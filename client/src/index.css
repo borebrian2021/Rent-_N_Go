@@ -20,3 +20,22 @@ code {
 .bg-transparent{
   background-color: transparent !important;
 }
+.logo{
+  height:60px;
+  width:60px;
+}
+.partners{
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+.partners_img{
+  height:100px; margin: 50px;
+}
+.login{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.authinputs{
+  padding: 20px!important;
+  border-radius: 4px;
+}

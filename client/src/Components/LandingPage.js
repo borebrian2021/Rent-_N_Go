@@ -6,6 +6,7 @@ import FeaturedPlaces from './SubComponents/FeaturedPlaces';
 import WhyChooseUs from './SubComponents/WhyChooseUs';
 import PopularSpaces from './SubComponents/PopularSpaces';
 import OurAgents from './SubComponents/OurAgents';
+import OurPartners from './SubComponents/OurPartners';
 const LandingPage = () => {
     return (
         <div>
@@ -16,6 +17,7 @@ const LandingPage = () => {
             <WhyChooseUs/>
             <PopularSpaces/>
             <OurAgents/>
+            <OurPartners/>
         </div>
     );
 }

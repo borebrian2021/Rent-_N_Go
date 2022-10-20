@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logowhite from '../Image/logo-white-1.svg'
 import profileImage from '../Image/testimonials/ts-1.jpg'
+import logo from '../Image/logo.png'
 class TopBar extends Component {
     render() {
         return (
@@ -9,9 +10,9 @@ class TopBar extends Component {
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="#">Rent N Go</a>
+    <a class="navbar-brand nav-link" href="#"><img src={logo} className="logo" />Rent N Go</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
+      <li class="nav-item ">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
@@ -26,11 +27,18 @@ class TopBar extends Component {
       
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+  <ul className=' navbar-nav'>
+    <li class="nav-item">
     <a class="nav-link " href="#">Log In</a>
+
+    </li>
+    <li class="nav-item">
     <a class="nav-link " href="#">Sign Up</a>
 
-    </form>
+    </li>
+  </ul>
+
+   
   </div>
 </nav>
         );
