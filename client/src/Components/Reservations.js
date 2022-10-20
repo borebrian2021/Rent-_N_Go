@@ -6,7 +6,7 @@ const Reservations = () => {
             <div class="container-fluid">
                 <div class="row"></div>
               <div class="dashborad-box">
-                            <h4 class="title">Listing</h4>
+                            <h4 class="title">Reservations made</h4>
                             <div class="section-body listing-table">
                                 <div class="table-responsive">
                                     <table class="table table-striped">
@@ -28,8 +28,40 @@ const Reservations = () => {
                                                 <td class="rating"><span>22/10/2022 10:00 AM</span></td>
                                                 <td class="rating"><span>22/10/2022 5:00 PM</span></td>
                                                 <td class="status"><span class=" active">Ksh. 60,000</span></td>
-                                                <td class="edit"><a href="#">                                                <td class="rating"><span>22/10/2022</span></td>
-</a></td>
+                                                <td class="edit">Verified</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Victoria Musyoka</td>
+                                                <td>+25471234567</td>
+                                                <td class="rating"><span>22/10/2022 10:00 AM</span></td>
+                                                <td class="rating"><span>22/10/2022 5:00 PM</span></td>
+                                                <td class="status"><span class=" active">Ksh. 60,000</span></td>
+                                                <td class="edit">Verified</td>
+
+                                            </tr> <tr>
+                                                <td>Victoria Musyoka</td>
+                                                <td>+25471234567</td>
+                                                <td class="rating"><span>22/10/2022 10:00 AM</span></td>
+                                                <td class="rating"><span>22/10/2022 5:00 PM</span></td>
+                                                <td class="status"><span class=" active">Ksh. 60,000</span></td>
+                                                <td class="edit">Verified</td>
+
+                                            </tr> <tr>
+                                                <td>Victoria Musyoka</td>
+                                                <td>+25471234567</td>
+                                                <td class="rating"><span>22/10/2022 10:00 AM</span></td>
+                                                <td class="rating"><span>22/10/2022 5:00 PM</span></td>
+                                                <td class="status"><span class=" active">Ksh. 60,000</span></td>
+                                                <td class="edit">Verified</td>
+
+                                            </tr> <tr>
+                                                <td>Victoria Musyoka</td>
+                                                <td>+25471234567</td>
+                                                <td class="rating"><span>22/10/2022 10:00 AM</span></td>
+                                                <td class="rating"><span>22/10/2022 5:00 PM</span></td>
+                                                <td class="status"><span class=" active">Ksh. 60,000</span></td>
+                                                <td class="edit">Verified</td>
+
                                             </tr>
                                             
                                         </tbody>
