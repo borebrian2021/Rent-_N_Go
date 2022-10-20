@@ -6,6 +6,7 @@ import SignUp from './Components/SignUp';
 import Login from './Components/Login';
 import ResetPassword from './Components/ResetPassword';
 import TermsAndConditions from './Components/TermsAndConditions';
+import Reservations from './Components/Reservations';
 function App() {
   return (
 <div>
@@ -14,8 +15,8 @@ function App() {
    <SignUp/>
    <TermsAndConditions/> */}
 {/* <ResetPassword/> */}
-<LandingPage/>
-
+{/* <LandingPage/> */}
+<Reservations/>
 </div>
   );
 }
