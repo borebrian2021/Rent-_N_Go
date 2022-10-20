@@ -6,13 +6,13 @@ const Login = () => {
         <section class="headings">
        <div class="text-heading text-center">
            <div class="container">
-               <h6>Login</h6>
+               <h6 className='m-3'>Welcome back ,please login</h6>
            </div>
        </div>
    </section>
 
    <div id="login">
-       <div class="login">
+       <div class="login text-left">
            <form>
             
                <div class="form-group">
@@ -22,7 +22,7 @@ const Login = () => {
                </div>
                <div class="form-group">
                    <label>Password</label>
-                   <input type="password" class="form-control" placeholder='Password' name="password" id="password" value=""/>
+                   <input type="password" class="form-control authinputs"  placeholder='Password' name="password" id="password" value=""/>
                    <i class="icon_lock_alt"></i>
                </div>
                <div class="fl-wrap filter-tags clearfix add_bottom_30">
@@ -35,7 +35,7 @@ const Login = () => {
                    <div class="float-right mt-1"><a id="forgot" href="javascript:void(0);">Forgot Password?</a></div>
                </div>
               
-               <a href="#0" class="btn_1 rounded full-width">Login to Find Houses</a>
+               <input href="#0" class="btn_1 rounded " value="Log In" type="submit"/>
                <div class="text-center add_top_10">New to Find Houses? <strong><a href="register.html" class="default_color">Sign up!</a></strong></div>
 
 <div class="access_social m-3">
