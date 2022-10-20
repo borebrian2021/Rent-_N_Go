@@ -77,7 +77,7 @@ const Contact = () => {
     
 
 
-        <footer class="first-footer">
+        {/* <footer class="first-footer">
             <div class="top-footer">
                 <div class="container">
                     <div class="row">
@@ -199,7 +199,7 @@ const Contact = () => {
                 </div>
             </div>
            
-        </footer>
+        </footer> */}
         </div>
 
 
