@@ -34,15 +34,15 @@ const Login = () => {
                    </div>
                    <div class="float-right mt-1"><a id="forgot" href="javascript:void(0);">Forgot Password?</a></div>
                </div>
-               <div class="divider"><span>Or</span></div>
-
-               <div class="access_social">
-                   {/* <a href="#0" class="social_bt facebook">Login with Facebook</a> */}
-                   <a href="#0" class="social_bt google">Login with Google</a>
-                   {/* <a href="#0" class="social_bt linkedin">Login with Linkedin</a> */}
-               </div>
+              
                <a href="#0" class="btn_1 rounded full-width">Login to Find Houses</a>
-               <div class="text-center add_top_10">New to Find Houses? <strong><a href="register.html">Sign up!</a></strong></div>
+               <div class="text-center add_top_10">New to Find Houses? <strong><a href="register.html" class="default_color">Sign up!</a></strong></div>
+
+<div class="access_social m-3">
+    {/* <a href="#0" class="social_bt facebook">Login with Facebook</a> */}
+    <a href="#0" class="social_bt google">Login with Google</a>
+    {/* <a href="#0" class="social_bt linkedin">Login with Linkedin</a> */}
+</div>
            </form>
        </div>
    </div>
