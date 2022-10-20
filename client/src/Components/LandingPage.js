@@ -3,6 +3,7 @@ import TopBar from './TopBar';
 import AfterHeader from './SubComponents/AfterHeader';
 import PopularPlaces from './SubComponents/PopularPlaces';
 import FeaturedPlaces from './SubComponents/FeaturedPlaces';
+import WhyChooseUs from './SubComponents/WhyChooseUs';
 const LandingPage = () => {
     return (
         <div>
@@ -10,6 +11,8 @@ const LandingPage = () => {
             <AfterHeader/>
             <PopularPlaces/>
             <FeaturedPlaces/>
+            <WhyChooseUs/>
+
         </div>
     );
 }
