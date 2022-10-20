@@ -1,10 +1,11 @@
 import React from 'react';
 import TopBar from './TopBar';
-import AfterHeader from './LandingPageComponents/AfterHeader';
-import PopularPlaces from './LandingPageComponents/PopularPlaces';
-import FeaturedPlaces from './LandingPageComponents/FeaturedPlaces';
-import WhyChooseUs from './LandingPageComponents/WhyChooseUs';
-import PopularSpaces from './LandingPageComponents/PopularSpaces';
+import AfterHeader from './SubComponents/AfterHeader';
+import PopularPlaces from './SubComponents/PopularPlaces';
+import FeaturedPlaces from './SubComponents/FeaturedPlaces';
+import WhyChooseUs from './SubComponents/WhyChooseUs';
+import PopularSpaces from './SubComponents/PopularSpaces';
+import OurAgents from './SubComponents/OurAgents';
 const LandingPage = () => {
     return (
         <div>
@@ -14,7 +15,7 @@ const LandingPage = () => {
             <FeaturedPlaces/>
             <WhyChooseUs/>
             <PopularSpaces/>
-
+            <OurAgents/>
         </div>
     );
 }
