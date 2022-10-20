@@ -1,10 +1,8 @@
 import React from 'react';
-import image1 from "../Image/single-property/s-1.jpg"
+
 import image2 from "../Image/single-property/s-2.jpg"
 import image3 from "../Image/single-property/s-3.jpg"
-import image4 from "../Image/single-property/s-4.jpg"
-import image5 from "../Image/single-property/s-5.jpg"
-import image6 from "../Image/single-property/s-6.jpg"
+
 import image7 from "../Image/feature-properties/fp-1.jpg"
 import image8 from "../Image/feature-properties/fp-2.jpg"
 import image9 from "../Image/feature-properties/fp-3.jpg"
@@ -13,12 +11,7 @@ import image11 from "../Image/single-property/s-1.jpg"
 import image12 from "../Image/testimonials/ts-4.jpg"
 import image13 from "../Image/testimonials/ts-3.jpg"
 
-import image15 from "../Image/feature-properties/fp-1.jpg"
-import image16 from "../Image/feature-properties/fp-2.jpg"
-import image17 from "../Image/feature-properties/fp-3.jpg"
-import image18 from "../Image/feature-properties/fp-4.jpg"
-import image19 from "../Image/feature-properties/fp-5.jpg"
-import image20 from "../Image/feature-properties/fp-6.jpg"
+
 import image21 from "../Image/single-property/banner.jpg"
 import image22 from "../Image/blog/b-11.jpg"
 import image23 from "../Image/testimonials/ts-1.jpg"
@@ -26,8 +19,16 @@ import image24 from "../Image/blog/b-12.jpg"
 import image25 from "../Image/testimonials/ts-2.jpg"
 import image26 from "../Image/blog/b-1.jpg"
 import image27 from "../Image/testimonials/ts-3.jpg"
-import image28 from "../Image/bg/floor-plan-1.png"
+
 import image29 from "../Image/testimonials/ts-1.jpg"
+
+import image50 from "../Image/single-property/s-1.jpg"
+import image51 from "../Image/single-property/s-2.jpg"
+import image52 from "../Image/single-property/s-3.jpg"
+import image53 from "../Image/single-property/s-4.jpg"
+import image54 from "../Image/single-property/s-5.jpg"
+
+
 const MySpaces = () => {
     return (
         <body class="inner-pages sin-1 homepage-4 hd-white">
@@ -35,7 +36,7 @@ const MySpaces = () => {
             <body class="inner-pages sin-1 homepage-4 hd-white">
           
             <div class="clearfix"></div>
-             <div class="swiper-container">
+             {/* <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <a href="images/single-property/s-1.jpg" class="grid image-link">
@@ -73,7 +74,8 @@ const MySpaces = () => {
 
             <div class="swiper-button-next swiper-button-white mr-3"></div>
             <div class="swiper-button-prev swiper-button-white ml-3"></div>
-        </div>
+        </div> */}
+
        
         <section class="single-proper blog details">
             <div class="container">
@@ -90,8 +92,12 @@ const MySpaces = () => {
                                                     <a href="#listing-location" class="listing-address">
                                                         <i class="fa fa-map-marker pr-2 ti-location-pin mrg-r-5"></i>77 - Central Park South, NYC
                                                     </a>
+
+
                                                 </div>
                                             </div>
+
+
                                         </div>
                                         <div class="single detail-wrapper mr-2">
                                             <div class="detail-wrapper-body">
@@ -107,7 +113,59 @@ const MySpaces = () => {
                                         </div>
                                     </div>
                                 </section>
-                                
+                                <div id="listingDetailsSlider" class="carousel listing-details-sliders slide mb-30">
+                                    <h5 class="mb-4">Gallery</h5>
+                                    <div class="carousel-inner">
+                                        <div class="active item carousel-item" data-slide-number="0">
+                                            <img src={image50} class="img-fluid" alt="slider-listing"/>
+                                        </div>
+                                        <div class="item carousel-item" data-slide-number="1">
+                                            <img src={image51} class="img-fluid" alt="slider-listing"/>
+                                        </div>
+                                        <div class="item carousel-item" data-slide-number="2">
+                                            <img src={image52} class="img-fluid" alt="slider-listing"/>
+                                        </div>
+                                        <div class="item carousel-item" data-slide-number="4">
+                                            <img src={image53} class="img-fluid" alt="slider-listing"/>
+                                        </div>
+                                        <div class="item carousel-item" data-slide-number="5">
+                                            <img src={image54} class="img-fluid" alt="slider-listing"/>
+                                        </div>
+
+                                        <a class="carousel-control left" href="#listingDetailsSlider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+                                        <a class="carousel-control right" href="#listingDetailsSlider" data-slide="next"><i class="fa fa-angle-right"></i></a>
+
+                                    </div>
+                                    {/* <!-- main slider carousel nav controls --> */}
+                                    {/* <ul class="carousel-indicators smail-listing list-inline">
+                                        <li class="list-inline-item active">
+                                            <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#listingDetailsSlider">
+                                                <img src="images/single-property/s-1.jpg" class="img-fluid" alt="listing-small"/>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a id="carousel-selector-1" data-slide-to="1" data-target="#listingDetailsSlider">
+                                                <img src="images/single-property/s-2.jpg" class="img-fluid" alt="listing-small"/>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a id="carousel-selector-2" data-slide-to="2" data-target="#listingDetailsSlider">
+                                                <img src="images/single-property/s-3.jpg" class="img-fluid" alt="listing-small"/>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a id="carousel-selector-3" data-slide-to="3" data-target="#listingDetailsSlider">
+                                                <img src="images/single-property/s-4.jpg" class="img-fluid" alt="listing-small"/>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a id="carousel-selector-4" data-slide-to="4" data-target="#listingDetailsSlider">
+                                                <img src="images/single-property/s-5.jpg" class="img-fluid" alt="listing-small"/>
+                                            </a>
+                                        </li>
+                                    </ul> */}
+                                    {/* <!-- main slider carousel items --> */}
+                                </div>
                                 <div class="blog-info details mb-30">
                                     <h5 class="mb-4">Description</h5>
                                     <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur, totam fugit, alias fuga aliquam quod tempora a nisi esse magnam nulla quas! Error praesentium, vero dolorum laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur, totam fugit.</p>
@@ -201,11 +259,8 @@ const MySpaces = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div class="floor-plan property wprt-image-video w50 pro">
-                            <h5>Floor Plans</h5>
-                            <img alt="image" src={image28}/>
-                        </div>
-                        <div class="floor-plan property wprt-image-video w50 pro">
+                       
+                        {/* <div class="floor-plan property wprt-image-video w50 pro">
                             <h5>What's Nearby</h5>
                             <div class="property-nearby">
                                 <div class="row">
@@ -339,7 +394,7 @@ const MySpaces = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         {/* <div class="property wprt-image-video w50 pro vid-si2">
                             <h5>Property Video</h5>
                             <img alt="image" src="images/slider/home-slider-4.jpg"/>
@@ -592,7 +647,7 @@ const MySpaces = () => {
                                     </div>
                                 </div>
                                 <div class="main-search-field-2">
-                                    <div class="widget-boxed mt-5">
+                                    {/* <div class="widget-boxed mt-5">
                                         <div class="widget-boxed-header">
                                             <h4>Recent Properties</h4>
                                         </div>
@@ -627,8 +682,8 @@ const MySpaces = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="widget-boxed mt-5">
+                                    </div> */}
+                                    {/* <div class="widget-boxed mt-5">
                                         <div class="widget-boxed-header mb-5">
                                             <h4>Feature Properties</h4>
                                         </div>
@@ -756,7 +811,7 @@ const MySpaces = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                     
                                     <div class="widget-boxed popular mt-5">
                                         <div class="widget-boxed-header">
