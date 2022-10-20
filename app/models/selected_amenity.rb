@@ -1,0 +1,2 @@
+class SelectedAmenity < ApplicationRecord
+end
