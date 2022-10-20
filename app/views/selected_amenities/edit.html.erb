@@ -1,0 +1,10 @@
+<h1>Editing selected amenity</h1>
+
+<%= render "form", selected_amenity: @selected_amenity %>
+
+<br>
+
+<div>
+  <%= link_to "Show this selected amenity", @selected_amenity %> |
+  <%= link_to "Back to selected amenities", selected_amenities_path %>
+</div>
