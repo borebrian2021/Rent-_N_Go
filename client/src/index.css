@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.parallax-searchs.home15.thome-6 {
+  background-image: url("") !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(./Image/bg/thome-6.jpg) no-repeat center top !important;
+}
+.bg-transparent{
+  background-color: transparent !important;
+}

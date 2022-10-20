@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AfterHeader from './Components/SubComponents/AfterHeader';
+import LandingPage from './Components/LandingPage';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root1'));
 root.render(
   <React.StrictMode>
-    <App />
+    <LandingPage/>
   </React.StrictMode>
 );
 
