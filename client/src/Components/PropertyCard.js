@@ -33,8 +33,8 @@ function PropertyCard() {
                                         </td>
                                         <td>
                                             <div class="inner">
-                                                <a href="single-property-1.html"><h2>Luxury Villa House</h2></a>
-                                                <figure><i class="lni-map-marker"></i> Est St, 77 - Central Park South, NYC</figure>
+                                                <a href="single-property-1.html"><h2>Kenya Archives</h2></a>
+                                                <figure><i class="lni-map-marker"></i>P.O BOX: 49210, 00100 Nairobi</figure>
                                                 <ul class="starts text-left mb-0">
                                                     <li class="mb-0"><i class="fa fa-star"></i>
                                                     </li>
@@ -63,8 +63,8 @@ function PropertyCard() {
                                         </td>
                                         <td>
                                             <div class="inner">
-                                                <a href="single-property-1.html"><h2>Luxury Villa House</h2></a>
-                                                <figure><i class="lni-map-marker"></i> Est St, 77 - Central Park South, NYC</figure>
+                                                <a href="single-property-1.html"><h2>Kenya Archives</h2></a>
+                                                <figure><i class="lni-map-marker"></i> P.O BOX: 49210, 00100 Nairobi</figure>
                                                 <ul class="starts text-left mb-0">
                                                     <li class="mb-0"><i class="fa fa-star"></i>
                                                     </li>
@@ -93,8 +93,8 @@ function PropertyCard() {
                                         </td>
                                         <td>
                                             <div class="inner">
-                                                <a href="single-property-1.html"><h2>Luxury Villa House</h2></a>
-                                                <figure><i class="lni-map-marker"></i> Est St, 77 - Central Park South, NYC</figure>
+                                                <a href="single-property-1.html"><h2>enya Archives</h2></a>
+                                                <figure><i class="lni-map-marker"></i> P.O BOX: 49210, 00100 Nairobi</figure>
                                                 <ul class="starts text-left mb-0">
                                                     <li class="mb-0"><i class="fa fa-star"></i>
                                                     </li>
@@ -123,8 +123,8 @@ function PropertyCard() {
                                         </td>
                                         <td>
                                             <div class="inner">
-                                                <a href="single-property-1.html"><h2>Luxury Villa House</h2></a>
-                                                <figure><i class="lni-map-marker"></i> Est St, 77 - Central Park South, NYC</figure>
+                                                <a href="single-property-1.html"><h2>Kenya Archives</h2></a>
+                                                <figure><i class="lni-map-marker"></i> P.O BOX: 49210, 00100 Nairobi</figure>
                                                 <ul class="starts text-left mb-0">
                                                     <li class="mb-0"><i class="fa fa-star"></i>
                                                     </li>
@@ -153,8 +153,8 @@ function PropertyCard() {
                                         </td>
                                         <td>
                                             <div class="inner">
-                                                <a href="single-property-1.html"><h2>Luxury Villa House</h2></a>
-                                                <figure><i class="lni-map-marker"></i> Est St, 77 - Central Park South, NYC</figure>
+                                                <a href="single-property-1.html"><h2>Kenya Archives</h2></a>
+                                                <figure><i class="lni-map-marker"></i> P.O BOX: 49210, 00100 Nairobi</figure>
                                                 <ul class="starts text-left mb-0">
                                                     <li class="mb-0"><i class="fa fa-star"></i>
                                                     </li>
@@ -183,8 +183,8 @@ function PropertyCard() {
                                         </td>
                                         <td>
                                             <div class="inner">
-                                                <a href="single-property-1.html"><h2>Luxury Villa House</h2></a>
-                                                <figure><i class="lni-map-marker"></i> Est St, 77 - Central Park South, NYC</figure>
+                                                <a href="single-property-1.html"><h2>Kenya Archives</h2></a>
+                                                <figure><i class="lni-map-marker"></i> P.O BOX: 49210, 00100 Nairobi</figure>
                                                 <ul class="starts text-left mb-0">
                                                     <li class="mb-0"><i class="fa fa-star"></i>
                                                     </li>

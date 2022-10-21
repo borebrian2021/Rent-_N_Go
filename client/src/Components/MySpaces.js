@@ -224,7 +224,7 @@ const MySpaces = () => {
                                         </div>
                                         <div class="col-md-10 comments-info">
                                             <div class="conra">
-                                                <h5 class="mb-2">Abraham Tyron</h5>
+                                                <h5 class="mb-2">Brian Koskei</h5>
                                                 <div class="rating-box">
                                                     <div class="detail-list-rating mr-0">
                                                         <i class="fa fa-star"></i>
@@ -250,7 +250,7 @@ const MySpaces = () => {
                                         </div>
                                         <div class="col-md-10 comments-info">
                                             <div class="conra">
-                                                <h5 class="mb-2">Lisa Williams</h5>
+                                                <h5 class="mb-2">Sharon Mwenda</h5>
                                                 <div class="rating-box">
                                                     <div class="detail-list-rating mr-0">
                                                         <i class="fa fa-star"></i>
@@ -399,7 +399,7 @@ const MySpaces = () => {
                                         <div class="sidebar-widget author-widget2">
                                             <div class="author-box clearfix">
                                                 <img src={image29} alt="author-image" class="author__img"/>
-                                                <h4 class="author__title">Lisa Clark</h4>
+                                                <h4 class="author__title">Denis Kipyegon</h4>
                                                 <p class="author__meta">Agent of Property</p>
                                             </div>
                                             <ul class="author__contact">
