@@ -9,7 +9,9 @@ import LandingPage from './Components/LandingPage';
 const root = ReactDOM.createRoot(document.getElementById('root1'));
 root.render(
   <React.StrictMode>
+
    <App/>
+
   </React.StrictMode>
 );
 

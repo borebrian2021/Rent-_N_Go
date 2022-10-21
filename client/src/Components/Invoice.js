@@ -1,5 +1,5 @@
 import React from 'react';
-
+import logo from '../Image/logo1.png'
 const Invoice = () => {
     return (
         <div className='row'>
@@ -43,7 +43,9 @@ const Invoice = () => {
                                         <div class="col-md-12">
                                             <table class="table">
                                                 <thead>
-                                                    <tr></tr>
+                                                    <tr colspan="5">
+                                                        <th>Property details</th>
+                                                    </tr>
                                                     <tr>
                                                         <th class="border-0 text-uppercase small font-weight-bold">Description</th>
                                                         <th class="border-0 text-uppercase small font-weight-bold">Product</th>
