@@ -1,17 +1,10 @@
 import React from 'react';
-
 import image2 from "../Image/single-property/s-2.jpg"
 import image3 from "../Image/single-property/s-3.jpg"
-
-import image7 from "../Image/feature-properties/fp-1.jpg"
-import image8 from "../Image/feature-properties/fp-2.jpg"
-import image9 from "../Image/feature-properties/fp-3.jpg"
 import image10 from "../Image/testimonials/ts-5.jpg"
 import image11 from "../Image/single-property/s-1.jpg"
 import image12 from "../Image/testimonials/ts-4.jpg"
 import image13 from "../Image/testimonials/ts-3.jpg"
-
-
 import image21 from "../Image/single-property/banner.jpg"
 import image22 from "../Image/blog/b-11.jpg"
 import image23 from "../Image/testimonials/ts-1.jpg"
@@ -19,9 +12,7 @@ import image24 from "../Image/blog/b-12.jpg"
 import image25 from "../Image/testimonials/ts-2.jpg"
 import image26 from "../Image/blog/b-1.jpg"
 import image27 from "../Image/testimonials/ts-3.jpg"
-
 import image29 from "../Image/testimonials/ts-1.jpg"
-
 import image50 from "../Image/single-property/s-1.jpg"
 import image51 from "../Image/single-property/s-2.jpg"
 import image52 from "../Image/single-property/s-3.jpg"
@@ -36,45 +27,7 @@ const MySpaces = () => {
             <body class="inner-pages sin-1 homepage-4 hd-white">
           
             <div class="clearfix"></div>
-             {/* <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <a href="images/single-property/s-1.jpg" class="grid image-link">
-                        <img src={image1} class="img-fluid" alt="#"/>
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="images/single-property/s-2.jpg" class="grid image-link">
-                        <img src={image2} class="img-fluid" alt="#"/>
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="images/single-property/s-3.jpg" class="grid image-link">
-                        <img src={image3} class="img-fluid" alt="#"/>
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="images/single-property/s-4.jpg" class="grid image-link">
-                        <img src={image4}class="img-fluid" alt="#"/>
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="images/single-property/s-5.jpg" class="grid image-link">
-                        <img src={image5} class="img-fluid" alt="#"/>
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="images/single-property/s-6.jpg" class="grid image-link">
-                        <img src={image6}class="img-fluid" alt="#"/>
-                    </a>
-                </div>
-            </div>
-
-            <div class="swiper-pagination swiper-pagination-white"></div>
-
-            <div class="swiper-button-next swiper-button-white mr-3"></div>
-            <div class="swiper-button-prev swiper-button-white ml-3"></div>
-        </div> */}
+            
 
        
         <section class="single-proper blog details">
@@ -136,35 +89,7 @@ const MySpaces = () => {
                                         <a class="carousel-control right" href="#listingDetailsSlider" data-slide="next"><i class="fa fa-angle-right"></i></a>
 
                                     </div>
-                                    {/* <!-- main slider carousel nav controls --> */}
-                                    {/* <ul class="carousel-indicators smail-listing list-inline">
-                                        <li class="list-inline-item active">
-                                            <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#listingDetailsSlider">
-                                                <img src="images/single-property/s-1.jpg" class="img-fluid" alt="listing-small"/>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a id="carousel-selector-1" data-slide-to="1" data-target="#listingDetailsSlider">
-                                                <img src="images/single-property/s-2.jpg" class="img-fluid" alt="listing-small"/>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a id="carousel-selector-2" data-slide-to="2" data-target="#listingDetailsSlider">
-                                                <img src="images/single-property/s-3.jpg" class="img-fluid" alt="listing-small"/>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a id="carousel-selector-3" data-slide-to="3" data-target="#listingDetailsSlider">
-                                                <img src="images/single-property/s-4.jpg" class="img-fluid" alt="listing-small"/>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a id="carousel-selector-4" data-slide-to="4" data-target="#listingDetailsSlider">
-                                                <img src="images/single-property/s-5.jpg" class="img-fluid" alt="listing-small"/>
-                                            </a>
-                                        </li>
-                                    </ul> */}
-                                    {/* <!-- main slider carousel items --> */}
+                                  
                                 </div>
                                 <div class="blog-info details mb-30">
                                     <h5 class="mb-4">Description</h5>
@@ -260,158 +185,7 @@ const MySpaces = () => {
                             </ul>
                         </div>
                        
-                        {/* <div class="floor-plan property wprt-image-video w50 pro">
-                            <h5>What's Nearby</h5>
-                            <div class="property-nearby">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="nearby-info mb-4">
-                                            <span class="nearby-title mb-3 d-block text-info">
-                                               <i class="fas fa-graduation-cap mr-2"></i><b class="title">Education</b>
-                                            </span>
-                                            <div class="nearby-list">
-                                                <ul class="property-list list-unstyled mb-0">
-                                                    <li class="d-flex">
-                                                        <h6 class="mb-3 mr-2">Education Mandarin</h6>
-                                                        <span>(15.61 miles)</span>
-                                                        <ul class="list-unstyled list-inline ml-auto">
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="d-flex">
-                                                        <h6 class="mb-3 mr-2">Marry's Education</h6>
-                                                        <span>(15.23 miles)</span>
-                                                        <ul class="list-unstyled list-inline ml-auto">
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="d-flex">
-                                                        <h6 class="mb-3 mr-2">The Kaplan</h6>
-                                                        <span>(15.16 miles)</span>
-                                                        <ul class="list-unstyled list-inline ml-auto">
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="nearby-info mb-4">
-                                            <span class="nearby-title mb-3 d-block text-success">
-                                              <i class="fas fa-user-md mr-2"></i><b class="title">Health and Medical</b>
-                                            </span>
-                                            <div class="nearby-list">
-                                                <ul class="property-list list-unstyled mb-0">
-                                                    <li class="d-flex">
-                                                        <h6 class="mb-3 mr-2">Natural Market</h6>
-                                                        <span>(13.20 miles)</span>
-                                                        <ul class="list-unstyled list-inline ml-auto">
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="d-flex">
-                                                        <h6 class="mb-3 mr-2">Food For Health</h6>
-                                                        <span>(13.22 miles)</span>
-                                                        <ul class="list-unstyled list-inline ml-auto">
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="d-flex">
-                                                        <h6 class="mb-3 mr-2">A Matter of Health</h6>
-                                                        <span>(13.34 miles)</span>
-                                                        <ul class="list-unstyled list-inline ml-auto">
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="nearby-info">
-                                            <span class="nearby-title mb-3 d-block text-danger">
-                                                <i class="fas fa-car mr-2"></i><b class="title">Transportation</b>
-                                            </span>
-                                            <div class="nearby-list">
-                                                <ul class="property-list list-unstyled mb-0">
-                                                    <li class="d-flex">
-                                                        <h6 class="mb-3 mr-2">Airport Transportation</h6>
-                                                        <span>(11.36 miles)</span>
-                                                        <ul class="list-unstyled list-inline ml-auto">
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="d-flex">
-                                                        <h6 class="mb-3 mr-2">NYC Executive Limo</h6>
-                                                        <span>(11.87 miles)</span>
-                                                        <ul class="list-unstyled list-inline ml-auto">
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="d-flex">
-                                                        <h6 class="mb-3 mr-2">Empire Limousine</h6>
-                                                        <span>(11.52 miles)</span>
-                                                        <ul class="list-unstyled list-inline ml-auto">
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> */}
-                        {/* <div class="property wprt-image-video w50 pro vid-si2">
-                            <h5>Property Video</h5>
-                            <img alt="image" src="images/slider/home-slider-4.jpg"/>
-                            <a class="icon-wrap popup-video popup-youtube" href="https://www.youtube.com/watch?v=14semTlwyUY">
-                                <i class="fa fa-play"></i>
-                            </a>
-                            <div class="iq-waves">
-                                <div class="waves wave-1"></div>
-                                <div class="waves wave-2"></div>
-                                <div class="waves wave-3"></div>
-                            </div>
-                        </div> */}
-                        {/* <div class="property-location map">
-                            <h5>Location</h5>
-                            <div class="divider-fade"></div>
-                            <div id="map-contact" class="contact-map"></div>
-                        </div> */}
+                     
                      
                         <section class="reviews comments">
                             <h3 class="mb-5">3 Reviews</h3>
@@ -647,172 +421,7 @@ const MySpaces = () => {
                                     </div>
                                 </div>
                                 <div class="main-search-field-2">
-                                    {/* <div class="widget-boxed mt-5">
-                                        <div class="widget-boxed-header">
-                                            <h4>Recent Properties</h4>
-                                        </div>
-                                        <div class="widget-boxed-body">
-                                            <div class="recent-post">
-                                                <div class="recent-main">
-                                                    <div class="recent-img">
-                                                        <a href="blog-details.html"><img src={image7} alt="#"/></a>
-                                                    </div>
-                                                    <div class="info-img">
-                                                        <a href="blog-details.html"><h6>Family Home</h6></a>
-                                                        <p>$230,000</p>
-                                                    </div>
-                                                </div>
-                                                <div class="recent-main my-4">
-                                                    <div class="recent-img">
-                                                        <a href="blog-details.html"><img src={image8} alt="#"/></a>
-                                                    </div>
-                                                    <div class="info-img">
-                                                        <a href="blog-details.html"><h6>Family Home</h6></a>
-                                                        <p>$230,000</p>
-                                                    </div>
-                                                </div>
-                                                <div class="recent-main">
-                                                    <div class="recent-img">
-                                                        <a href="blog-details.html"><img src={image9} alt="#"/></a>
-                                                    </div>
-                                                    <div class="info-img">
-                                                        <a href="blog-details.html"><h6>Family Home</h6></a>
-                                                        <p>$230,000</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> */}
-                                    {/* <div class="widget-boxed mt-5">
-                                        <div class="widget-boxed-header mb-5">
-                                            <h4>Feature Properties</h4>
-                                        </div>
-                                        <div class="widget-boxed-body">
-                                            <div class="slick-lancers">
-                                                <div class="agents-grid mr-0">
-                                                    <div class="listing-item compact">
-                                                        <a href="properties-details.html" class="listing-img-container">
-                                                            <div class="listing-badges">
-                                                                <span class="featured">$ 230,000</span>
-                                                                <span>For Sale</span>
-                                                            </div>
-                                                            <div class="listing-img-content">
-                                                                <span class="listing-compact-title">House Luxury <i>New York</i></span>
-                                                                <ul class="listing-hidden-content">
-                                                                    <li>Area <span>720 sq ft</span></li>
-                                                                    <li>Rooms <span>6</span></li>
-                                                                    <li>Beds <span>2</span></li>
-                                                                    <li>Baths <span>3</span></li>
-                                                                </ul>
-                                                            </div>
-                                                            <img src={image15} alt=""/>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="agents-grid mr-0">
-                                                    <div class="listing-item compact">
-                                                        <a href="properties-details.html" class="listing-img-container">
-                                                            <div class="listing-badges">
-                                                                <span class="featured">$ 6,500</span>
-                                                                <span class="rent">For Rent</span>
-                                                            </div>
-                                                            <div class="listing-img-content">
-                                                                <span class="listing-compact-title">House Luxury <i>Los Angles</i></span>
-                                                                <ul class="listing-hidden-content">
-                                                                    <li>Area <span>720 sq ft</span></li>
-                                                                    <li>Rooms <span>6</span></li>
-                                                                    <li>Beds <span>2</span></li>
-                                                                    <li>Baths <span>3</span></li>
-                                                                </ul>
-                                                            </div>
-                                                            <img src={image16} alt=""/>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="agents-grid mr-0">
-                                                    <div class="listing-item compact">
-                                                        <a href="properties-details.html" class="listing-img-container">
-                                                            <div class="listing-badges">
-                                                                <span class="featured">$ 230,000</span>
-                                                                <span>For Sale</span>
-                                                            </div>
-                                                            <div class="listing-img-content">
-                                                                <span class="listing-compact-title">House Luxury <i>San Francisco</i></span>
-                                                                <ul class="listing-hidden-content">
-                                                                    <li>Area <span>720 sq ft</span></li>
-                                                                    <li>Rooms <span>6</span></li>
-                                                                    <li>Beds <span>2</span></li>
-                                                                    <li>Baths <span>3</span></li>
-                                                                </ul>
-                                                            </div>
-                                                            <img src={image17} alt=""/>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="agents-grid mr-0">
-                                                    <div class="listing-item compact">
-                                                        <a href="properties-details.html" class="listing-img-container">
-                                                            <div class="listing-badges">
-                                                                <span class="featured">$ 6,500</span>
-                                                                <span class="rent">For Rent</span>
-                                                            </div>
-                                                            <div class="listing-img-content">
-                                                                <span class="listing-compact-title">House Luxury <i>Miami FL</i></span>
-                                                                <ul class="listing-hidden-content">
-                                                                    <li>Area <span>720 sq ft</span></li>
-                                                                    <li>Rooms <span>6</span></li>
-                                                                    <li>Beds <span>2</span></li>
-                                                                    <li>Baths <span>3</span></li>
-                                                                </ul>
-                                                            </div>
-                                                            <img src={image18} alt=""/>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="agents-grid mr-0">
-                                                    <div class="listing-item compact">
-                                                        <a href="properties-details.html" class="listing-img-container">
-                                                            <div class="listing-badges">
-                                                                <span class="featured">$ 230,000</span>
-                                                                <span>For Sale</span>
-                                                            </div>
-                                                            <div class="listing-img-content">
-                                                                <span class="listing-compact-title">House Luxury <i>Chicago IL</i></span>
-                                                                <ul class="listing-hidden-content">
-                                                                    <li>Area <span>720 sq ft</span></li>
-                                                                    <li>Rooms <span>6</span></li>
-                                                                    <li>Beds <span>2</span></li>
-                                                                    <li>Baths <span>3</span></li>
-                                                                </ul>
-                                                            </div>
-                                                            <img src={image19} alt=""/>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="agents-grid mr-0">
-                                                    <div class="listing-item compact">
-                                                        <a href="properties-details.html" class="listing-img-container">
-                                                            <div class="listing-badges">
-                                                                <span class="featured">$ 6,500</span>
-                                                                <span class="rent">For Rent</span>
-                                                            </div>
-                                                            <div class="listing-img-content">
-                                                                <span class="listing-compact-title">House Luxury <i>Toronto CA</i></span>
-                                                                <ul class="listing-hidden-content">
-                                                                    <li>Area <span>720 sq ft</span></li>
-                                                                    <li>Rooms <span>6</span></li>
-                                                                    <li>Beds <span>2</span></li>
-                                                                    <li>Baths <span>3</span></li>
-                                                                </ul>
-                                                            </div>
-                                                            <img src={image20} alt=""/>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> */}
-                                    
+                                 
                                     <div class="widget-boxed popular mt-5">
                                         <div class="widget-boxed-header">
                                             <h4>Specials of the day</h4>
