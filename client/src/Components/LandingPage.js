@@ -8,11 +8,13 @@ import PopularSpaces from './SubComponents/PopularSpaces';
 import OurAgents from './SubComponents/OurAgents';
 import OurPartners from './SubComponents/OurPartners';
 const LandingPage = () => {
+    // const [allDtaa,setAllData]=useStae([])
+
     return (
         <div>
             <TopBar/>
             <AfterHeader/>
-            <PopularPlaces/>
+            <PopularPlaces />
             <FeaturedPlaces/>
             <WhyChooseUs/>
             <PopularSpaces/>
