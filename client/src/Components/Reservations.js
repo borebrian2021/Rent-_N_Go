@@ -2,7 +2,7 @@ import React from 'react';
 
 const Reservations = () => {
     return (
-                 <section class="user-page section-padding">
+        <section class="user-page section-padding">
             <div class="container-fluid">
                 <div class="row"></div>
               <div class="dashborad-box">

@@ -7,16 +7,17 @@ import Login from './Components/Login';
 import ResetPassword from './Components/ResetPassword';
 import TermsAndConditions from './Components/TermsAndConditions';
 import Reservations from './Components/Reservations';
+import Invoice from './Components/Invoice';
 function App() {
   return (
 <div>
-   {/* <TopBar/>
-   <Login/>
-   <SignUp/>
-   <TermsAndConditions/> */}
-{/* <ResetPassword/> */}
-{/* <LandingPage/> */}
-<Reservations/>
+  <TopBar/>
+{/* <Login/>
+ */}
+ {/* <Reservations/> */}
+ <Invoice/>
+ {/* <ResetPassword/> */}
+{/* <SignUp/> */}
 </div>
   );
 }

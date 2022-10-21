@@ -1,6 +1,6 @@
 import React from 'react';
 import moringa from '../../Image/Moringa.png'
-import logo from '../../Image/logo.png'
+import logo from '../../Image/logo1.png'
 
 const OurPartners = () => {
     return (

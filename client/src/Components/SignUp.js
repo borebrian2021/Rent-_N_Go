@@ -17,7 +17,7 @@ const SignUp = () => {
             
                <div class="form-group">
                    <label>First Name</label>
-                   <input type="text" class="form-control authinputs p-3" placeholder='EmFirst nameail' required/>
+                   <input type="text" class="form-control authinputs p-3" placeholder='First name' required/>
                    <i class="icon_mail_alt"></i>
                </div>
                <div class="form-group">
