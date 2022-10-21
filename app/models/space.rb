@@ -13,6 +13,8 @@ class Space < ApplicationRecord
     validates :description, presence: true;
     validates :price_per_hour, presence: true;
     validates :status, presence: true;
+
+    # to be changed latter
     validates :space_category, inclusion: {in:["big", "small"]} 
 
 end
