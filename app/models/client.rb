@@ -4,6 +4,7 @@ class Client < ApplicationRecord
     has_many :spaces, through: :properties 
     has_many :messages 
     has_many :reservations 
+    has_secure_password
     #validations 
     validates :first_name, presence: true
     validates :last_name, presence: true
