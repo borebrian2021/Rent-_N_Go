@@ -5,7 +5,7 @@ class Space < ApplicationRecord
     has_many :reviews
     has_many :amenities
 
-    validates :client_id, presence: true;
+    validates :property_id, presence: true;
     validates :room_size, presence: true
     validates :image_1, presence: true;
     validates :image_2, presence: true;
