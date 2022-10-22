@@ -112,14 +112,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_20_130333) do
   end
 
   create_table "spaces", force: :cascade do |t|
-    t.integer "client_id"
+    t.integer "property_id", null: false
     t.string "room_size"
     t.string "image_1"
     t.string "image_2"
     t.string "image_3"
     t.string "description"
     t.integer "price_per_hour"
-    t.string "status"
+    t.boolean "status"
     t.string "space_category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
