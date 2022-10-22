@@ -65,6 +65,6 @@ class SpacesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def space_params
-      params.require(:space).permit(:client_id, :room_size, :image_1, :image_2, :image_3, :description, :price_per_hour, :status, :space_category)
+      params.require(:space).permit(:property_id, :room_size, :image_1, :image_2, :image_3, :description, :price_per_hour, :status, :space_category)
     end
 end
