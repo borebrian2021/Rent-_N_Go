@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :selected_amenities
   resources :amenities
   resources :spaces
+  resources :messages, only: [:index, :show, :create]
   resources :clients, only: [:create, :show]
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
