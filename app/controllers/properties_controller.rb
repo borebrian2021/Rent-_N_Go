@@ -1,5 +1,6 @@
 class PropertiesController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
+rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_render
     def index
         properties = Property.all
         render json :properties
@@ -11,8 +12,14 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
     end
 
     def create
-       property = Property.create(property_params)
+       property = Property.create!(property_params)
        render json :property, status: :created 
+    end
+
+    def update
+        property = Property.find(params[:id])
+        property.update!(property_params)
+        render json: property
     end
 
     def destroy
@@ -29,4 +36,8 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
     def property_params
         params.permit(:property_name, :location, :image_url)
     end
+
+    def render_unprocessable_entity_response(invalid)
+        render json: { errors: invalid.record.errors }, status: :unprocessable_entity
+      end
 end
