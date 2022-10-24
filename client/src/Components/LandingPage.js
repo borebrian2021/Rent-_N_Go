@@ -1,12 +1,12 @@
 import React from 'react';
 import TopBar from './TopBar';
-import AfterHeader from './SubComponents/AfterHeader';
-import PopularPlaces from './SubComponents/PopularPlaces';
-import FeaturedPlaces from './SubComponents/FeaturedPlaces';
-import WhyChooseUs from './SubComponents/WhyChooseUs';
-import PopularSpaces from './SubComponents/PopularSpaces';
-import OurAgents from './SubComponents/OurAgents';
-import OurPartners from './SubComponents/OurPartners';
+import AfterHeader from './LandingPagComponents/AfterHeader';
+import PopularPlaces from './LandingPagComponents/PopularPlaces';
+import FeaturedPlaces from './LandingPagComponents/FeaturedPlaces';
+import WhyChooseUs from './LandingPagComponents/WhyChooseUs';
+import PopularSpaces from './LandingPagComponents/PopularSpaces';
+import OurAgents from './LandingPagComponents/OurAgents';
+import OurPartners from './LandingPagComponents/OurPartners';
 const LandingPage = () => {
     // const [allDtaa,setAllData]=useStae([])
 
