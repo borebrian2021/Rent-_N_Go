@@ -1,0 +1,37 @@
+<%= form_with(model: selected_amenity) do |form| %>
+  <% if selected_amenity.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(selected_amenity.errors.count, "error") %> prohibited this selected_amenity from being saved:</h2>
+
+      <ul>
+        <% selected_amenity.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :reservation_id, style: "display: block" %>
+    <%= form.text_field :reservation_id %>
+  </div>
+
+  <div>
+    <%= form.label :amenity_id, style: "display: block" %>
+    <%= form.number_field :amenity_id %>
+  </div>
+
+  <div>
+    <%= form.label :quality, style: "display: block" %>
+    <%= form.number_field :quality %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
