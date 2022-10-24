@@ -11,13 +11,14 @@ import Invoice from './Components/Invoice';
 function App() {
   return (
 <div>
-  <TopBar/>
-{/* <Login/>
- */}
+  {/* <TopBar/> */}
+{/* <Login/> */}
+
  {/* <Reservations/> */}
- <Invoice/>
+ {/* <Invoice/> */}
  {/* <ResetPassword/> */}
 {/* <SignUp/> */}
+<LandingPage/>
 </div>
   );
 }

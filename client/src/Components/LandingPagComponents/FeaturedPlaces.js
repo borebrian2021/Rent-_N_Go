@@ -16,7 +16,7 @@ const FeaturedPlaces = () => {
                             <div class="homes">
                                 <a href="single-property-1.html" class="homes-img">
                                     <div class="homes-tag button alt featured">Featured</div>
-                                    <div class="homes-tag button alt sale">For Sale</div>
+                                    
                                     <img src={backgroundImage} alt="home-1" class="img-responsive"/>
                                 </a>
                             </div>
@@ -73,7 +73,7 @@ const FeaturedPlaces = () => {
                             <div class="homes">
                                 <a href="single-property-1.html" class="homes-img">
                                     <div class="homes-tag button alt featured">Featured</div>
-                                    <div class="homes-tag button alt sale">For Sale</div>
+                                    
                                     <img src={backgroundImage} alt="home-1" class="img-responsive"/>
                                 </a>
                             </div>
@@ -129,7 +129,7 @@ const FeaturedPlaces = () => {
                             <div class="homes">
                                 <a href="single-property-1.html" class="homes-img">
                                     <div class="homes-tag button alt featured">Featured</div>
-                                    <div class="homes-tag button alt sale">For Sale</div>
+                                    
                                     <img src={backgroundImage} alt="home-1" class="img-responsive"/>
                                 </a>
                             </div>
@@ -185,7 +185,7 @@ const FeaturedPlaces = () => {
                             <div class="homes">
                                 <a href="single-property-1.html" class="homes-img">
                                     <div class="homes-tag button alt featured">Featured</div>
-                                    <div class="homes-tag button alt sale">For Sale</div>
+                                    
                                     <img src={backgroundImage} alt="home-1" class="img-responsive"/>
                                 </a>
                             </div>
