@@ -9,7 +9,7 @@ class Client < ApplicationRecord
     validates :first_name, presence: true
     validates :last_name, presence: true
     validates :email, presence: true, uniqueness: true 
-    validates :phone_number, presence: true, length: {maximum: 10}
+    validates :phone_number, presence: true, length: {minimum: 10}
     validates :password, presence: true, length: {minimum: 4}
     validates :password_confirmation, presence: true, length: {minimum: 4}
 end

@@ -1,6 +1,9 @@
 class AmenitiesController < ApplicationController
   before_action :set_amenity, only: %i[ show edit update destroy ]
 
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
+
+
   # GET /amenities or /amenities.json
   def index
     @amenities = Amenity.all
@@ -8,6 +11,8 @@ class AmenitiesController < ApplicationController
 
   # GET /amenities/1 or /amenities/1.json
   def show
+    amenities = Amenity.find(params[:id])
+    render json: amenities
   end
 
   # GET /amenities/new
@@ -66,5 +71,9 @@ class AmenitiesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def amenity_params
       params.require(:amenity).permit(:space_id, :item_name, :price)
+    end
+
+    def render_not_found
+      render json: {error: 'Amenity not found'}, status: :not_found
     end
 end

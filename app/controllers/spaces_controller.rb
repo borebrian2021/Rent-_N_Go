@@ -1,6 +1,9 @@
 class SpacesController < ApplicationController
   before_action :set_space, only: %i[ show edit update destroy ]
 
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
+
+
   # GET /spaces or /spaces.json
   def index
     @spaces = Space.all
@@ -8,6 +11,8 @@ class SpacesController < ApplicationController
 
   # GET /spaces/1 or /spaces/1.json
   def show
+    space = Space.find(params[:id])
+    render json: space
   end
 
   # GET /spaces/new
@@ -65,6 +70,10 @@ class SpacesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def space_params
-      params.require(:space).permit(:property_id, :room_size, :image_1, :image_2, :image_3, :description, :price_per_hour, :status, :space_category)
+      params.require(:space).permit(:property_id, :room_size, :image_1, :image_2, :image_3, :description, :price_per_hour, :status, :space_category, :client_id)
+    end
+
+    def render_not_found
+      render json: {error: 'Space not found'}, status: :not_found
     end
 end
