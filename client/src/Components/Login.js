@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import TopBar from './TopBar';
+import {Link} from 'react-router-dom'
 
 const Login = () => {
     const [userDetails, setUserdetails] = useState({
@@ -25,7 +27,7 @@ const Login = () => {
         }
         else{
 
-            fetch("/clients", {
+            fetch("/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -42,8 +44,17 @@ const Login = () => {
                         // localStorage.setItem("signup_id",data.id)
                         // console.log(localStorage.getItem("signup_id"));
                         console.log(data)
+
                         toast.success("Logged in successfully!")
-                        // navigate("/dashboard")
+                        
+                setTimeout(function () {
+                  
+                    localStorage.setItem("user_id",data.id)
+                    navigate("/dashboard")
+
+
+
+                }, 2000);
                     })
                 }
                 else{
@@ -57,6 +68,7 @@ const Login = () => {
 
     return (
         <div>
+            <TopBar/>
             <Toaster/>
             <section class="headings">
                 <div class="text-heading text-center">
@@ -68,16 +80,16 @@ const Login = () => {
 
             <div id="login">
                 <div class="login text-left">
-                    <form onSubmit={handleSubmit}>
-
+                    <form autocomplete="off" onSubmit={handleSubmit}>
+                    <input autocomplete="false" name="hidden" type="text" style={{display:"none"}}/>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email " value={userDetails.email} onChange={handleChange} id="email" class="form-control authinputs p-3" placeholder='Email'    />
+                            <input type="email " value={userDetails.email} autoComplete="off" onChange={handleChange} id="email" class="form-control authinputs p-3" placeholder='Email'    />
                             <i class="icon_mail_alt"></i>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" value={userDetails.password}  onChange={handleChange} id="password" class="form-control authinputs"  placeholder='Password' name="password"  />
+                            <input type="password" value={userDetails.password} autoComplete="off"  onChange={handleChange} id="password" class="form-control authinputs"  placeholder='Password' name="password"  />
                             <i class="icon_lock_alt"></i>
                         </div>
                         <div class="fl-wrap filter-tags clearfix add_bottom_30">
@@ -91,7 +103,7 @@ const Login = () => {
                         </div>
 
                         <input href="#0" class="btn_1 rounded " value="Log In" type="submit" />
-                        <div class="text-center add_top_10">New to Find Houses? <strong><a href="register.html" class="default_color">Sign up!</a></strong></div>
+                        <div class="text-center add_top_10">New to Find Houses? <strong><Link to="/signup" class="default_color">Sign up!</Link></strong></div>
 
                         <div class="access_social m-3">
                             {/* <a href="#0" class="social_bt facebook">Login with Facebook</a> */}
