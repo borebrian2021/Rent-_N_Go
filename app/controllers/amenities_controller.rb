@@ -1,79 +1,52 @@
 class AmenitiesController < ApplicationController
-  before_action :set_amenity, only: %i[ show edit update destroy ]
+  rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
-  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
-
-  # GET /amenities or /amenities.json
   def index
-    @amenities = Amenity.all
+      res = Amenity.all
+      render json: res;
   end
 
-  # GET /amenities/1 or /amenities/1.json
-  def show
-    amenities = Amenity.find(params[:id])
-    render json: amenities
-  end
-
-  # GET /amenities/new
-  def new
-    @amenity = Amenity.new
-  end
-
-  # GET /amenities/1/edit
-  def edit
-  end
-
-  # POST /amenities or /amenities.json
   def create
-    @amenity = Amenity.new(amenity_params)
-
-    respond_to do |format|
-      if @amenity.save
-        format.html { redirect_to amenity_url(@amenity), notice: "Amenity was successfully created." }
-        format.json { render :show, status: :created, location: @amenity }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @amenity.errors, status: :unprocessable_entity }
-      end
-    end
+      res = Amenity.create!(amenities_params)
+      render json: res, status: :created
   end
 
-  # PATCH/PUT /amenities/1 or /amenities/1.json
-  def update
-    respond_to do |format|
-      if @amenity.update(amenity_params)
-        format.html { redirect_to amenity_url(@amenity), notice: "Amenity was successfully updated." }
-        format.json { render :show, status: :ok, location: @amenity }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @amenity.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /amenities/1 or /amenities/1.json
   def destroy
-    @amenity.destroy
+      res = find
+      res.destroy
+      render json: {}
+      # head :no_content
+  end
 
-    respond_to do |format|
-      format.html { redirect_to amenities_url, notice: "Amenity was successfully destroyed." }
-      format.json { head :no_content }
-    end
+  def update
+      res = find
+      res.update(amenities_params)
+      render json: res
+  end
+
+  def show
+      res = find
+      render json: res
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_amenity
-      @amenity = Amenity.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def amenity_params
-      params.require(:amenity).permit(:space_id, :item_name, :price)
-    end
+  def find
+      Amenity.find(params[:id])
+  end
 
-    def render_not_found
-      render json: {error: 'Amenity not found'}, status: :not_found
-    end
+  def amenities_params
+    params.permit(:space_id, :item_name, :price)
+  end
+
+  def render_unprocessable_entity_response(invalid)
+      render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
+  end
+
+  def render_not_found_response
+      render json: { error: "Record not found" }, status: :not_found
+  end
 end
+
