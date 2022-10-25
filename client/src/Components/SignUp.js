@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState ,useNavigate} from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import TopBar from './TopBar';
 //SETTING THE CONSTANTS
 const SignUp = () => {
+    const navigate =useNavigate()
+
     const [userDetails, setUserdetails] = useState({
         firstName: "",
         lastName: "",
@@ -49,6 +52,7 @@ const SignUp = () => {
                     password_confirmation: ""
                 });
         toast.success('User succesfully created!')
+navigate()
 
             });
     }
@@ -58,6 +62,7 @@ const SignUp = () => {
 
 return (
     <div>
+        <TopBar/>
         <Toaster/>
         <section class="headings">
             <div class="text-heading text-center">

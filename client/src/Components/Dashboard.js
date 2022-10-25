@@ -8,6 +8,8 @@ import Profile from './DashboardComponents/Profile';
 import Reservations from './DashboardComponents/Reservations';
 import Reviews from './DashboardComponents/Reviews';
 import SideBar from './DashboardComponents/SideBar';
+import PropertyUploadForm from './PropertyUploadForm';
+import SpaceUploadForm from './SpaceUploadForm';
 const Dashboard = () => {
     return (
         <section class="user-page section-padding">
@@ -16,6 +18,8 @@ const Dashboard = () => {
                     <SideBar />
                     <div class="col-lg-9 col-md-12 col-xs-12 pl-0 user-dash2">
                         <DashboardCards />
+                        <PropertyUploadForm/>
+                        <SpaceUploadForm/>
                         <MySpaces />
                         <Messages />
                         <Reviews />
@@ -23,6 +27,7 @@ const Dashboard = () => {
                         <Invoice/>
                         <Reservations/>
                         <DashboardFooter />
+
                     </div>
                 </div>
             </div>
