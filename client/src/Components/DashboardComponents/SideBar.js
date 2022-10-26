@@ -56,7 +56,7 @@ const SideBar = ({ sideBarData ,hideShowProfiles}) => {
 
                 </div>
                 <div class="active-user">
-                    <h4 class="text-white ml-5">{sideBarData.first_name} &nbsp; {sideBarData.last_name}</h4>
+                    <h4 class="text-white side-name ml-5">{sideBarData.first_name} &nbsp; {sideBarData.last_name}</h4>
                 </div>
                 <div class="detail clearfix">
                     <ul class="mb-0">
