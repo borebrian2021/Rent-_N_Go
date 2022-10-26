@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 //SETTING THE CONSTANTS
-const PropertyUploadForm = () => {
+const PropertyUploadForm = ({propertyData, setPropertyData}) => {
     const [userProperty, setProperty] = useState({
         propertyName: "",
         location: "",
@@ -30,6 +30,7 @@ const PropertyUploadForm = () => {
         })
             .then((r) => r.json())
             .then((userProperty) => {
+                setPropertyData([...propertyData, userProperty])
                 setProperty({
                     ...userProperty,
                     propertyName: "",

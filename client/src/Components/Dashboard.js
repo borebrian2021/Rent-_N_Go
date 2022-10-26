@@ -28,7 +28,7 @@ const Dashboard = () => {
 
     //HIDA & SHOW STATES
     const [profile, setProfile] = useState(false)
-    const [uploadForm, setUploadForm] = useState(false)
+    const [uploadForm, setUploadForm] = useState(true)
     const [dashboardCards, setDashboardCards] = useState(true)
     const [properUpload, setPropertyUpload] = useState(true)
     const [reviews, setReviews] = useState(false)
@@ -120,16 +120,17 @@ const Dashboard = () => {
                         {profile && <Profile />}
                         {uploadForm && <SpaceUploadForm />}
                         {dashboardCards && <DashboardCards />}
-                        {/* {dashboardCards && <MySpaces />}
-                        {dashboardCards && <Messages />
-                        }
                         {dashboardCards && <MySpaces />}
+                        {/* {dashboardCards && <Messages />
+                        } */}
+                        {/* {dashboardCards && <MySpaces />}
                         {dashboardCards && <MySpaces />}
                         {dashboardCards && <MySpaces />}
                         {dashboardCards && <MySpaces />}
                         {dashboardCards && <MySpaces />} */}
-<PropertyUploadForm />
+<PropertyUploadForm setPropertyData={setPropertyData} propertyData={propertyData} />
 <PropertyListing propertyData={propertyData}/>
+{/* <SpaceUploadForm/> */}
 
 
 

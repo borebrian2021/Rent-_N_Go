@@ -25,7 +25,7 @@ const PropertyListing = ({propertyData}) => {
                                        <div class="inner">
                                            <a href="single-property-1.html"><h2>{item.property_name}</h2></a>
                                            <figure><i class="lni-map-marker"></i> {item.location}</figure>
-                                           <ul class="starts text-left mb-0">
+                                           {/* <ul class="starts text-left mb-0">
                                                <li class="mb-0"><i class="fa fa-star"></i>
                                                </li>
                                                <li class="mb-0"><i class="fa fa-star"></i>
@@ -37,7 +37,7 @@ const PropertyListing = ({propertyData}) => {
                                                <li class="mb-0"><i class="fa fa-star"></i>
                                                </li>
                                                <li class="ml-3">(6 Reviews)</li>
-                                           </ul>
+                                           </ul> */}
                                        </div>
                                    </td>
                                    <td>08.14.2020</td>
@@ -47,8 +47,8 @@ const PropertyListing = ({propertyData}) => {
                                        <a href="#"><i class="far fa-trash-alt"></i></a>
                                    </td>
                                </tr>
-                                    ))
-                                   
+                                    )})
+    
                                     }
                                 </tbody>
                             </table>

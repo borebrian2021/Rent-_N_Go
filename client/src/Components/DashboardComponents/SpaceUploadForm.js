@@ -65,10 +65,18 @@ const SpaceUploadForm = () => {
     return (
         <div class="dashborad-box mb-0 mb-3 mt-3">
             {/* <img src="https://ibb.co/6NQ8X6n" className='illustrations' /> */}
-            <h4 class="heading pt-0">Property Upload Form</h4>
+            <h4 class="heading pt-0">Space Upload Form</h4>
             <div class="section-inforamation">
                 <form onSubmit={handleSubmit}>
                     <div class="row">
+                    <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Space size</label>
+                               <select> 
+                                
+                               </select>
+                            </div>
+                        </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Space size</label>
