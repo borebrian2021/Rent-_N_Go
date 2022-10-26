@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :messages, only: [:index, :show, :create]
   resources :clients, only: [:create, :show , :index]
   post "/login", to: "sessions#create"
+  # get "/get_client", to: "clients#get_client"
   get "/me", to: "clients#show"
   delete "/logout", to: "sessions#destroy"
   devise_for :admin_users, ActiveAdmin::Devise.config
