@@ -1,79 +1,51 @@
 class SpacesController < ApplicationController
-  before_action :set_space, only: %i[ show edit update destroy ]
+  rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
-  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
-
-  # GET /spaces or /spaces.json
   def index
-    @spaces = Space.all
+      res = Space.all
+      render json: res;
   end
 
-  # GET /spaces/1 or /spaces/1.json
-  def show
-    space = Space.find(params[:id])
-    render json: space
-  end
-
-  # GET /spaces/new
-  def new
-    @space = Space.new
-  end
-
-  # GET /spaces/1/edit
-  def edit
-  end
-
-  # POST /spaces or /spaces.json
   def create
-    @space = Space.new(space_params)
-
-    respond_to do |format|
-      if @space.save
-        format.html { redirect_to space_url(@space), notice: "Space was successfully created." }
-        format.json { render :show, status: :created, location: @space }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @space.errors, status: :unprocessable_entity }
-      end
-    end
+      res = Space.create!(spaces_params)
+      render json: res, status: :created
   end
 
-  # PATCH/PUT /spaces/1 or /spaces/1.json
-  def update
-    respond_to do |format|
-      if @space.update(space_params)
-        format.html { redirect_to space_url(@space), notice: "Space was successfully updated." }
-        format.json { render :show, status: :ok, location: @space }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @space.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /spaces/1 or /spaces/1.json
   def destroy
-    @space.destroy
+      res = find
+      res.destroy
+      render json: {}
+      # head :no_content
+  end
 
-    respond_to do |format|
-      format.html { redirect_to spaces_url, notice: "Space was successfully destroyed." }
-      format.json { head :no_content }
-    end
+  def update
+      res = find
+      res.update(spaces_params)
+      render json: res
+  end
+
+  def show
+      res = find
+      render json: res
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_space
-      @space = Space.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def space_params
-      params.require(:space).permit(:property_id, :room_size, :image_1, :image_2, :image_3, :description, :price_per_hour, :status, :space_category, :client_id)
-    end
+  def find
+      Space.find(params[:id])
+  end
 
-    def render_not_found
-      render json: {error: 'Space not found'}, status: :not_found
-    end
+  def spaces_params
+      params.permit(:property_id, :room_size, :image_1, :image_2, :image_3, :description, :price_per_hour, :status, :space_category, :client_id)
+  end
+
+  def render_unprocessable_entity_response(invalid)
+      render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
+  end
+
+  def render_not_found_response
+      render json: { error: "Record not found" }, status: :not_found
+  end
 end
