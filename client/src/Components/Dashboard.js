@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import DashboardCards from "./DashboardComponents/DashboardCards";
 import DashboardFooter from "./DashboardComponents/DashboardFooter";
 import Invoice from "./Invoice";
+import PropertyDetails from "./PropertyDetails";
 import Messages from "./DashboardComponents/Messages";
 import MySpaces from "./DashboardComponents/MySpaces";
 import Profile from "./DashboardComponents/Profile";
@@ -79,30 +80,29 @@ const Dashboard = ({ user }) => {
             hideShowProfiles={hideShowProfiles}
           />
           <div class="col-lg-9 col-md-12 col-xs-12 pl-0 user-dash2">
-            {/* <DashboardCards />
-                        <PropertyUploadForm /> */}
             {profile && <Profile />}
             {dashboardCards && <DashboardCards />}
-            {/* {dashboardCards && <MySpaces />} */}
-            {/* {dashboardCards && <Messages />
-                        } */}
-            {/* {dashboardCards && <MySpaces />}
-                        {dashboardCards && <MySpaces />}
-                        {dashboardCards && <MySpaces />}
-                        {dashboardCards && <MySpaces />}
-                        {dashboardCards && <MySpaces />} */}
             <PropertyUploadForm
               setPropertyData={setPropertyData}
               propertyData={propertyData}
               id={id}
             />
             <PropertyListing propertyData={propertyData} />
-            {/* <SpaceUploadForm/> */}
 
-            {uploadForm && <SpaceUploadForm propertyData={propertyData} setClientSpaces={setClientSpaces} clientSpaces={clientSpaces} />}
+            {uploadForm && <SpaceUploadForm propertyData={propertyData}
+             setClientSpaces={setClientSpaces} 
+             clientSpaces={clientSpaces} 
+             id={id}/>}
             {dashboardCards && <MySpaces clientSpaces={clientSpaces} />}
             
-            {dashboardCards && <Messages />}
+            {/* {dashboardCards && <Messages />} */}
+
+
+            {dashboardCards && <Reservations />}
+
+
+            {dashboardCards && <PropertyDetails/>}
+
                          
 
             <DashboardFooter />
