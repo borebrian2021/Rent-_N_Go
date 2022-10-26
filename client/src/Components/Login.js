@@ -1,15 +1,14 @@
 import React, {useState} from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import TopBar from './TopBar';
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 
 const Login = () => {
+    //NAVIGATE
+    const navigate=useNavigate();
     const [userDetails, setUserdetails] = useState({
-
         email: "",
-
         password: "",
-
     })
 
     //HANDLE CHANGE
@@ -40,7 +39,7 @@ const Login = () => {
             .then((rawData) => {
                 if (rawData.ok) {
                     rawData.json().then((data) => {
-                        //   setUserProfile(data);
+                        // setUserProfile(data);
                         // localStorage.setItem("signup_id",data.id)
                         // console.log(localStorage.getItem("signup_id"));
                         console.log(data)
@@ -50,6 +49,7 @@ const Login = () => {
                 setTimeout(function () {
                   
                     localStorage.setItem("user_id",data.id)
+                    localStorage.setItem("user_data",JSON.stringify(data))
                     navigate("/dashboard")
 
 

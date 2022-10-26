@@ -22,26 +22,18 @@ class TopBar extends Component {
             <li class="nav-item">
               <Link class="nav-link " href="#">Contacts</Link>
             </li>
-            <li class="nav-item">
-              <Link to='/login' class="nav-link " href="#">Log In</Link>
-
-            </li>
-
-            <li class="nav-item">
-              <Link to='/signup' class="nav-link " href="#">Sign up</Link>
-
-            </li>
+       
             <li class="nav-item">
 
             </li>
           </ul>
           <ul className=' navbar-nav'>
             <li class="nav-item">
-              <a class="nav-link " href="#">Log In</a>
+              <Link to="/login" class="nav-link">Log In</Link>
 
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#">Sign Up</a>
+              <Link to="/signup" class="nav-link " >Sign Up</Link>
 
             </li>
           </ul>

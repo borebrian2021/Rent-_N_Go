@@ -9,23 +9,25 @@ import TermsAndConditions from './Components/TermsAndConditions';
 import Reservations from './Components/DashboardComponents/Reservations';
 import Invoice from './Components/Invoice';
 import Dashboard from './Components/Dashboard';
-import PropertyCard from './Components/PropertyListing';
+// import PropertyCard from './Components/PropertyListing';
 // import PropertyDetails from './Components/PropertyDetails';
 import MySpaces from './Components/MySpaces';
-import PropertyListing from './Components/PropertyListing';
-import SpaceUploadForm from './Components/SpaceUploadForm'
-import PropertyUploadForm from './Components/PropertyUploadForm'
+import PropertyListing from './Components/DashboardComponents/PropertyListing'
+import SpaceUploadForm from './Components/DashboardComponents/SpaceUploadForm'
+import PropertyUploadForm from './Components/DashboardComponents/PropertyUploadForm'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
 function App() {
   return (
 
-    <BrowserRouter>
+    
       <Routes>
         {/* <Route path="/" element={ <Home/> } /> */}
         <Route path="/" element={<LandingPage />} />
-
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
+        <Route path="dashboard" element={<Dashboard/>} />
+
 
         {/* <PropertyUploadForm/> */}
         {/* <SpaceUploadForm/> */}
@@ -44,7 +46,7 @@ function App() {
         {/* <MySpaces/> */}
 
       </Routes>
-    </BrowserRouter>
+    
   );
 }
 export default App;
