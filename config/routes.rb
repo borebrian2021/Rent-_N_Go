@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :spaces
   resources :payments, only: [:index, :create, :show]
   resources :messages, only: [:index, :show, :create]
-  resources :clients, only: [:create, :show]
+  resources :clients, only: [:create, :show , :index]
   post "/login", to: "sessions#create"
   get "/me", to: "clients#show"
   delete "/logout", to: "sessions#destroy"

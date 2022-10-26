@@ -6,5 +6,4 @@ class Property < ApplicationRecord
     validates :property_name, presence: true
     validates :location, presence: true
     validates :image_url, presence: true
-
 end

@@ -1,6 +1,6 @@
 class SelectedAmenity < ApplicationRecord
     belongs_to :amenity
-    has_many :reservations
+    belongs_to :reservation
 
     validates :reservation_id, presence: true;
     validates :amenity_id, presence: true

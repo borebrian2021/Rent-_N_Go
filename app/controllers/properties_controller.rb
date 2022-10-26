@@ -3,17 +3,17 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_render
     def index
         properties = Property.all
-        render json :properties
+        render json: properties
     end
 
     def show
         property = Property.find(params[:id])
-        render json: :property
+        render json: property
     end
 
     def create
        property = Property.create!(property_params)
-       render json :property, status: :created 
+       render json: property, status: :created 
     end
 
     def update
@@ -34,10 +34,11 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_rend
     end
 
     def property_params
-        params.permit(:property_name, :location, :image_url)
+        params.permit(:client_id , :property_name, :location, :image_url)
     end
 
     def render_unprocessable_entity_response(invalid)
-        render json: { errors: invalid.record.errors }, status: :unprocessable_entity
-      end
+        # render json: { errors: invalid.record.errors }, status: :unprocessable_entity
+        render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
+    end
 end
