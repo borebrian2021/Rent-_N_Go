@@ -4,7 +4,7 @@ const Contact = () => {
     return (
 
         <div>
-        <body class="inner-pages hd-white">
+      
             <section class="contact-us">
             <div class="container">
                 {/* <div class="property-location mb-5">
@@ -72,7 +72,6 @@ const Contact = () => {
                 </div>
             </div>
         </section>
-        </body>
  
         </div>
 

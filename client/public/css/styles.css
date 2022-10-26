@@ -8309,7 +8309,7 @@ html input[disabled] {
   }
 
   .hp-6 .parallax-searchs.home15.thome-6 .hero-inner {
-    padding: 228px 0;
+    /* padding: 228px 0; */
   }
 
   .homepage-10 .parallax-searchs.home15.thome-10 .hero-inner {
@@ -8424,7 +8424,7 @@ html input[disabled] {
   }
 
   .hp-6 .parallax-searchs.home15.thome-6 .hero-inner {
-    padding: 90px 0;
+    /* padding: 90px 0; */
     margin-bottom: 0px !important;
   }
 
@@ -10538,7 +10538,7 @@ a.button {
 
 .parallax-searchs.home15.thome-6 .hero-inner {
   text-align: center;
-  padding: 290px 0;
+  /* padding: 290px 0; */
 }
 
 .th-15 .rec-pro .container-fluid {
@@ -10853,7 +10853,7 @@ a.button {
 
 .parallax-searchs.home15 .hero-inner {
   text-align: center;
-  padding: 320px 0;
+  padding: 120px 0;
 }
 
 .parallax-searchs .welcome-text p {
