@@ -1,19 +1,19 @@
 class ReservationsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
-    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_render
+    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
     def index
         reservations = Reservation.all
-        render json :reservations
+        render json: reservations
     end
 
     def show
         reservation = Reservation.find(params[:id])
-        render json: :reservation
+        render json: reservation
     end
 
     def create
-       reservation = Reservation.create!(reservaion_params)
-       render json :reservation, status: :created 
+       reservation = Reservation.create!(reservation_params)
+       render json: reservation, status: :created 
     end
 
     def update
@@ -38,7 +38,8 @@ class ReservationsController < ApplicationController
     end
 
     def render_unprocessable_entity_response(invalid)
-        render json: { errors: invalid.record.errors }, status: :unprocessable_entity
-      end
+        # render json: { errors: invalid.record.errors }, status: :unprocessable_entity
+        render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
+    end
 
 end
