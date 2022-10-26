@@ -26,14 +26,11 @@ const Dashboard = () => {
     const [propertyData,setPropertyData]=useState([])
 
 
-
-
-
     //HIDA & SHOW STATES
     const [profile, setProfile] = useState(false)
-    const [uploadForm, setUploadForm] = useState(false)
+    const [uploadForm, setUploadForm] = useState(true)
     const [dashboardCards, setDashboardCards] = useState(true)
-    const [properUpload, setPropertyUpload] = useState(false)
+    const [properUpload, setPropertyUpload] = useState(true)
     const [reviews, setReviews] = useState(false)
     const [invoice, setInvoice] = useState(false)
     const [reservations, setUserdetails] = useState(false)
@@ -121,18 +118,19 @@ const Dashboard = () => {
                         {/* <DashboardCards />
                         <PropertyUploadForm /> */}
                         {profile && <Profile />}
-                        {uploadForm && <SpaceUploadForm />}
+                        {uploadForm && <SpaceUploadForm  propertyData={propertyData}/>}
                         {dashboardCards && <DashboardCards />}
-                        {/* {dashboardCards && <MySpaces />}
-                        {dashboardCards && <Messages />
-                        }
                         {dashboardCards && <MySpaces />}
+                        {/* {dashboardCards && <Messages />
+                        } */}
+                        {/* {dashboardCards && <MySpaces />}
                         {dashboardCards && <MySpaces />}
                         {dashboardCards && <MySpaces />}
                         {dashboardCards && <MySpaces />}
                         {dashboardCards && <MySpaces />} */}
-
+<PropertyUploadForm setPropertyData={setPropertyData} propertyData={propertyData} />
 <PropertyListing propertyData={propertyData}/>
+{/* <SpaceUploadForm/> */}
 
 
 

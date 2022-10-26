@@ -12,7 +12,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_rend
     end
 
     def create
-       property = Property.create!(property_params)
+       property = Property.create(property_params)
        render json: property, status: :created 
     end
 
