@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 //SETTING THE CONSTANTS
-const SpaceUploadForm = () => {
+const SpaceUploadForm = ({propertyData}) => {
     localStorage.setItem("property_id", 1)
     const [useSpace, setSpace] = useState({
         room_size: "",
@@ -65,10 +65,26 @@ const SpaceUploadForm = () => {
     return (
         <div class="dashborad-box mb-0 mb-3 mt-3">
             {/* <img src="https://ibb.co/6NQ8X6n" className='illustrations' /> */}
-            <h4 class="heading pt-0">Property Upload Form</h4>
+            <h4 class="heading pt-0">Space Upload Form</h4>
             <div class="section-inforamation">
                 <form onSubmit={handleSubmit}>
                     <div class="row">
+                    <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Select Properties</label>
+
+                                <select class="custom-select border" >
+                                    {
+                                propertyData.map((property) =>{
+                                return (
+                                    <option value={property.id} key={property}>{property.property_name}</option>
+
+                                  )})}
+      
+    
+                                 </select>
+                            </div>
+                        </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Space size</label>
