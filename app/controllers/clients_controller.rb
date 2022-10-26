@@ -5,11 +5,17 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 def show
     client = Client.find_by(id: session[:client_id])
     if client
-      render json: client,include: [:properties, :spaces, :messages, :reservations]
+      render json: client
+      # render json: client,include: [:properties, :spaces, :messages, :reservations]
     else
       render json: { error: "Not authorized" }, status: :unauthorized
     end
   end
+
+  # def show
+  #   res = find
+  #   render json: res
+  # end
 
 
   def index
@@ -19,13 +25,16 @@ def show
 
 #create a new client
 def create
-    client = Client.create(client_params);
-    if client.valid?
-        session[:client_id] = client.id;
-        render json: client, status: :created
-    else
-        render json: { errors: client.errors.full_messages }, status: :unprocessable_entity
-    end
+    # client = Client.create(client_params);
+    # if client.valid?
+    #     session[:client_id] = client.id;
+    #     render json: client, status: :created
+    # else
+    #     render json: { errors: client.errors.full_messages }, status: :unprocessable_entity
+    # end
+
+    client = Client.create!(client_params)
+    render json: client, status: :created
 end
 # def get_client
 #   client=Client.find(id: session[:client_id])
@@ -43,4 +52,8 @@ end
     def render_unprocessable_entity_response(invalid)
         render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
     end
+
+    def find
+      Client.find(params[:id])
+  end
 end
