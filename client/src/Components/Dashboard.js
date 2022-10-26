@@ -118,7 +118,7 @@ const Dashboard = () => {
                         {/* <DashboardCards />
                         <PropertyUploadForm /> */}
                         {profile && <Profile />}
-                        {uploadForm && <SpaceUploadForm />}
+                        {uploadForm && <SpaceUploadForm  propertyData={propertyData}/>}
                         {dashboardCards && <DashboardCards />}
                         {dashboardCards && <MySpaces />}
                         {/* {dashboardCards && <Messages />
