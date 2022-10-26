@@ -13,6 +13,7 @@ import Dashboard from "./Components/Dashboard";
 // import PropertyCard from './Components/PropertyListing';
 // import PropertyDetails from './Components/PropertyDetails';
 import MySpaces from "./Components/MySpaces";
+import PropertyDetails from "./Components/PropertyDetails";
 import PropertyListing from "./Components/DashboardComponents/PropertyListing";
 import SpaceUploadForm from "./Components/DashboardComponents/SpaceUploadForm";
 import PropertyUploadForm from "./Components/DashboardComponents/PropertyUploadForm";
@@ -37,6 +38,8 @@ function App() {
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<SignUp />} />
       <Route path="dashboard" element={<Dashboard user={user} />} />
+
+      <Route path="/space-page" element={<PropertyDetails />} />
 
       {/* <PropertyUploadForm/> */}
       {/* <SpaceUploadForm/> */}
