@@ -1,198 +1,147 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import DashboardCards from './DashboardComponents/DashboardCards';
-import Message from './DashboardComponents/Message';
-import PersonalInfo from './DashboardComponents/PersonalInfo';
+import DashboardFooter from './DashboardComponents/DashboardFooter';
+import Invoice from './Invoice';
+import Messages from './DashboardComponents/Messages';
+import MySpaces from './DashboardComponents/MySpaces';
+import Profile from './DashboardComponents/Profile';
+import Reservations from './DashboardComponents/Reservations';
+import Reviews from './DashboardComponents/Reviews';
 import SideBar from './DashboardComponents/SideBar';
-// import Profile from '.Components/Profile';
+import PropertyUploadForm from './DashboardComponents/PropertyUploadForm';
+import SpaceUploadForm from './DashboardComponents/SpaceUploadForm';
+import toast, { Toaster } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
+import PropertyListing from './DashboardComponents/PropertyListing';
 
 const Dashboard = () => {
+    //NAVIGATE
+    const navigate = useNavigate();
 
- 
+    //RETRIEVE USER_ID FROM LOCAL STORAGE
+    const user_id = localStorage.getItem('user_id')
+
+    //DATA STATES
+    const [sideBarData, setSideBarData] = useState([])
+    const [propertyData,setPropertyData]=useState([])
+
+
+
+
+
+    //HIDA & SHOW STATES
+    const [profile, setProfile] = useState(false)
+    const [uploadForm, setUploadForm] = useState(false)
+    const [dashboardCards, setDashboardCards] = useState(true)
+    const [properUpload, setPropertyUpload] = useState(false)
+    const [reviews, setReviews] = useState(false)
+    const [invoice, setInvoice] = useState(false)
+    const [reservations, setUserdetails] = useState(false)
+    const [messages, setMessages] = useState(false)
+    const [myspaces, setMySpaces] = useState(false)
+
+    //HIDE AND DISPLAY COMPONENT DYNAMICALLY
+    const hideShowProfiles = () => {
+        setUploadForm(false)
+        setDashboardCards(false)
+        setPropertyUpload(false)
+        setReviews(false)
+        setInvoice(false)
+        setUserdetails(false)
+        setMessages(false)
+        setMySpaces(false)
+        setProfile(true)
+    }
+
+    //GET USER ID
+
+    let newObject = window.localStorage.getItem("user_data");
+    console.log(JSON.parse(newObject));
+
+    // sideBarData=console.log(JSON.parse(newObject))
+    // setSideBarData(JSON.parse(newObject))
+    // console.log(user_data)
+    //SET DATA
+    const setData = () => {
+
+    }
+
+    //FETCH USER DETAILS
+    useEffect(() => {
+
+        //CHECK LOGIN STATUS
+        fetch("/me")
+            .then((rawData) => {
+                if (rawData.ok) {
+                    rawData.json().then((data) => {
+                        //USER IS LOGGED IN ,FETCHING USER DATA
+                        // console.log(data)
+                        setSideBarData(data)
+                        setPropertyData(data.properties)
+
+
+
+
+                    })
+                }
+                else {
+
+                    navigate("/login")
+                    // toast.error('Something went wrong')
+                }
+            })
+
+
+        //FETCH USER DATA
+        fetch("/clients")
+            .then((rawData) => {
+                if (rawData.ok) {
+                    rawData.json().then((data) => {
+
+
+                    })
+                }
+                else {
+
+                    navigate("/login")
+                    // toast.error('Something went wrong')
+                }
+            })
+
+
+    }, [])
+
     return (
-      <div id="wrapper" class="int_main_wraapper maxw1600 m0a dashboard-bd">
-        <SideBar />
         <section class="user-page section-padding">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-lg-9 col-md-12 col-xs-12 pl-0 user-dash2">
-                <DashboardCards />
-                <Message />
-                <div class="dashborad-box">
-                  <h4 class="title">Review</h4>
-                  <div class="section-body">
-                    <div class="reviews">
-                      <div class="review">
-                        <div class="thumb">
-                          <img
-                            class="img-fluid"
-                            src="images/testimonials/ts-4.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div class="body">
-                          <h5>Family House</h5>
-                          <h6>Mary Smith</h6>
-                          <p class="post-time">10 hours ago</p>
-                          <p class="content mb-0 mt-2">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore
-                          </p>
-                          <ul class="starts mb-0">
-                            <li>
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li>
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li>
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li>
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li>
-                              <i class="fa fa-star-o"></i>
-                            </li>
-                          </ul>
-                          <div class="controller">
-                            <ul>
-                              <li>
-                                <a href="#">
-                                  <i class="fa fa-eye"></i>
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  <i class="far fa-trash-alt"></i>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="review">
-                        <div class="thumb">
-                          <img
-                            class="img-fluid"
-                            src="images/testimonials/ts-5.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div class="body">
-                          <h5>Bay Apartment</h5>
-                          <h6>Karl Tyron</h6>
-                          <p class="post-time">22 hours ago</p>
-                          <p class="content mb-0 mt-2">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore
-                          </p>
-                          <ul class="starts mb-0">
-                            <li>
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li>
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li>
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li>
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li>
-                              <i class="fa fa-star-o"></i>
-                            </li>
-                          </ul>
-                          <div class="controller">
-                            <ul>
-                              <li>
-                                <a href="#">
-                                  <i class="fa fa-eye"></i>
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  <i class="far fa-trash-alt"></i>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="review">
-                        <div class="thumb">
-                          <img
-                            class="img-fluid"
-                            src="images/testimonials/ts-6.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div class="body">
-                          <h5>Family House Villa</h5>
-                          <h6>Lisa Willis</h6>
-                          <p class="post-time">51 hours ago</p>
-                          <p class="content mb-0 mt-2">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore
-                          </p>
-                          <ul class="starts mb-0">
-                            <li>
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li>
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li>
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li>
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li>
-                              <i class="fa fa-star-o"></i>
-                            </li>
-                          </ul>
-                          <div class="controller">
-                            <ul>
-                              <li>
-                                <a href="#">
-                                  <i class="fa fa-eye"></i>
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  <i class="far fa-trash-alt"></i>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <PersonalInfo />
+            <div class="container-fluid">
+                <div class="row">
+                    <Toaster />
+                    <SideBar sideBarData={sideBarData} hideShowProfiles={hideShowProfiles} />
+                    <div class="col-lg-9 col-md-12 col-xs-12 pl-0 user-dash2">
+                        {/* <DashboardCards />
+                        <PropertyUploadForm /> */}
+                        {profile && <Profile />}
+                        {uploadForm && <SpaceUploadForm />}
+                        {dashboardCards && <DashboardCards />}
+                        {/* {dashboardCards && <MySpaces />}
+                        {dashboardCards && <Messages />
+                        }
+                        {dashboardCards && <MySpaces />}
+                        {dashboardCards && <MySpaces />}
+                        {dashboardCards && <MySpaces />}
+                        {dashboardCards && <MySpaces />}
+                        {dashboardCards && <MySpaces />} */}
 
-                <div class="second-footer">
-                  <div class="container">
-                    <p>2021 © Copyright - All Rights Reserved.</p>
-                    <p>
-                      Made With <i class="fa fa-heart" aria-hidden="true"></i>{" "}
-                      By Code-Theme
-                    </p>
-                  </div>
+<PropertyListing propertyData={propertyData}/>
+
+
+
+                        <DashboardFooter />
+
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </section>
-        {/* <NavLink>
-          to="/Profile" activeClassName="active" className="nav-link">Profile
-        </NavLink> */}
-      </div>
     );
 }
 

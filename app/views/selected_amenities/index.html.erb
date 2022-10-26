@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Selected amenities</h1>
+
+<div id="selected_amenities">
+  <% @selected_amenities.each do |selected_amenity| %>
+    <%= render selected_amenity %>
+    <p>
+      <%= link_to "Show this selected amenity", selected_amenity %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New selected amenity", new_selected_amenity_path %>
