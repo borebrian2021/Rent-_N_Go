@@ -10,7 +10,7 @@ const PropertyListing = ({propertyData}) => {
                                         <th class="pl-2">My Properties</th>
                                         <th class="p-0"></th>
                                         <th>Date Added</th>
-                                        <th>Views</th>
+                                  
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -40,8 +40,8 @@ const PropertyListing = ({propertyData}) => {
                                            </ul> */}
                                        </div>
                                    </td>
-                                   <td>08.14.2020</td>
-                                   <td>163</td>
+                                   <td>{item.created_at} </td>
+                                   
                                    <td class="actions">
                                        <a href="#" class="edit"><i class="lni-pencil"></i>Edit</a>
                                        <a href="#"><i class="far fa-trash-alt"></i></a>
