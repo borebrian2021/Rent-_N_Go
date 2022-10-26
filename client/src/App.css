@@ -1,6 +1,12 @@
 .App {
   text-align: center;
 }
+.side-name{
+  font-size: 1.5em;
+  color: #61dafb;
+  font-weight: bold;
+  margin-left: 5rem!important;
+}
 
 .App-logo {
   height: 40vmin;
