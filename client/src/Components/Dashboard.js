@@ -124,15 +124,13 @@ const Dashboard = () => {
                         {uploadForm && <SpaceUploadForm />}
                         {dashboardCards && <DashboardCards />}
                         {/* {dashboardCards && <MySpaces />}
-                        {dashboardCards && <Messages />
-                        }
+                        {dashboardCards && <Messages />}
                         {dashboardCards && <MySpaces />}
                         {dashboardCards && <MySpaces />}
                         {dashboardCards && <MySpaces />}
                         {dashboardCards && <MySpaces />}
                         {dashboardCards && <MySpaces />} */}
-
-<PropertyListing propertyData={propertyData}/>
+                        <PropertyListing propertyData={propertyData}/>
 
 
 

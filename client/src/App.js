@@ -19,16 +19,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
-
-    
-      <Routes>
+     <Routes>
         {/* <Route path="/" element={ <Home/> } /> */}
         <Route path="/" element={<LandingPage />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="dashboard" element={<Dashboard/>} />
-
-
         {/* <PropertyUploadForm/> */}
         {/* <SpaceUploadForm/> */}
         {/* <Test/> */}
@@ -44,9 +40,7 @@ function App() {
         {/* <PropertyCard/> */}
         {/* <PropertyDetails/> */}
         {/* <MySpaces/> */}
-
       </Routes>
-    
   );
 }
 export default App;
