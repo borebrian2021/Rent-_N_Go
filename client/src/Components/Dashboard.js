@@ -100,19 +100,11 @@ const Dashboard = ({ user }) => {
              clientSpaces={clientSpaces} 
              id={id}/>}
             {dashboardCards && <MySpaces clientSpaces={clientSpaces} />}
-            {amenities && <AmenitiesForm clientSpaces={clientSpaces} />}
-
-
-            
+            {amenities && <AmenitiesForm clientSpaces={clientSpaces} />}            
             {/* {dashboardCards && <Messages />} */}
-
-
             {dashboardCards && <Reservations />}
-
-
+            
             {dashboardCards && <PropertyDetails/>}
-
-                         
 
             <DashboardFooter />
 

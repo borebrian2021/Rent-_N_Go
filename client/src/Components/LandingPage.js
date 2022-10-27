@@ -10,6 +10,19 @@ import OurPartners from './LandingPagComponents/OurPartners';
 const LandingPage = () => {
     // const [allDtaa,setAllData]=useStae([])
 
+
+    useEffect(() => {
+        fetch("/properties" + id)
+          .then((r) => r.json())
+          .then((data) => {
+            console.log("data " + data);
+            setSideBarData(data);
+            setPropertyData(data.properties);
+            setClientSpaces(data.spaces);
+            setProfileData(data)
+          });
+      }, [id]);
+
     return (
         <div>
             <TopBar/>
