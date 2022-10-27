@@ -37,7 +37,7 @@ const MySpaces = ({ clientSpaces }) => {
                 <td>
                   <div class="inner">
                     <a href="single-property-1.html">
-                      <h2>baadaye</h2>
+                      <h2>{item.space_category}</h2>
                     </a>
                     <figure>
                       <i class="lni-map-marker"></i> {item.location}

@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Profile = () => {
+const Profile = ({profileData}) => {
+    console.log(profileData)
     return (
         <div class="dashborad-box mb-0">
         <h4 class="heading pt-0">Personal Information</h4>
@@ -10,41 +11,36 @@ const Profile = () => {
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label>First Name</label>
-                            <input type="text" class="form-control" placeholder="Enter your First name"/>
+                            <input type="text" class="form-control" value={profileData.first_name} placeholder="Enter your First name"/>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label>Last Name</label>
-                            <input type="text" class="form-control" placeholder="Enter your Last name"/>
+                            <input type="text" class="form-control"value={profileData.last_name} placeholder="Enter your Last name"/>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label>Email Address</label>
-                            <input type="text" class="form-control" placeholder="Ex: example@domain.com"/>
+                            <input type="text" class="form-control" value={profileData.email} placeholder="Ex: example@domain.com"/>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label>Phone Number</label>
-                            <input type="text" class="form-control" placeholder="Ex: +1-800-7700-00"/>
+                            <input type="text" class="form-control" value={profileData.phone_number}  placeholder="Ex: +1-800-7700-00"/>
                         </div>
-                    </div>
-                    <div class="col-lg-12">
+                    </div> <div class="col-sm-6">
                         <div class="form-group">
-                            <label>Address</label>
-                            <textarea name="address" class="form-control" placeholder="Write your address here"></textarea>
+                            <label>Profile URL</label>
+                            <input type="text" class="form-control" value={profileData.profile_url}  placeholder="Ex: +1-800-7700-00"/>
                         </div>
                     </div>
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <label>About Yourself</label>
-                            <textarea name="address" class="form-control" placeholder="Write about userself"></textarea>
-                        </div>
-                    </div>
+    
+                    
                 </div>
-                <div class="password-section">
+                {/* <div class="password-section">
                     <h6>Update Password</h6>
                     <div class="row">
                         <div class="col-sm-6">
@@ -60,8 +56,8 @@ const Profile = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-                <button type="submit" class="btn btn-primary btn-lg mt-2">Submit</button>
+                </div> */}
+                <button type="submit" class="btn btn-primary btn-lg mt-2">Update Profile</button>
             </form>
         </div>
     </div>
