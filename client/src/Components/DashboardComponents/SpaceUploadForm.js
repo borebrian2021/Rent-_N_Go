@@ -21,7 +21,7 @@ const SpaceUploadForm = ({propertyData}) => {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch("/properties", {
+        fetch("/spaces", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -53,6 +53,7 @@ const SpaceUploadForm = ({propertyData}) => {
                             space_category: ""
                         });
                         toast.success('Property successfully submitted.')
+                        console.log(useSpace)
                     });
                 }
                 else {
