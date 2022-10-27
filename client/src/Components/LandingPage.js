@@ -11,6 +11,7 @@ const LandingPage = () => {
   const [properties, setProperties] = useState([]);
   const [spaces, setSpaces] = useState([]);
 
+
   // properties
   useEffect(() => {
     fetch("/properties")
@@ -42,5 +43,6 @@ const LandingPage = () => {
     </div>
   );
 };
+
 
 export default LandingPage;

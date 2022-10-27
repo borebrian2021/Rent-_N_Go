@@ -21,7 +21,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   const [user, setUser] = useState(null);
-
   useEffect(() => {
     // auto-login
     fetch("/me").then((r) => {
@@ -38,9 +37,7 @@ function App() {
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<SignUp />} />
       <Route path="dashboard" element={<Dashboard user={user} />} />
-
       <Route path="/space-page" element={<PropertyDetails />} />
-
       {/* <PropertyUploadForm/> */}
       {/* <SpaceUploadForm/> */}
       {/* <Test/> */}

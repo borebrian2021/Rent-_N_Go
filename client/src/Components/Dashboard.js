@@ -14,6 +14,7 @@ import SpaceUploadForm from "./DashboardComponents/SpaceUploadForm";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import PropertyListing from "./DashboardComponents/PropertyListing";
+import AmenitiesForm from "./DashboardComponents/AmenitiesForm";
 
 const Dashboard = ({ user }) => {
   //NAVIGATE
@@ -26,9 +27,10 @@ const Dashboard = ({ user }) => {
   const [sideBarData, setSideBarData] = useState([]);
   const [propertyData, setPropertyData] = useState([]);
   const [clientSpaces, setClientSpaces] = useState([]);
+  const [profileData, setProfileData] = useState([]);
 
   //HIDA & SHOW STATES
-  const [profile, setProfile] = useState(false);
+  const [profile, setProfile] = useState(true);
   const [uploadForm, setUploadForm] = useState(true);
   const [dashboardCards, setDashboardCards] = useState(true);
   const [properUpload, setPropertyUpload] = useState(true);
@@ -37,6 +39,8 @@ const Dashboard = ({ user }) => {
   const [reservations, setUserdetails] = useState(false);
   const [messages, setMessages] = useState(false);
   const [mySpaces, setMySpaces] = useState(false);
+  const [amenities, setAmenities] = useState(true);
+
 
   //HIDE AND DISPLAY COMPONENT DYNAMICALLY
   const hideShowProfiles = () => {
@@ -49,6 +53,7 @@ const Dashboard = ({ user }) => {
     setMessages(false);
     setMySpaces(false);
     setProfile(true);
+    setAmenities(false)
   };
 
   //GET USER ID
@@ -67,6 +72,7 @@ const Dashboard = ({ user }) => {
         setSideBarData(data);
         setPropertyData(data.properties);
         setClientSpaces(data.spaces);
+        setProfileData(data)
       });
   }, [id]);
 
@@ -80,7 +86,7 @@ const Dashboard = ({ user }) => {
             hideShowProfiles={hideShowProfiles}
           />
           <div class="col-lg-9 col-md-12 col-xs-12 pl-0 user-dash2">
-            {profile && <Profile />}
+            {profile && <Profile profileData={profileData} />}
             {dashboardCards && <DashboardCards />}
             <PropertyUploadForm
               setPropertyData={setPropertyData}
@@ -94,16 +100,11 @@ const Dashboard = ({ user }) => {
              clientSpaces={clientSpaces} 
              id={id}/>}
             {dashboardCards && <MySpaces clientSpaces={clientSpaces} />}
-            
+            {amenities && <AmenitiesForm clientSpaces={clientSpaces} />}            
             {/* {dashboardCards && <Messages />} */}
-
-
             {dashboardCards && <Reservations />}
-
-
+            
             {dashboardCards && <PropertyDetails/>}
-
-                         
 
             <DashboardFooter />
 
