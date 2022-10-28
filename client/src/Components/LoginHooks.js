@@ -22,3 +22,23 @@ function LoginHooks() {
       `Failed to login. 😢 Please ping this to repo owner twitter.com/sivanesh_fiz`
     );
   };
+  const { signIn } = useGoogleLogin({
+    onSuccess,
+    onFailure,
+    clientId,
+    isSignedIn: true,
+    accessType: "offline",
+    // responseType: 'code',
+    // prompt: 'consent',
+  });
+
+  return (
+    <button onClick={signIn} className="button">
+      <img src="icons/google.svg" alt="google login" className="icon"></img>
+
+      <span className="buttonText">Sign in with Google</span>
+    </button>
+  );
+}
+
+export default LoginHooks;
