@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import image2 from "../Image/single-property/s-2.jpg";
 import image3 from "../Image/single-property/s-3.jpg";
 import image10 from "../Image/testimonials/ts-5.jpg";
@@ -20,14 +20,39 @@ import image53 from "../Image/single-property/s-4.jpg";
 import image54 from "../Image/single-property/s-5.jpg";
 
 const MySpaces = () => {
-  const [message, setMessage] = useState("");
+  //RETRIEVE SPACE ID
+  const [message, setMessage] = useState("")
+  const [spaceData, setSpaceData] = useState([])
+  const [amenities, setAmenities] = useState([])
+  const [reviews, setReviews] = useState([])
+  const [property, setProperty] = useState([])
+  const [clientData, setClientData] = useState([])
+
+  //FETCH SPACE DETAILS
+  const space_id = localStorage.getItem("space_id")
+  console.log(space_id)
+
+  //FETCH SPACE DETAILS
+  useEffect(() => {
+    fetch("/spaces/" + space_id)
+      .then((r) => r.json())
+      .then((data) => {
+        setSpaceData(data)
+        setAmenities(data.amenities)
+        setReviews(data.reviews)
+        setProperty(data.property)
+        setClientData(data.client)
+        console.log(data)
+
+      });
+  }, [space_id]);
 
   async function handleMessage(e) {
     e.preventDefault();
 
-    const formData = { 
-        message,
-        client_id: 1
+    const formData = {
+      message,
+      client_id: 1
     };
 
     const response = await fetch("/messages", {
@@ -41,9 +66,9 @@ const MySpaces = () => {
     const data = await response.json();
     if (response.ok) {
       // console.log("User created:", data);
-    //   window.location = '/log-in';
+      //   window.location = '/log-in';
     } else {
-    //   setErrors(data.errors);
+      //   setErrors(data.errors);
     }
   }
 
@@ -64,9 +89,9 @@ const MySpaces = () => {
                           <div class="detail-wrapper-body">
                             <div class="listing-title-bar">
                               <h3>
-                                Luxury Villa House{" "}
+                                {spaceData.space_category}{" "}
                                 <span class="mrg-l-5 category-tag">
-                                  For Sale
+                                  For hire
                                 </span>
                               </h3>
                               <div class="mt-0">
@@ -75,7 +100,7 @@ const MySpaces = () => {
                                   class="listing-address"
                                 >
                                   <i class="fa fa-map-marker pr-2 ti-location-pin mrg-r-5"></i>
-                                  77 - Central Park South, NYC
+                                  {property.location}
                                 </a>
                               </div>
                             </div>
@@ -83,13 +108,13 @@ const MySpaces = () => {
                           <div class="single detail-wrapper mr-2">
                             <div class="detail-wrapper-body">
                               <div class="listing-title-bar">
-                                <h4>$ 230,000</h4>
+                                <h4>{spaceData.price_per_hour}/hr</h4>
                                 <div class="mt-0">
                                   <a
                                     href="#listing-location"
                                     class="listing-address"
                                   >
-                                    <p>$ 1,200 / sq ft</p>
+                                    <p>{spaceData.room_size} / sq ft</p>
                                   </a>
                                 </div>
                               </div>
@@ -108,39 +133,26 @@ const MySpaces = () => {
                             data-slide-number="0"
                           >
                             <img
-                              src={image50}
+                              src={spaceData.image_1}
                               class="img-fluid"
                               alt="slider-listing"
                             />
                           </div>
                           <div class="item carousel-item" data-slide-number="1">
                             <img
-                              src={image51}
+                              src={spaceData.image_2}
                               class="img-fluid"
                               alt="slider-listing"
                             />
                           </div>
                           <div class="item carousel-item" data-slide-number="2">
                             <img
-                              src={image52}
+                              src={spaceData.image_3}
                               class="img-fluid"
                               alt="slider-listing"
                             />
                           </div>
-                          <div class="item carousel-item" data-slide-number="4">
-                            <img
-                              src={image53}
-                              class="img-fluid"
-                              alt="slider-listing"
-                            />
-                          </div>
-                          <div class="item carousel-item" data-slide-number="5">
-                            <img
-                              src={image54}
-                              class="img-fluid"
-                              alt="slider-listing"
-                            />
-                          </div>
+
 
                           <a
                             class="carousel-control left"
@@ -161,124 +173,37 @@ const MySpaces = () => {
                       <div class="blog-info details mb-30">
                         <h5 class="mb-4">Description</h5>
                         <p class="mb-3">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Cum rerum beatae consequatur, totam fugit, alias
-                          fuga aliquam quod tempora a nisi esse magnam nulla
-                          quas! Error praesentium, vero dolorum laborum. Lorem
-                          ipsum dolor sit amet, consectetur adipisicing elit.
-                          Cum rerum beatae consequatur, totam fugit.
-                        </p>
-                        <p class="mb-3">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Cum rerum beatae consequatur, totam fugit, alias
-                          fuga aliquam quod tempora a nisi esse magnam nulla
-                          quas! Error praesentium, vero dolorum laborum. Lorem
-                          ipsum dolor sit amet, consectetur adipisicing elit.
-                          Cum rerum beatae consequatur, totam fugit.
-                        </p>
-                        <p class="mb-3">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Cum rerum beatae consequatur, totam fugit, alias
-                          fuga aliquam quod tempora a nisi esse magnam nulla
-                          quas! Error praesentium, vero dolorum laborum. Lorem
-                          ipsum dolor sit amet, consectetur adipisicing elit.
-                          Cum rerum beatae consequatur, totam fugit.
+                          {spaceData.description}
                         </p>
                       </div>
                     </div>
                   </div>
 
                   <div class="single homes-content details mb-30">
-                    <h5 class="mb-4">Property Details</h5>
-                    <ul class="homes-list clearfix">
-                      <li>
-                        <span class="font-weight-bold mr-1">Property ID:</span>
-                        <span class="det">V254680</span>
-                      </li>
-                      <li>
-                        <span class="font-weight-bold mr-1">
-                          Property Type:
-                        </span>
-                        <span class="det">House</span>
-                      </li>
-                      <li>
-                        <span class="font-weight-bold mr-1">
-                          Property status:
-                        </span>
-                        <span class="det">For Sale</span>
-                      </li>
-                      <li>
-                        <span class="font-weight-bold mr-1">
-                          Property Price:
-                        </span>
-                        <span class="det">$230,000</span>
-                      </li>
-                      <li>
-                        <span class="font-weight-bold mr-1">Rooms:</span>
-                        <span class="det">6</span>
-                      </li>
-                      <li>
-                        <span class="font-weight-bold mr-1">Bedrooms:</span>
-                        <span class="det">7</span>
-                      </li>
-                      <li>
-                        <span class="font-weight-bold mr-1">Bath:</span>
-                        <span class="det">4</span>
-                      </li>
-                      <li>
-                        <span class="font-weight-bold mr-1">Garages:</span>
-                        <span class="det">2</span>
-                      </li>
-                      <li>
-                        <span class="font-weight-bold mr-1">Year Built:</span>
-                        <span class="det">10/6/2020</span>
-                      </li>
-                    </ul>
+
 
                     <h5 class="mt-5">Amenities</h5>
 
                     <ul class="homes-list clearfix">
-                      <li>
-                        <i class="fa fa-check-square" aria-hidden="true"></i>
-                        <span>Air Cond</span>
-                      </li>
-                      <li>
-                        <i class="fa fa-check-square" aria-hidden="true"></i>
-                        <span>Balcony</span>
-                      </li>
-                      <li>
-                        <i class="fa fa-check-square" aria-hidden="true"></i>
-                        <span>Internet</span>
-                      </li>
-                      <li>
-                        <i class="fa fa-check-square" aria-hidden="true"></i>
-                        <span>Dishwasher</span>
-                      </li>
-                      <li>
-                        <i class="fa fa-check-square" aria-hidden="true"></i>
-                        <span>Bedding</span>
-                      </li>
-                      <li>
-                        <i class="fa fa-check-square" aria-hidden="true"></i>
-                        <span>Cable TV</span>
-                      </li>
-                      <li>
-                        <i class="fa fa-check-square" aria-hidden="true"></i>
-                        <span>Parking</span>
-                      </li>
-                      <li>
-                        <i class="fa fa-check-square" aria-hidden="true"></i>
-                        <span>Pool</span>
-                      </li>
-                      <li>
-                        <i class="fa fa-check-square" aria-hidden="true"></i>
-                        <span>Fridge</span>
-                      </li>
+
+                      {
+                        amenities.map((amenity) => {
+                          return (
+                            <li>
+                              <i class="fa fa-check-square" aria-hidden="true"></i>
+                              <span key={amenity.id}>{amenity.item_name}</span>
+                            </li>
+                          )
+                        })
+
+
+                      }
+
                     </ul>
                   </div>
 
                   <section class="reviews comments">
-                    <h3 class="mb-5">3 Reviews</h3>
+                    <h3 class="mb-5">{reviews.rat}</h3>
                     <div class="row mb-5">
                       <ul class="col-12 commented pl-0">
                         <li class="comm-inf">
@@ -313,76 +238,8 @@ const MySpaces = () => {
                         </li>
                       </ul>
                     </div>
-                    <div class="row">
-                      <ul class="col-12 commented pl-0">
-                        <li class="comm-inf">
-                          <div class="col-md-2">
-                            <img src={image12} class="img-fluid" alt="" />
-                          </div>
-                          <div class="col-md-10 comments-info">
-                            <div class="conra">
-                              <h5 class="mb-2">Abraham Tyron</h5>
-                              <div class="rating-box">
-                                <div class="detail-list-rating mr-0">
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <p class="mb-4">june 1 2020</p>
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit. Cras aliquam, quam congue dictum luctus,
-                              lacus magna congue ante, in finibus dui sapien eu
-                              dolor. Integer tincidunt suscipit erat, nec
-                              laoreet ipsum vestibulum sed.
-                            </p>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="row mt-5">
-                      <ul class="col-12 commented mb-0 pl-0">
-                        <li class="comm-inf">
-                          <div class="col-md-2">
-                            <img src={image13} class="img-fluid" alt="" />
-                          </div>
-                          <div class="col-md-10 comments-info">
-                            <div class="conra">
-                              <h5 class="mb-2">Lisa Williams</h5>
-                              <div class="rating-box">
-                                <div class="detail-list-rating mr-0">
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star-o"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <p class="mb-4">jul 12 2020</p>
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit. Cras aliquam, quam congue dictum luctus,
-                              lacus magna congue ante, in finibus dui sapien eu
-                              dolor. Integer tincidunt suscipit erat, nec
-                              laoreet ipsum vestibulum sed.
-                            </p>
-                            <div class="resti">
-                              <div class="rest">
-                                <img src={image2} class="img-fluid" alt="" />
-                              </div>
-                              <div class="rest">
-                                <img src={image3} class="img-fluid" alt="" />
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
+
+
                   </section>
 
                   <section class="single reviews leve-comments details">
@@ -628,11 +485,11 @@ const MySpaces = () => {
                           <div class="sidebar-widget author-widget2">
                             <div class="author-box clearfix">
                               <img
-                                src={image29}
+                                src={clientData.profile_url}
                                 alt="author-image"
                                 class="author__img"
                               />
-                              <h4 class="author__title">Lisa Clark</h4>
+                              <h4 class="author__title">{clientData.first_name}&nbsp;{clientData.last_name}</h4>
                               <p class="author__meta">Agent of Property</p>
                             </div>
                             <ul class="author__contact">
@@ -640,13 +497,13 @@ const MySpaces = () => {
                                 <span class="la la-map-marker">
                                   <i class="fa fa-map-marker"></i>
                                 </span>
-                                302 Av Park, New York
+                                {clientData.location}
                               </li>
                               <li>
                                 <span class="la la-phone">
                                   <i class="fa fa-phone" aria-hidden="true"></i>
                                 </span>
-                                <a href="#">(234) 0200 17813</a>
+                                <a href="#">{clientData.phone_number}</a>
                               </li>
                               <li>
                                 <span class="la la-envelope-o">

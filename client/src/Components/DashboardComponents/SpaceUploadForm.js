@@ -79,8 +79,8 @@ const SpaceUploadForm = ({ propertyData, setClientSpaces, clientSpaces , id }) =
                   onChange={handleChange}
                   id="property_id"
                 >
-                  <option value="" disabled>
-                    Select
+                  <option value="" >
+                    --Select--
                   </option>
                   {propertyData.map((property) => {
                     return (
@@ -187,7 +187,7 @@ const SpaceUploadForm = ({ propertyData, setClientSpaces, clientSpaces , id }) =
                   </option>
 
                   <option value="room">Room</option>
-                  <option value="field">Field</option>
+                  <option value="field">Conferen</option>
                 </select>
               </div>
             </div>

@@ -1,7 +1,8 @@
 import React from "react";
 import backgroundImage from "../../Image/space.jpg";
-
 const PopularPlaces = ({ properties }) => {
+
+
   return (
     <section class="feature-categories bg-white rec-pro">
       <div class="container-fluid">
@@ -14,6 +15,7 @@ const PopularPlaces = ({ properties }) => {
         <div class="row">
           {properties.map((property) => {
             return (
+
               <div class="col-xl-3 col-lg-6 col-sm-6" key={property.id}>
                 <div class="small-category-2">
                   <div class="small-category-2-thumb img-1">
@@ -29,6 +31,7 @@ const PopularPlaces = ({ properties }) => {
                   </div>
                 </div>
               </div>
+
             );
           })}
         </div>
