@@ -1,7 +1,9 @@
 import React from 'react';
 
 const PropertyListing = ({propertyData}) => {
-    console.log(propertyData)
+     function handleUpdate() {
+         
+     }
     return (
         <div class="my-properties">
                             <table class="table-responsive">
@@ -40,10 +42,10 @@ const PropertyListing = ({propertyData}) => {
                                            </ul> */}
                                        </div>
                                    </td>
-                                   <td>08.14.2020</td>
+                                   <td>{item.created_at}</td>
                                    <td>163</td>
                                    <td class="actions">
-                                       <a href="#" class="edit"><i class="lni-pencil"></i>Edit</a>
+                                       <a href="#" class="edit" onClick={handleUpdate}><i class="lni-pencil"></i>Edit</a>
                                        <a href="#"><i class="far fa-trash-alt"></i></a>
                                    </td>
                                </tr>
