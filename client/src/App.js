@@ -28,8 +28,8 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
-        <Route path="dashboard" element={<Dashboard/>} />
-        <Route path="googlelogin" element={<LoginGoogle/> }  />
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="googlelogin" element={<LoginGoogle /> }  />
 
         {/* <PropertyUploadForm/> */}
         {/* <SpaceUploadForm/> */}
