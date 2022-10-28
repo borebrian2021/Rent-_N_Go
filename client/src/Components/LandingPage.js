@@ -36,10 +36,10 @@ const LandingPage = () => {
       <AfterHeader />
       <PopularPlaces properties={properties} />
       <FeaturedPlaces spaces={spaces} />
-      {/* <WhyChooseUs /> */}
-      {/* <PopularSpaces /> */}
-      {/* <OurAgents /> */}
-      {/* <OurPartners /> */}
+      <WhyChooseUs /> 
+      <PopularSpaces /> 
+      <OurAgents />
+      <OurPartners />
     </div>
   );
 };

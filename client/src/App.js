@@ -54,9 +54,7 @@ function App() {
       {/* <PropertyDetails/> */}
       {/* <MySpaces/> */}
     </Routes>
+
   );
 }
 export default App;
-{
-  /* <Login/> */
-}
