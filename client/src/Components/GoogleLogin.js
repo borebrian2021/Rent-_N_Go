@@ -18,7 +18,21 @@ function LoginGoogle() {
 
   const onFailure = (res) => {
     console.log("Login failed: res:", res);
-    alert(
-      `Failed to login. 😢 Please ping this to Rent & Go team`
-    );
+    alert(`Failed to login. 😢 Please ping this to Rent & Go team`);
   };
+  return (
+    <div>
+      <GoogleLogin
+        clientId={clientId}
+        buttonText="Login"
+        onSuccess={onSuccess}
+        onFailure={onFailure}
+        cookiePolicy={"single_host_origin"}
+        style={{ marginTop: "100px" }}
+        isSignedIn={true}
+      />
+    </div>
+  );
+}
+
+export default LoginGoogle;
