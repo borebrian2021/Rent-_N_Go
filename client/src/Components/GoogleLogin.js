@@ -38,7 +38,7 @@ gapi.auth2.getAuthInstance();
 
   const onFailure = (res) => {
     console.log("Login failed: res:", res);
-    alert(`Failed to login. 😢 Please ping this to Rent & Go team`);
+    alert(`Failed to login. 😢 Please ping this to the Rent & Go team or send an email to rentandgoservice@gmail.com`);
   };
   return (
     <div>
