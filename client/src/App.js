@@ -16,10 +16,12 @@ import PropertyListing from './Components/DashboardComponents/PropertyListing'
 import SpaceUploadForm from './Components/DashboardComponents/SpaceUploadForm'
 import PropertyUploadForm from './Components/DashboardComponents/PropertyUploadForm'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import LoginGoogle from './Components/GoogleLogin';
 
 function App() {
   return (
-
+         
+   
     
       <Routes>
         {/* <Route path="/" element={ <Home/> } /> */}
@@ -27,7 +29,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="dashboard" element={<Dashboard/>} />
-
+        <Route path="googlelogin" element={<LoginGoogle/> }  />
 
         {/* <PropertyUploadForm/> */}
         {/* <SpaceUploadForm/> */}
