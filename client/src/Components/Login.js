@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import TopBar from './TopBar';
 import {Link,useNavigate} from 'react-router-dom'
+import LoginGoogle from './GoogleLogin';
+
 
 const Login = () => {
     //NAVIGATE
@@ -66,6 +68,8 @@ const Login = () => {
 
     }
 
+   
+
     return (
         <div>
             <TopBar/>
@@ -107,7 +111,7 @@ const Login = () => {
 
                         <div class="access_social m-3">
                             {/* <a href="#0" class="social_bt facebook">Login with Facebook</a> */}
-                            <a href="#0" class="social_bt google">Login with Google</a>
+                            <a href="#0" class="social_bt google">{<LoginGoogle/> } </a>
                             {/* <a href="#0" class="social_bt linkedin">Login with Linkedin</a> */}
                         </div>
                     </form>
@@ -116,5 +120,6 @@ const Login = () => {
         </div>
     );
 }
+
 
 export default Login;
