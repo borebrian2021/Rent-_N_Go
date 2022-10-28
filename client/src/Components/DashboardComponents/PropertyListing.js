@@ -62,7 +62,7 @@ const PropertyListing = ({ propertyData, setPropertyData }) => {
                                            </ul> */}
                   </div>
                 </td>
-                <td>08.14.2020</td>
+                <td>{item.created_at}</td>
                 <td>163</td>
                 <td class="actions">
                   <a href="#" class="edit">
