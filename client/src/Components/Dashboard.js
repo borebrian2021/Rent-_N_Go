@@ -40,6 +40,41 @@ const Dashboard = ({ user }) => {
   const [messages, setMessages] = useState(false);
   const [mySpaces, setMySpaces] = useState(false);
   const [amenities, setAmenities] = useState(true);
+  const [submitBtn, setSubmitBtn] = useState(true);
+  const [submitBtnSpace, setSubmitSpaceBtn] = useState(true);
+
+  // data received from property listing to edit form
+
+  // edit of property
+  const [userProperty, setProperty] = useState({
+    propertyName: "",
+    location: "",
+    imageUrl: "https://images.unsplash.com/photo-1515263487990-61b07816b324?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YXBhcnRtZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+  });
+
+  const [propertyId, setPropertyId] = useState("");
+
+  // edit spaces
+  const [useSpace, setSpace] = useState({
+    room_size: "",
+    image_1:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3BhY2UlMjByb29tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    image_2:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3BhY2UlMjByb29tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    image_3:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3BhY2UlMjByb29tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    description: "",
+    price_per_hour: "",
+    status_: "",
+    space_category: "",
+    property_id: "",
+  });
+
+  // space_id
+
+  const [spaceID, setSpaceID] = useState("");
+
+  // btn and header changes
 
   //HIDE AND DISPLAY COMPONENT DYNAMICALLY
   const hideShowProfiles = () => {
@@ -54,10 +89,6 @@ const Dashboard = ({ user }) => {
     setProfile(true);
     setAmenities(false);
   };
-
-  //GET USER ID
-  //   let newObject = window.localStorage.getItem("user_data");
-  // //   console.log(JSON.parse(newObject));
 
   let id = 1;
 
@@ -91,10 +122,18 @@ const Dashboard = ({ user }) => {
               setPropertyData={setPropertyData}
               propertyData={propertyData}
               id={id}
+              userProperty={userProperty}
+              setProperty={setProperty}
+              submitBtn={submitBtn}
+              propertyId={propertyId}
+              setSubmitBtn={setSubmitBtn}
             />
             <PropertyListing
               propertyData={propertyData}
               setPropertyData={setPropertyData}
+              setSubmitBtn={setSubmitBtn}
+              setProperty={setProperty}
+              setPropertyId={setPropertyId}
             />
 
             {uploadForm && (
@@ -103,12 +142,20 @@ const Dashboard = ({ user }) => {
                 setClientSpaces={setClientSpaces}
                 clientSpaces={clientSpaces}
                 id={id}
+                useSpace={useSpace}
+                setSpace={setSpace}
+                submitBtnSpace={submitBtnSpace}
+                spaceID={spaceID}
+                setSubmitSpaceBtn={setSubmitSpaceBtn}
               />
             )}
             {dashboardCards && (
               <MySpaces
                 clientSpaces={clientSpaces}
                 setClientSpaces={setClientSpaces}
+                setSubmitSpaceBtn={setSubmitSpaceBtn}
+                setSpace={setSpace}
+                setSpaceID={setSpaceID}
               />
             )}
             {amenities && <AmenitiesForm clientSpaces={clientSpaces} />}

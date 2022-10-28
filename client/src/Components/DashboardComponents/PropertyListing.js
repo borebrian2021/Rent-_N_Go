@@ -1,6 +1,6 @@
 import React from "react";
 
-const PropertyListing = ({ propertyData, setPropertyData }) => {
+const PropertyListing = ({ propertyData, setPropertyData, setSubmitBtn,setPropertyId,setProperty}) => {
   function handleDelete(id) {
     fetch("/properties/" + id, {
       method: "DELETE",
@@ -8,7 +8,7 @@ const PropertyListing = ({ propertyData, setPropertyData }) => {
       .then((r) => r.json())
       .then(() => updateAfterDelete(id));
   }
-
+ 
   function updateAfterDelete(id) {
     const updated = propertyData.filter((property) => property.id !== id);
     setPropertyData(updated);
@@ -65,8 +65,22 @@ const PropertyListing = ({ propertyData, setPropertyData }) => {
                 <td>{item.created_at}</td>
                 <td>163</td>
                 <td class="actions">
-                  <a href="#" class="edit">
-                    <i class="lni-pencil"></i>Edit
+                  <a class="edit">
+                    <i
+                      class="lni-pencil"
+                      style={{ pointer: "cursor" }}
+                      onClick={() => {
+                        setSubmitBtn(false)
+                        setProperty({
+                          propertyName: item.property_name ,
+                          location: item.location,
+                          imageUrl: item.image_url,
+                        });
+                        setPropertyId(item.id)
+                      }}
+                    >
+                      Edit
+                    </i>
                   </a>
                   <a>
                     <i

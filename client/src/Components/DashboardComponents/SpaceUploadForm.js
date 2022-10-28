@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 //SETTING THE CONSTANTS
-const SpaceUploadForm = ({ propertyData, setClientSpaces, clientSpaces , id }) => {
+const SpaceUploadForm = ({
+  propertyData,
+  setClientSpaces,
+  clientSpaces,
+  id,
+  useSpace,
+  setSpace,
+  submitBtnSpace,
+  spaceID,
+  setSubmitSpaceBtn
+}) => {
   localStorage.setItem("property_id", 1);
-  const [useSpace, setSpace] = useState({
-    room_size: "",
-    image_1: "https://ibb.co/nBWyj9K",
-    image_2: "https://ibb.co/nBWyj9K",
-    image_3: "https://ibb.co/nBWyj9K",
-    description: "",
-    price_per_hour: "",
-    status_: "",
-    space_category: "",
-    property_id: "",
-  });
+
   //HANDLE CHANGE
   function handleChange(e) {
     const key = e.target.id;
@@ -63,12 +63,71 @@ const SpaceUploadForm = ({ propertyData, setClientSpaces, clientSpaces , id }) =
       }
     });
   };
+
+  function handleEditSpaces() {
+    const form_data = {
+      room_size: useSpace.room_size,
+      image_1: useSpace.image_1,
+      image_2: useSpace.image_2,
+      image_3: useSpace.image_3,
+      description: useSpace.description,
+      price_per_hour: useSpace.price_per_hour,
+      status: useSpace.status_,
+      space_category: useSpace.space_category,
+      property_id: useSpace.property_id,
+      client_id: id,
+    };
+    fetch("/spaces/" + spaceID, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form_data),
+    })
+      .then((r) => r.json())
+      .then((updatedItem) => updateList(updatedItem));
+  }
+
+  function updateList(updatedItem) {
+    const updatedItems = clientSpaces.map((item) => {
+      if (item.id === updatedItem.id) {
+        return updatedItem;
+      } else {
+        return item;
+      }
+    });
+    setClientSpaces(updatedItems);
+
+    setSpace({
+      
+        room_size: "",
+        image_1:
+          "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3BhY2UlMjByb29tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        image_2:
+          "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3BhY2UlMjByb29tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        image_3:
+          "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3BhY2UlMjByb29tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        description: "",
+        price_per_hour: "",
+        status_: "",
+        space_category: "",
+        property_id: "",
+      
+    })
+
+    setSubmitSpaceBtn(true)
+
+
+  }
+
   return (
     <div class="dashborad-box mb-0 mb-3 mt-3">
       {/* <img src="https://ibb.co/6NQ8X6n" className='illustrations' /> */}
-      <h4 class="heading pt-0">Space Upload Form</h4>
+      <h4 class="heading pt-0">
+        {submitBtnSpace ? "Space Upload Form" : "Space Edit Form"}
+      </h4>
       <div class="section-inforamation">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={submitBtnSpace ? handleSubmit : handleEditSpaces}>
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
@@ -79,9 +138,7 @@ const SpaceUploadForm = ({ propertyData, setClientSpaces, clientSpaces , id }) =
                   onChange={handleChange}
                   id="property_id"
                 >
-                  <option value="" >
-                    --Select--
-                  </option>
+                  <option value="">--Select--</option>
                   {propertyData.map((property) => {
                     return (
                       <option value={property.id} key={property.id}>
@@ -213,7 +270,7 @@ const SpaceUploadForm = ({ propertyData, setClientSpaces, clientSpaces , id }) =
             </div>
           </div>
           <button type="submit" class="btn btn-primary btn-lg mt-2">
-            Submit
+            {submitBtnSpace ? "Submit" : "Edit Space"}
           </button>
         </form>
       </div>
