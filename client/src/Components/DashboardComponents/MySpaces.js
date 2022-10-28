@@ -90,7 +90,7 @@ const MySpaces = ({
                   <strong>$ {item.price_per_hour}</strong>
                 </td>
                 <td class="actions">
-                  <button class="edit">
+                  <a class="edit">
                     <i
                       class="lni-pencil"
                       onClick={() => {
@@ -111,7 +111,7 @@ const MySpaces = ({
                     >
                       Edit
                     </i>
-                  </button>
+                  </a>
                   <a>
                     <i
                       class="far fa-trash-alt"

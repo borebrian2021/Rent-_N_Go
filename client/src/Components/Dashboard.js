@@ -37,11 +37,15 @@ const Dashboard = ({ user }) => {
   const [reviews, setReviews] = useState(false);
   const [invoice, setInvoice] = useState(false);
   const [reservations, setUserdetails] = useState(false);
-  const [messages, setMessages] = useState(false);
-  const [mySpaces, setMySpaces] = useState(false);
+
   const [amenities, setAmenities] = useState(true);
   const [submitBtn, setSubmitBtn] = useState(true);
   const [submitBtnSpace, setSubmitSpaceBtn] = useState(true);
+
+  // for dashboard card
+  const [spaceReservations, setSpaceReservations] = useState([]);
+  const [messages, setMessages] = useState([]);
+  const [mySpaces, setMySpaces] = useState([]);
 
   // data received from property listing to edit form
 
@@ -49,7 +53,8 @@ const Dashboard = ({ user }) => {
   const [userProperty, setProperty] = useState({
     propertyName: "",
     location: "",
-    imageUrl: "https://images.unsplash.com/photo-1515263487990-61b07816b324?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YXBhcnRtZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    imageUrl:
+      "https://images.unsplash.com/photo-1515263487990-61b07816b324?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YXBhcnRtZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
   });
 
   const [propertyId, setPropertyId] = useState("");
@@ -103,6 +108,9 @@ const Dashboard = ({ user }) => {
         setPropertyData(data.properties);
         setClientSpaces(data.spaces);
         setProfileData(data);
+        setMessages(data.messages);
+        setMySpaces(data.spaces);
+        setSpaceReservations(data.reservations);
       });
   }, [id]);
 
@@ -116,8 +124,16 @@ const Dashboard = ({ user }) => {
             hideShowProfiles={hideShowProfiles}
           />
           <div class="col-lg-9 col-md-12 col-xs-12 pl-0 user-dash2">
+            {dashboardCards && (
+              <DashboardCards
+                propertyData={propertyData.length}
+                messages={messages.length}
+                mySpaces={mySpaces.length}
+                spaceReservations={spaceReservations.length}
+              />
+            )}
             {profile && <Profile profileData={profileData} />}
-            {dashboardCards && <DashboardCards />}
+
             <PropertyUploadForm
               setPropertyData={setPropertyData}
               propertyData={propertyData}
