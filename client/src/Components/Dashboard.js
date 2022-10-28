@@ -41,7 +41,6 @@ const Dashboard = ({ user }) => {
   const [mySpaces, setMySpaces] = useState(false);
   const [amenities, setAmenities] = useState(true);
 
-
   //HIDE AND DISPLAY COMPONENT DYNAMICALLY
   const hideShowProfiles = () => {
     setUploadForm(false);
@@ -53,7 +52,7 @@ const Dashboard = ({ user }) => {
     setMessages(false);
     setMySpaces(false);
     setProfile(true);
-    setAmenities(false)
+    setAmenities(false);
   };
 
   //GET USER ID
@@ -72,7 +71,7 @@ const Dashboard = ({ user }) => {
         setSideBarData(data);
         setPropertyData(data.properties);
         setClientSpaces(data.spaces);
-        setProfileData(data)
+        setProfileData(data);
       });
   }, [id]);
 
@@ -93,22 +92,31 @@ const Dashboard = ({ user }) => {
               propertyData={propertyData}
               id={id}
             />
-            <PropertyListing propertyData={propertyData} />
+            <PropertyListing
+              propertyData={propertyData}
+              setPropertyData={setPropertyData}
+            />
 
-            {uploadForm && <SpaceUploadForm propertyData={propertyData}
-             setClientSpaces={setClientSpaces} 
-             clientSpaces={clientSpaces} 
-             id={id}/>}
-            {dashboardCards && <MySpaces clientSpaces={clientSpaces} />}
-            {amenities && <AmenitiesForm clientSpaces={clientSpaces} />}            
-            {/* {dashboardCards && <Messages />} */}
+            {uploadForm && (
+              <SpaceUploadForm
+                propertyData={propertyData}
+                setClientSpaces={setClientSpaces}
+                clientSpaces={clientSpaces}
+                id={id}
+              />
+            )}
+            {dashboardCards && (
+              <MySpaces
+                clientSpaces={clientSpaces}
+                setClientSpaces={setClientSpaces}
+              />
+            )}
+            {amenities && <AmenitiesForm clientSpaces={clientSpaces} />}
             {dashboardCards && <Reservations />}
-            
-            {dashboardCards && <PropertyDetails/>}
+
+            {dashboardCards && <PropertyDetails />}
 
             <DashboardFooter />
-
-
           </div>
         </div>
       </div>

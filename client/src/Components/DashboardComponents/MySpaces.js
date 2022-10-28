@@ -1,6 +1,20 @@
 import React from "react";
 
-const MySpaces = ({ clientSpaces }) => {
+const MySpaces = ({ clientSpaces ,setClientSpaces}) => {
+
+  function handleDelete(id) {
+    fetch("/spaces/" + id, {
+      method: "DELETE",
+    })
+      .then((r) => r.json())
+      .then(() => updateAfterDelete(id));
+  }
+
+  function updateAfterDelete(id) {
+    const updated = clientSpaces.filter((clientSpace) => clientSpace.id !== id);
+    setClientSpaces(updated);
+  }
+
   return (
     <div class="my-properties">
       <table class="table-responsive">
@@ -74,8 +88,11 @@ const MySpaces = ({ clientSpaces }) => {
                   <a href="#" class="edit">
                     <i class="lni-pencil"></i>Edit
                   </a>
-                  <a href="#">
-                    <i class="far fa-trash-alt"></i>
+                  <a>
+                    <i
+                      class="far fa-trash-alt"
+                      onClick={() => handleDelete(item.id)}
+                    ></i>
                   </a>
                 </td>
               </tr>
