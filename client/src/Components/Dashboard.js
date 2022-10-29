@@ -15,7 +15,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import PropertyListing from "./DashboardComponents/PropertyListing";
 import AmenitiesForm from "./DashboardComponents/AmenitiesForm";
-
+import AmenitiesList from "./DashboardComponents/AmenitiesList";
 const Dashboard = ({ user }) => {
   //NAVIGATE
   const navigate = useNavigate();
@@ -28,6 +28,8 @@ const Dashboard = ({ user }) => {
   const [propertyData, setPropertyData] = useState([]);
   const [clientSpaces, setClientSpaces] = useState([]);
   const [profileData, setProfileData] = useState([]);
+  const [amenities, setAmenities] = useState(true);
+
 
   //HIDA & SHOW STATES
   const [profile, setProfile] = useState(true);
@@ -39,7 +41,7 @@ const Dashboard = ({ user }) => {
   const [reservations, setUserdetails] = useState(false);
   const [messages, setMessages] = useState(false);
   const [mySpaces, setMySpaces] = useState(false);
-  const [amenities, setAmenities] = useState(true);
+  const [amenitiesDisplay, setAmenitiesDisplay] = useState(true);
 
 
   //HIDE AND DISPLAY COMPONENT DYNAMICALLY
@@ -86,14 +88,14 @@ const Dashboard = ({ user }) => {
             hideShowProfiles={hideShowProfiles}
           />
           <div class="col-lg-9 col-md-12 col-xs-12 pl-0 user-dash2">
-            {profile && <Profile profileData={profileData} />}
+            {/* {profile && <Profile profileData={profileData} />}
             {dashboardCards && <DashboardCards />}
             <PropertyUploadForm
               setPropertyData={setPropertyData}
               propertyData={propertyData}
               id={id}
-            />
-            <PropertyListing propertyData={propertyData} />
+            /> */}
+            {/* <PropertyListing propertyData={propertyData} />
 
             {uploadForm && <SpaceUploadForm propertyData={propertyData}
              setClientSpaces={setClientSpaces} 
@@ -102,11 +104,9 @@ const Dashboard = ({ user }) => {
             {dashboardCards && <MySpaces clientSpaces={clientSpaces} />}
             {amenities && <AmenitiesForm clientSpaces={clientSpaces} />}            
             {/* {dashboardCards && <Messages />} */}
-            {dashboardCards && <Reservations />}
-            
-            {dashboardCards && <PropertyDetails/>}
-
-            <DashboardFooter />
+            {/* {dashboardCards && <Reservations />}  */}
+            {amenitiesDisplay && <AmenitiesList spaceData={clientSpaces} propertyData={propertyData}/>}
+            {/* <DashboardFooter /> */}
 
 
           </div>
