@@ -18,6 +18,7 @@ import image51 from "../Image/single-property/s-2.jpg";
 import image52 from "../Image/single-property/s-3.jpg";
 import image53 from "../Image/single-property/s-4.jpg";
 import image54 from "../Image/single-property/s-5.jpg";
+import TopBar from "./TopBar";
 
 const MySpaces = () => {
   //RETRIEVE SPACE ID
@@ -73,9 +74,9 @@ const MySpaces = () => {
   }
 
   return (
-    <body class="inner-pages sin-1 homepage-4 hd-white">
-      <div>
-        <body class="inner-pages sin-1 homepage-4 hd-white">
+   <div>
+    <TopBar/>
+        <div class="inner-pages sin-1 homepage-4 hd-white">
           <div class="clearfix"></div>
 
           <section class="single-proper blog details">
@@ -905,9 +906,9 @@ const MySpaces = () => {
               </section>
             </div>
           </section>
-        </body>
-      </div>
-    </body>
+        </div>
+   </div>
+     
   );
 };
 
