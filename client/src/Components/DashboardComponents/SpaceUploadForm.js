@@ -80,7 +80,7 @@ const SpaceUploadForm = ({ propertyData, setClientSpaces, clientSpaces , id }) =
                   id="property_id"
                 >
                   <option value="" >
-                    --Select--
+                    -- Select --
                   </option>
                   {propertyData.map((property) => {
                     return (

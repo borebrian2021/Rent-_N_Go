@@ -97,7 +97,6 @@ const Dashboard = ({ user }) => {
             /> */}
             {/* <PropertyListing propertyData={propertyData} />
 
-            {uploadForm && <SpaceUploadForm propertyData={propertyData}
              setClientSpaces={setClientSpaces} 
              clientSpaces={clientSpaces} 
              id={id}/>}
@@ -105,9 +104,15 @@ const Dashboard = ({ user }) => {
             {amenities && <AmenitiesForm clientSpaces={clientSpaces} />}            
             {/* {dashboardCards && <Messages />} */}
             {/* {dashboardCards && <Reservations />}  */}
+
             {amenitiesDisplay && <AmenitiesList spaceData={clientSpaces} propertyData={propertyData}/>}
             {/* <DashboardFooter /> */}
-
+           { <PropertyUploadForm
+              setPropertyData={setPropertyData}
+              propertyData={propertyData}
+              id={id}
+            /> }
+            {uploadForm && <SpaceUploadForm propertyData={propertyData}/>}
 
           </div>
         </div>
