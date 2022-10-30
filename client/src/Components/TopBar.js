@@ -14,13 +14,13 @@ class TopBar extends Component {
           <a class="navbar-brand nav-link" href="#"><img src={logo} className="logo" />Rent N Go</a>
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item ">
-              <Link to='/' class="nav-link" href="#">Home <span class="sr-only">(current)</span></Link>
+              <Link to='/' class="nav-link" >Home <span class="sr-only">(current)</span></Link>
             </li>
             <li class="nav-item">
               <Link class="nav-link" href="#">About us</Link>
             </li>
             <li class="nav-item">
-              <Link class="nav-link " href="#">Contacts</Link>
+              <Link to='contact' class="nav-link " >ContactUs</Link>
             </li>
        
             <li class="nav-item">

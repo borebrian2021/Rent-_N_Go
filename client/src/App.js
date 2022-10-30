@@ -18,6 +18,7 @@ import PropertyListing from "./Components/DashboardComponents/PropertyListing";
 import SpaceUploadForm from "./Components/DashboardComponents/SpaceUploadForm";
 import PropertyUploadForm from "./Components/DashboardComponents/PropertyUploadForm";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Contact from "./Components/Contact";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -31,30 +32,33 @@ function App() {
   }, []);
 
   return (
-    <Routes>
-      {/* <Route path="/" element={ <Home/> } /> */}
-      <Route path="/" element={<LandingPage />} />
-      <Route  path="login" element={<Login />} />
-      <Route  path="signup" element={<SignUp />} />
-      <Route  path="dashboard/*" element={<Dashboard user={user} />} />
-      <Route  path="/space-page" element={<PropertyDetails />} />
-      {/* <PropertyUploadForm/> */}
-      {/* <SpaceUploadForm/> */}
-      {/* <Test/> */}
-      {/* <TopBar/> */}
-      {/* <Login/> */}
-      {/* <Reservations/> */}
-      {/* <Invoice/> */}
-      {/* <ResetPassword/> */}
-      {/* <SignUp/> */}
-      {/* <LandingPage/> */}
-      {/* <Dashboard/> */}
-      {/* <PropertyListing/> */}
-      {/* <PropertyCard/> */}
-      {/* <PropertyDetails/> */}
-      {/* <MySpaces/> */}
-    </Routes>
-
+    <>
+      <Routes>
+        {/* <Route path="/" element={ <Home/> } /> */}
+        <Route path="/" element={<LandingPage />} />
+        {/* <Route path="/aboutus" element={<AboutUs />}></Route> */}
+        <Route path="contact" element={<Contact />} />
+        <Route path="login" element={<Login />} />
+        <Route path="signup" element={<SignUp />} />
+        <Route path="dashboard/*" element={<Dashboard user={user} />} />
+        <Route path="/space-page" element={<PropertyDetails />} />
+        {/* <PropertyUploadForm/> */}
+        {/* <SpaceUploadForm/> */}
+        {/* <Test/> */}
+        {/* <TopBar/> */}
+        {/* <Login/> */}
+        {/* <Reservations/> */}
+        {/* <Invoice/> */}
+        {/* <ResetPassword/> */}
+        {/* <SignUp/> */}
+        {/* <LandingPage/> */}
+        {/* <Dashboard/> */}
+        {/* <PropertyListing/> */}
+        {/* <PropertyCard/> */}
+        {/* <PropertyDetails/> */}
+        {/* <MySpaces/> */}
+      </Routes>
+    </>
   );
 }
 export default App;

@@ -36,8 +36,8 @@ const LandingPage = () => {
       <AfterHeader />
       <PopularPlaces properties={properties} />
       <FeaturedPlaces spaces={spaces} />
-      <WhyChooseUs /> 
-      <PopularSpaces /> 
+      <WhyChooseUs />
+      <PopularSpaces />
       <OurAgents />
       <OurPartners />
     </div>
