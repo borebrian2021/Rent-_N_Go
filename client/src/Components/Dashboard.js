@@ -31,15 +31,8 @@ const Dashboard = ({ user }) => {
   const [profileData, setProfileData] = useState([]);
 
   //HIDA & SHOW STATES
-  const [profile, setProfile] = useState(true);
-  const [uploadForm, setUploadForm] = useState(true);
-  const [dashboardCards, setDashboardCards] = useState(true);
-  const [properUpload, setPropertyUpload] = useState(true);
-  const [reviews, setReviews] = useState(false);
-  const [invoice, setInvoice] = useState(false);
-  const [reservations, setUserdetails] = useState(false);
-
-  const [amenities, setAmenities] = useState(true);
+ 
+ 
   const [submitBtn, setSubmitBtn] = useState(true);
   const [submitBtnSpace, setSubmitSpaceBtn] = useState(true);
 
@@ -82,19 +75,7 @@ const Dashboard = ({ user }) => {
 
   // btn and header changes
 
-  //HIDE AND DISPLAY COMPONENT DYNAMICALLY
-  const hideShowProfiles = () => {
-    setUploadForm(false);
-    setDashboardCards(false);
-    setPropertyUpload(false);
-    setReviews(false);
-    setInvoice(false);
-    setUserdetails(false);
-    setMessages(false);
-    setMySpaces(false);
-    setProfile(true);
-    setAmenities(false);
-  };
+
 
   let id = 1;
 
@@ -122,9 +103,10 @@ const Dashboard = ({ user }) => {
           <Toaster />
           <SideBar
             sideBarData={sideBarData}
-            hideShowProfiles={hideShowProfiles}
+           
           />
           <div class="col-lg-9 col-md-12 col-xs-12 pl-0 user-dash2">
+           <Reviews />
             <DashboardCards
               propertyData={propertyData.length}
               messages={messages.length}
