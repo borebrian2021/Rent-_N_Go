@@ -34,10 +34,10 @@ function App() {
     <Routes>
       {/* <Route path="/" element={ <Home/> } /> */}
       <Route path="/" element={<LandingPage />} />
-      <Route path="login" element={<Login />} />
-      <Route path="signup" element={<SignUp />} />
-      <Route path="dashboard" element={<Dashboard user={user} />} />
-      <Route path="/space-page" element={<PropertyDetails />} />
+      <Route  path="login" element={<Login />} />
+      <Route  path="signup" element={<SignUp />} />
+      <Route  path="dashboard/*" element={<Dashboard user={user} />} />
+      <Route  path="/space-page" element={<PropertyDetails />} />
       {/* <PropertyUploadForm/> */}
       {/* <SpaceUploadForm/> */}
       {/* <Test/> */}

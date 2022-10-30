@@ -15,7 +15,8 @@ import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import PropertyListing from "./DashboardComponents/PropertyListing";
 import AmenitiesForm from "./DashboardComponents/AmenitiesForm";
-
+import PaymentModule from "./PaymentModule";
+import { Routes, Route } from "react-router-dom";
 const Dashboard = ({ user }) => {
   //NAVIGATE
   const navigate = useNavigate();
@@ -124,62 +125,80 @@ const Dashboard = ({ user }) => {
             hideShowProfiles={hideShowProfiles}
           />
           <div class="col-lg-9 col-md-12 col-xs-12 pl-0 user-dash2">
-            {dashboardCards && (
-              <DashboardCards
-                propertyData={propertyData.length}
-                messages={messages.length}
-                mySpaces={mySpaces.length}
-                spaceReservations={spaceReservations.length}
-              />
-            )}
-            {profile && <Profile profileData={profileData} />}
-
-            <PropertyUploadForm
-              setPropertyData={setPropertyData}
-              propertyData={propertyData}
-              id={id}
-              userProperty={userProperty}
-              setProperty={setProperty}
-              submitBtn={submitBtn}
-              propertyId={propertyId}
-              setSubmitBtn={setSubmitBtn}
+            <DashboardCards
+              propertyData={propertyData.length}
+              messages={messages.length}
+              mySpaces={mySpaces.length}
+              spaceReservations={spaceReservations.length}
             />
-            <PropertyListing
-              propertyData={propertyData}
-              setPropertyData={setPropertyData}
-              setSubmitBtn={setSubmitBtn}
-              setProperty={setProperty}
-              setPropertyId={setPropertyId}
-            />
-
-            {uploadForm && (
-              <SpaceUploadForm
-                propertyData={propertyData}
-                setClientSpaces={setClientSpaces}
-                clientSpaces={clientSpaces}
-                id={id}
-                useSpace={useSpace}
-                setSpace={setSpace}
-                submitBtnSpace={submitBtnSpace}
-                spaceID={spaceID}
-                setSubmitSpaceBtn={setSubmitSpaceBtn}
-              />
-            )}
-            {dashboardCards && (
-              <MySpaces
-                clientSpaces={clientSpaces}
-                setClientSpaces={setClientSpaces}
-                setSubmitSpaceBtn={setSubmitSpaceBtn}
-                setSpace={setSpace}
-                setSpaceID={setSpaceID}
-              />
-            )}
-            {amenities && <AmenitiesForm clientSpaces={clientSpaces} />}
-            {dashboardCards && <Reservations />}
-
-            {dashboardCards && <PropertyDetails />}
+            <Routes>
+              <Route
+                path="*"
+                element={<Profile profileData={profileData} />}
+              ></Route>
+              <Route
+                path="dashboard/addproperty"
+                element={
+                  <PropertyUploadForm
+                    setPropertyData={setPropertyData}
+                    propertyData={propertyData}
+                    id={id}
+                    userProperty={userProperty}
+                    setProperty={setProperty}
+                    submitBtn={submitBtn}
+                    propertyId={propertyId}
+                    setSubmitBtn={setSubmitBtn}
+                  />
+                }
+              ></Route>
+              <Route
+                path="dashboard/myproperties"
+                element={
+                  <PropertyListing
+                    propertyData={propertyData}
+                    setPropertyData={setPropertyData}
+                    setSubmitBtn={setSubmitBtn}
+                    setProperty={setProperty}
+                    setPropertyId={setPropertyId}
+                  />
+                }
+              ></Route>
+              <Route
+                path="dashboard/addspace"
+                element={
+                  <SpaceUploadForm
+                    propertyData={propertyData}
+                    setClientSpaces={setClientSpaces}
+                    clientSpaces={clientSpaces}
+                    id={id}
+                    useSpace={useSpace}
+                    setSpace={setSpace}
+                    submitBtnSpace={submitBtnSpace}
+                    spaceID={spaceID}
+                    setSubmitSpaceBtn={setSubmitSpaceBtn}
+                  />
+                }
+              ></Route>
+              <Route
+                path="dashboard/Myspaces"
+                element={
+                  <MySpaces
+                    clientSpaces={clientSpaces}
+                    setClientSpaces={setClientSpaces}
+                    setSubmitSpaceBtn={setSubmitSpaceBtn}
+                    setSpace={setSpace}
+                    setSpaceID={setSpaceID}
+                  />
+                }
+              ></Route>
+               <Route path="dashboard/addamenities" element={<AmenitiesForm clientSpaces={clientSpaces} />}></Route>
+              <Route path="dashboard/Myreservation" element={<Reservations />}></Route>
+              <Route path="dashboard/Mypayments" element={<PaymentModule />}></Route>
+              <Route exact path="dashboard/invoices" element={<Invoice />}></Route>
+            </Routes>
 
             <DashboardFooter />
+            
           </div>
         </div>
       </div>
