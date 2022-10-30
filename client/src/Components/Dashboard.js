@@ -17,7 +17,7 @@ import PropertyListing from "./DashboardComponents/PropertyListing";
 import AmenitiesForm from "./DashboardComponents/AmenitiesForm";
 import PaymentModule from "./PaymentModule";
 import { Routes, Route } from "react-router-dom";
-const Dashboard = ({ user }) => {
+const Dashboard = ({ user, setUser }) => {
   //NAVIGATE
   const navigate = useNavigate();
 
@@ -123,6 +123,7 @@ const Dashboard = ({ user }) => {
           <SideBar
             sideBarData={sideBarData}
             hideShowProfiles={hideShowProfiles}
+            setUser={setUser}
           />
           <div class="col-lg-9 col-md-12 col-xs-12 pl-0 user-dash2">
             <DashboardCards
