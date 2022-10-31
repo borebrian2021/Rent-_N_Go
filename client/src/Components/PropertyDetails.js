@@ -91,7 +91,8 @@ const MySpaces = ({ user }) => {
     // const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); DAYS
     const diffHrs = Math.ceil(diffTime / (1000 * 60 * 60)) + 24;
 
-    setTimeDiff((timeDiff) => diffHrs);
+    // setTimeDiff((timeDiff) => diffHrs);
+    setTimeDiff(diffHrs);
 
     setTtlAmount((ttlAmount) => diffHrs * spaceData.price_per_hour);
   }
@@ -101,10 +102,15 @@ const MySpaces = ({ user }) => {
     user ? (id = user.id) : (id = 1);
   }
   async function postReservations() {
+
+    if(startDate>endDate){
+      alert("End date should be greater than start date")
+    }else{
+
     const formData = {
       space_id: idd,
       kickoff_date: startDate,
-      end_date: new Date(endDate),
+      end_date: endDate,
       client_id: id,
       total_cash: ttlAmount,
       no_of_hours: timeDiff,
@@ -125,6 +131,7 @@ const MySpaces = ({ user }) => {
       // setErrors(data.errors);
       console.log("err");
     }
+  }
   }
 
   async function postReview(e) {
@@ -468,6 +475,7 @@ const MySpaces = ({ user }) => {
                               data-lang="en"
                               data-large-mode="true"
                               data-min-year="2017"
+                              minDate={new Date()}
                               data-max-year="2020"
                               data-disabled-days="08/17/2017,08/18/2017"
                               data-id="datedropper-0"
@@ -491,6 +499,7 @@ const MySpaces = ({ user }) => {
                               id="reservation-time"
                               class="form-control"
                               readonly=""
+                              minDate={new Date(startDate)}
                               onChange={(e) => {
                                 setEndDate(e);
                                 updateDateDiff();
