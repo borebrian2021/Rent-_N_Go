@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_25_130046) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_30_234051) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -73,7 +73,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_130046) do
   end
 
   create_table "properties", force: :cascade do |t|
-    t.integer "client_id"
+    t.integer "client_id", null: false
     t.string "property_name"
     t.string "location"
     t.string "image_url"
@@ -82,17 +82,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_130046) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.integer "space_id"
+    t.integer "space_id", null: false
     t.datetime "kickoff_date"
     t.datetime "end_date"
     t.integer "client_id"
     t.string "total_cash"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "no_of_hours"
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "space_id"
+    t.integer "space_id", null: false
     t.float "ratings"
     t.string "review_by"
     t.text "review"

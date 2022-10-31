@@ -17,7 +17,7 @@ import PropertyListing from "./DashboardComponents/PropertyListing";
 import AmenitiesForm from "./DashboardComponents/AmenitiesForm";
 import PaymentModule from "./PaymentModule";
 import { Routes, Route } from "react-router-dom";
-const Dashboard = ({ user }) => {
+const Dashboard = ({ user, setUser }) => {
   //NAVIGATE
   const navigate = useNavigate();
 

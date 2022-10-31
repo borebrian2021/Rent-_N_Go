@@ -2,7 +2,7 @@ import React from "react";
 import toast from "react-hot-toast";
 import { useNavigate, NavLink } from "react-router-dom";
 import logo from "../../Image/logo1.png";
-const SideBar = ({ sideBarData, hideShowProfiles }) => {
+const SideBar = ({ sideBarData, hideShowProfiles, setUser }) => {
   //INSTANCE
   const navigate = useNavigate();
 
@@ -11,22 +11,17 @@ const SideBar = ({ sideBarData, hideShowProfiles }) => {
       method: "DELETE",
     }).then((rawData) => {
       if (rawData.ok) {
-        // console.log(data)
-        // setSideBarData(data)
         toast.success("Logged out successfully");
-        // setTimeout(function () {
         alert("Working out");
         navigate("/login");
-        // }, 2000);
+        setUser(null);
       } else {
-        alert("No head");
-
         toast.error("Something went wrong");
       }
     });
   };
 
-  console.log(sideBarData.profile_url);
+  // console.log(sideBarData.profile_url);
   return (
     <div class="col-lg-3 col-md-12 col-xs-12 pl-0 pr-0 user-dash">
       <div class="user-profile-box mb-0">
@@ -46,46 +41,81 @@ const SideBar = ({ sideBarData, hideShowProfiles }) => {
           </h4>
         </div>
         <div class="detail clearfix">
-          
           <ul class="mb-0">
             <li class="active">
-            <i class="fa fa-map-marker"></i> Dashboard
-          </li>
-            <li>
-              <NavLink to="*" class='active'> <i class="fa fa-user">Profile</i></NavLink>
-          </li>
-            <li>
-              <NavLink to="dashboard/addproperty"><i class="fa-solid fa-plus" aria-hidden="true">Add Property</i></NavLink>
-            </li>
-            
-            <li>
-             <NavLink to="dashboard/myproperties"> <i class="fa fa-list" aria-hidden="true">My Properties</i></NavLink>
-            </li> 
-            <li>
-              <NavLink to="dashboard/addspace"><i class="fa fa-list" aria-hidden="true">AddSpace</i></NavLink>
-           </li>
-            <li>
-               <NavLink to="dashboard/Myspaces"><i class="fa fa-list" aria-hidden="true">MySpaces</i></NavLink>
+              <i class="fa fa-map-marker"></i> Dashboard
             </li>
             <li>
-               <NavLink to="dashboard/addamenities"><i class="fa fa-list" aria-hidden="true">Add Amenities</i></NavLink>
+              <NavLink to="*" class="active">
+                {" "}
+                <i class="fa fa-user">Profile</i>
+              </NavLink>
             </li>
             <li>
-               <NavLink to="dashboard/Myreservation"><i class="fa fa-list" aria-hidden="true">MyReservations</i></NavLink>
-         </li>
+              <NavLink to="dashboard/addproperty">
+                <i class="fa-solid fa-plus" aria-hidden="true">
+                  Add Property
+                </i>
+              </NavLink>
+            </li>
+
             <li>
-               <NavLink to="dashboard/Mypayments"><i class="fas fa-credit-card" aria-hidden="true">Mypayments</i></NavLink>
+              <NavLink to="dashboard/myproperties">
+                {" "}
+                <i class="fa fa-list" aria-hidden="true">
+                  My Properties
+                </i>
+              </NavLink>
             </li>
             <li>
-               <NavLink to="dashboard/invoices"><i class="fa fa-list" aria-hidden="true">MyInvoice</i></NavLink>
+              <NavLink to="dashboard/addspace">
+                <i class="fa fa-list" aria-hidden="true">
+                  AddSpace
+                </i>
+              </NavLink>
             </li>
-         <li>
-            <a onClick={logout}>
-              <i class="fas fa-sign-out-alt"></i>Log Out
-            </a>
-          </li>
+            <li>
+              <NavLink to="dashboard/Myspaces">
+                <i class="fa fa-list" aria-hidden="true">
+                  MySpaces
+                </i>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="dashboard/addamenities">
+                <i class="fa fa-list" aria-hidden="true">
+                  Add Amenities
+                </i>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="dashboard/Myreservation">
+                <i class="fa fa-list" aria-hidden="true">
+                  MyReservations
+                </i>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="dashboard/Mypayments">
+                <i class="fas fa-credit-card" aria-hidden="true">
+                  Mypayments
+                </i>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="dashboard/invoices">
+                <i class="fa fa-list" aria-hidden="true">
+                  MyInvoice
+                </i>
+              </NavLink>
+            </li>
+            <li>
+              <a onClick={logout}>
+                <i class="fas fa-sign-out-alt"></i>Log Out
+              </a>
+            </li>
           </ul>
-            {/* <ul class="mb-0"> */}
+          {/* <ul class="mb-0"> */}
           {/* <li>
               <a class="active" href="dashboard.html">
                 <i class="fa fa-map-marker"></i> Dashboard
@@ -127,7 +157,7 @@ const SideBar = ({ sideBarData, hideShowProfiles }) => {
                             <i class="fa fa-lock"></i>Change Password
                         </a>
                     </li> */}
-          
+
           {/* </ul> */}
         </div>
       </div>
