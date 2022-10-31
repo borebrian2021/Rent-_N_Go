@@ -7,7 +7,7 @@ import WhyChooseUs from "./LandingPagComponents/WhyChooseUs";
 import PopularSpaces from "./LandingPagComponents/PopularSpaces";
 import OurAgents from "./LandingPagComponents/OurAgents";
 import OurPartners from "./LandingPagComponents/OurPartners";
-const LandingPage = () => {
+const LandingPage = ({user,setUser}) => {
   const [properties, setProperties] = useState([]);
   const [spaces, setSpaces] = useState([]);
 
@@ -32,6 +32,8 @@ const LandingPage = () => {
   return (
     <div>
       {/* <TopBar /> */}
+      <TopBar user={user} setUser={setUser}/>
+
       <AfterHeader />
       <PopularPlaces properties={properties} />
       <FeaturedPlaces spaces={spaces} />
