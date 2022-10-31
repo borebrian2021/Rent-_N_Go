@@ -34,7 +34,7 @@ class ReservationsController < ApplicationController
     end
 
     def reservation_params
-        params.permit(:space_id, :kickoff_date, :end_date, :total_cash, :client_id)
+        params.permit(:space_id, :kickoff_date, :end_date, :total_cash, :client_id, :no_of_hours)
     end
 
     def render_unprocessable_entity_response(invalid)

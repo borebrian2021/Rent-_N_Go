@@ -33,7 +33,8 @@ const SpaceUploadForm = ({
         image_3: useSpace.image_3,
         description: useSpace.description,
         price_per_hour: useSpace.price_per_hour,
-        status: useSpace.status_,
+        // status: useSpace.status_,
+        status: "Vacant",
         space_category: useSpace.space_category,
         property_id: useSpace.property_id,
         // ????

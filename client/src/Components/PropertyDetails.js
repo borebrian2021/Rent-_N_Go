@@ -30,6 +30,7 @@ const MySpaces = ({ user }) => {
   const [reviews, setReviews] = useState([]);
   const [property, setProperty] = useState([]);
   const [clientData, setClientData] = useState([]);
+  const [reviewByUser, setReviewByUser] = useState("");
 
   // date
   const [startDate, setStartDate] = useState(new Date());
@@ -119,13 +120,43 @@ const MySpaces = ({ user }) => {
     const data = await response.json();
     if (response.ok) {
       // console.log(data);
-      console.log("no err")
+      console.log("no err");
     } else {
       // setErrors(data.errors);
-      console.log("err")
+      console.log("err");
     }
+  }
 
-    console.log(formData);
+  async function postReview(e) {
+    // random generate a rate
+    e.preventDefault();
+    const rate = Math.floor(Math.random() * 4.5) + 1;
+
+    const formData = {
+      space_id: idd,
+      ratings: rate,
+      review: reviewByUser,
+      review_by: id,
+      property_id: property.id,
+      client_id: id,
+    };
+
+    const response = await fetch("/reviews", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+    const data = await response.json();
+    if (response.ok) {
+      // console.log(data);
+      console.log("no err");
+      setReviewByUser("");
+    } else {
+      // setErrors(data.errors);
+      console.log("err");
+    }
   }
 
   return (
@@ -280,7 +311,7 @@ const MySpaces = ({ user }) => {
                               laoreet ipsum vestibulum sed.
                             </p>
                             <div class="rest">
-                              <img src={image11} class="img-fluid" alt="" />
+                              {/* <img src={image11} class="img-fluid" alt="" /> */}
                             </div>
                           </div>
                         </li>
@@ -353,8 +384,14 @@ const MySpaces = ({ user }) => {
                       </div>
                       <div class="row">
                         <div class="col-md-12 data">
-                          <form action="#">
-                            <div class="col-md-12">
+                          <form
+                            onClick={(e) => {
+                              user
+                                ? postReview(e)
+                                : alert("Bro mbona huja login ?!");
+                            }}
+                          >
+                            {/* <div class="col-md-12">
                               <div class="form-group">
                                 <input
                                   type="text"
@@ -386,13 +423,17 @@ const MySpaces = ({ user }) => {
                                   required
                                 />
                               </div>
-                            </div>
+                            </div> */}
                             <div class="col-md-12 form-group">
                               <textarea
                                 class="form-control"
                                 id="exampleTextarea"
                                 rows="8"
                                 placeholder="Review"
+                                value={reviewByUser}
+                                onChange={(e) =>
+                                  setReviewByUser(e.target.value)
+                                }
                                 required
                               ></textarea>
                             </div>
