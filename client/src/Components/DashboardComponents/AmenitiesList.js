@@ -7,9 +7,8 @@ const AmenitiesList = ({ propertyData }) => {
     const [spaceList, setSpaceList] = useState([]);
     const [propertyId, setPropertyId] = useState([])
     const [spaceId, setSpaceId] = useState([])
-    const [propertyData,setPropertyData]=useState([])
+    // const [propertyData,setPropertyData]=useState([])
     setPropertyData(propertyData)
-
     //controlled forms
 
     //HANDLE CHANGE
