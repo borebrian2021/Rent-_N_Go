@@ -90,9 +90,7 @@ const MySpaces = ({ user }) => {
     const diffTime = Math.abs(new Date(endDate) - new Date(startDate));
     // const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); DAYS
     const diffHrs = Math.ceil(diffTime / (1000 * 60 * 60)) + 24;
-
     setTimeDiff((timeDiff) => diffHrs);
-
     setTtlAmount((ttlAmount) => diffHrs * spaceData.price_per_hour);
   }
 
@@ -454,12 +452,11 @@ const MySpaces = ({ user }) => {
                     <div class="schedule widget-boxed mt-0">
                       <div class="widget-boxed-header">
                         <h4>
-                          <i class="fa fa-calendar pr-3 padd-r-10"></i>Schedule
-                          a Tour
+                          <i class="fa fa-calendar pr-3 padd-r-10"></i>Reserve space
                         </h4>
                       </div>
                       <div class="widget-boxed-body">
-                        <div class="row">
+                        <div class="row"S>
                           <div class="col-lg-12 col-md-12 book">
                             <h5>Reservation Date</h5>
                             <DateTimePicker

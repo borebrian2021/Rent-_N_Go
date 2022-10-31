@@ -46,7 +46,13 @@ const SideBar = ({ sideBarData, hideShowProfiles, setUser }) => {
               <i class="fa fa-map-marker"></i> Dashboard
             </li>
             <li>
-              <NavLink to="*" class="active">
+              <NavLink to="/" class="active">
+                {" "}
+                <i class="fa fa-user">  Home</i>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="dashboard/profile" class="active">
                 {" "}
                 <i class="fa fa-user">Profile</i>
               </NavLink>
