@@ -21,7 +21,7 @@ const SideBar = ({ sideBarData, hideShowProfiles, setUser }) => {
     });
   };
 
-  console.log(sideBarData.profile_url);
+  // console.log(sideBarData.profile_url);
   return (
     <div class="col-lg-3 col-md-12 col-xs-12 pl-0 pr-0 user-dash">
       <div class="user-profile-box mb-0">
