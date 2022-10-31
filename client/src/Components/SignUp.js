@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import TopBar from './TopBar';
 import { useNavigate } from 'react-router-dom'
+import LoginGoogle from './GoogleLogin';
 //SETTING THE CONSTANTS
 const SignUp = () => {
 
@@ -129,7 +130,7 @@ const SignUp = () => {
 
                         <div class="access_social m-3">
                             {/* <a href="#0" class="social_bt facebook">Login with Facebook</a> */}
-                            <a href="#0" class="social_bt google">Login with Google</a>
+                            <a href="#0" class="social_bt google"> <LoginGoogle /> </a>
                             {/* <a href="#0" class="social_bt linkedin">Login with Linkedin</a> */}
                         </div>
                     </form>
