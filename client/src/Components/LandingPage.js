@@ -11,7 +11,6 @@ const LandingPage = () => {
   const [properties, setProperties] = useState([]);
   const [spaces, setSpaces] = useState([]);
 
-
   // properties
   useEffect(() => {
     fetch("/properties")
@@ -32,17 +31,16 @@ const LandingPage = () => {
 
   return (
     <div>
-      <TopBar />
+      {/* <TopBar /> */}
       <AfterHeader />
       <PopularPlaces properties={properties} />
       <FeaturedPlaces spaces={spaces} />
-      <WhyChooseUs /> 
-      <PopularSpaces /> 
+      <WhyChooseUs />
+      <PopularSpaces />
       <OurAgents />
       <OurPartners />
     </div>
   );
 };
-
 
 export default LandingPage;

@@ -15,8 +15,9 @@ import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import PropertyListing from "./DashboardComponents/PropertyListing";
 import AmenitiesForm from "./DashboardComponents/AmenitiesForm";
-import AmenitiesList from "./DashboardComponents/AmenitiesList";
-const Dashboard = ({ user }) => {
+import PaymentModule from "./PaymentModule";
+import { Routes, Route } from "react-router-dom";
+const Dashboard = ({ user, setUser }) => {
   //NAVIGATE
   const navigate = useNavigate();
 
@@ -28,7 +29,6 @@ const Dashboard = ({ user }) => {
   const [propertyData, setPropertyData] = useState([]);
   const [clientSpaces, setClientSpaces] = useState([]);
   const [profileData, setProfileData] = useState([]);
-  const [amenities, setAmenities] = useState(true);
 
 
   //HIDA & SHOW STATES
@@ -39,10 +39,49 @@ const Dashboard = ({ user }) => {
   const [reviews, setReviews] = useState(false);
   const [invoice, setInvoice] = useState(false);
   const [reservations, setUserdetails] = useState(false);
-  const [messages, setMessages] = useState(false);
-  const [mySpaces, setMySpaces] = useState(false);
-  const [amenitiesDisplay, setAmenitiesDisplay] = useState(true);
 
+  const [amenities, setAmenities] = useState(true);
+  const [submitBtn, setSubmitBtn] = useState(true);
+  const [submitBtnSpace, setSubmitSpaceBtn] = useState(true);
+
+  // for dashboard card
+  const [spaceReservations, setSpaceReservations] = useState([]);
+  const [messages, setMessages] = useState([]);
+  const [mySpaces, setMySpaces] = useState([]);
+
+  // data received from property listing to edit form
+
+  // edit of property
+  const [userProperty, setProperty] = useState({
+    propertyName: "",
+    location: "",
+    imageUrl:
+      "https://images.unsplash.com/photo-1515263487990-61b07816b324?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YXBhcnRtZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+  });
+
+  const [propertyId, setPropertyId] = useState("");
+
+  // edit spaces
+  const [useSpace, setSpace] = useState({
+    room_size: "",
+    image_1:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3BhY2UlMjByb29tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    image_2:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3BhY2UlMjByb29tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    image_3:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3BhY2UlMjByb29tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    description: "",
+    price_per_hour: "",
+    status_: "",
+    space_category: "",
+    property_id: "",
+  });
+
+  // space_id
+
+  const [spaceID, setSpaceID] = useState("");
+
+  // btn and header changes
 
   //HIDE AND DISPLAY COMPONENT DYNAMICALLY
   const hideShowProfiles = () => {
@@ -55,12 +94,8 @@ const Dashboard = ({ user }) => {
     setMessages(false);
     setMySpaces(false);
     setProfile(true);
-    setAmenities(false)
+    setAmenities(false);
   };
-
-  //GET USER ID
-  //   let newObject = window.localStorage.getItem("user_data");
-  // //   console.log(JSON.parse(newObject));
 
   let id = 1;
 
@@ -74,7 +109,10 @@ const Dashboard = ({ user }) => {
         setSideBarData(data);
         setPropertyData(data.properties);
         setClientSpaces(data.spaces);
-        setProfileData(data)
+        setProfileData(data);
+        setMessages(data.messages);
+        setMySpaces(data.spaces);
+        setSpaceReservations(data.reservations);
       });
   }, [id]);
 
@@ -86,34 +124,83 @@ const Dashboard = ({ user }) => {
           <SideBar
             sideBarData={sideBarData}
             hideShowProfiles={hideShowProfiles}
+            setUser={setUser}
           />
           <div class="col-lg-9 col-md-12 col-xs-12 pl-0 user-dash2">
-            {/* {profile && <Profile profileData={profileData} />}
-            {dashboardCards && <DashboardCards />}
-            <PropertyUploadForm
-              setPropertyData={setPropertyData}
-              propertyData={propertyData}
-              id={id}
-            /> */}
-            {/* <PropertyListing propertyData={propertyData} />
+            <DashboardCards
+              propertyData={propertyData.length}
+              messages={messages.length}
+              mySpaces={mySpaces.length}
+              spaceReservations={spaceReservations.length}
+            />
+            <Routes>
+              <Route
+                path="*"
+                element={<Profile profileData={profileData} />}
+              ></Route>
+              <Route
+                path="dashboard/addproperty"
+                element={
+                  <PropertyUploadForm
+                    setPropertyData={setPropertyData}
+                    propertyData={propertyData}
+                    id={id}
+                    userProperty={userProperty}
+                    setProperty={setProperty}
+                    submitBtn={submitBtn}
+                    propertyId={propertyId}
+                    setSubmitBtn={setSubmitBtn}
+                  />
+                }
+              ></Route>
+              <Route
+                path="dashboard/myproperties"
+                element={
+                  <PropertyListing
+                    propertyData={propertyData}
+                    setPropertyData={setPropertyData}
+                    setSubmitBtn={setSubmitBtn}
+                    setProperty={setProperty}
+                    setPropertyId={setPropertyId}
+                  />
+                }
+              ></Route>
+              <Route
+                path="dashboard/addspace"
+                element={
+                  <SpaceUploadForm
+                    propertyData={propertyData}
+                    setClientSpaces={setClientSpaces}
+                    clientSpaces={clientSpaces}
+                    id={id}
+                    useSpace={useSpace}
+                    setSpace={setSpace}
+                    submitBtnSpace={submitBtnSpace}
+                    spaceID={spaceID}
+                    setSubmitSpaceBtn={setSubmitSpaceBtn}
+                  />
+                }
+              ></Route>
+              <Route
+                path="dashboard/Myspaces"
+                element={
+                  <MySpaces
+                    clientSpaces={clientSpaces}
+                    setClientSpaces={setClientSpaces}
+                    setSubmitSpaceBtn={setSubmitSpaceBtn}
+                    setSpace={setSpace}
+                    setSpaceID={setSpaceID}
+                  />
+                }
+              ></Route>
+               <Route path="dashboard/addamenities" element={<AmenitiesForm clientSpaces={clientSpaces} />}></Route>
+              <Route path="dashboard/Myreservation" element={<Reservations />}></Route>
+              <Route path="dashboard/Mypayments" element={<PaymentModule />}></Route>
+              <Route exact path="dashboard/invoices" element={<Invoice />}></Route>
+            </Routes>
 
-             setClientSpaces={setClientSpaces} 
-             clientSpaces={clientSpaces} 
-             id={id}/>}
-            {dashboardCards && <MySpaces clientSpaces={clientSpaces} />}
-            {amenities && <AmenitiesForm clientSpaces={clientSpaces} />}            
-            {/* {dashboardCards && <Messages />} */}
-            {/* {dashboardCards && <Reservations />}  */}
-
-            {amenitiesDisplay && <AmenitiesList spaceData={clientSpaces} propertyData={propertyData}/>}
-            {/* <DashboardFooter /> */}
-           { <PropertyUploadForm
-              setPropertyData={setPropertyData}
-              propertyData={propertyData}
-              id={id}
-            /> }
-            {uploadForm && <SpaceUploadForm propertyData={propertyData}/>}
-
+            <DashboardFooter />
+            
           </div>
         </div>
       </div>

@@ -20,40 +20,54 @@ import image53 from "../Image/single-property/s-4.jpg";
 import image54 from "../Image/single-property/s-5.jpg";
 import TopBar from "./TopBar";
 
-const MySpaces = () => {
+// date time
+import DateTimePicker from "react-datetime-picker";
+
+const MySpaces = ({ user }) => {
   //RETRIEVE SPACE ID
-  const [message, setMessage] = useState("")
-  const [spaceData, setSpaceData] = useState([])
-  const [amenities, setAmenities] = useState([])
-  const [reviews, setReviews] = useState([])
-  const [property, setProperty] = useState([])
-  const [clientData, setClientData] = useState([])
+  const [message, setMessage] = useState("");
+  const [spaceData, setSpaceData] = useState([]);
+  const [amenities, setAmenities] = useState([]);
+  const [reviews, setReviews] = useState([]);
+  const [property, setProperty] = useState([]);
+  const [clientData, setClientData] = useState([]);
+  const [reviewByUser, setReviewByUser] = useState("");
+
+  // date
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+
+  const [timeDiff, setTimeDiff] = useState(0);
+  const [ttlAmount, setTtlAmount] = useState(0);
+
+  // var diffDays = date2.getDate() - date1.getDate();
 
   //FETCH SPACE DETAILS
-  const space_id = localStorage.getItem("space_id")
-  console.log(space_id)
+  const space_id = localStorage.getItem("space_id");
+  console.log(space_id);
+
+  let idd = 1;
+  space_id ? (idd = space_id) : (idd = 1);
 
   //FETCH SPACE DETAILS
   useEffect(() => {
-    fetch("/spaces/" + space_id)
+    fetch("/spaces/" + idd)
       .then((r) => r.json())
       .then((data) => {
-        setSpaceData(data)
-        setAmenities(data.amenities)
-        setReviews(data.reviews)
-        setProperty(data.property)
-        setClientData(data.client)
-        console.log(data)
-
+        setSpaceData(data);
+        setAmenities(data.amenities);
+        setReviews(data.reviews);
+        setProperty(data.property);
+        setClientData(data.client);
       });
-  }, [space_id]);
+  }, [idd]);
 
   async function handleMessage(e) {
     e.preventDefault();
 
     const formData = {
       message,
-      client_id: 1
+      client_id: user.id,
     };
 
     const response = await fetch("/messages", {
@@ -70,6 +84,86 @@ const MySpaces = () => {
       //   window.location = '/log-in';
     } else {
       //   setErrors(data.errors);
+    }
+  }
+
+  function updateDateDiff() {
+    const diffTime = Math.abs(new Date(endDate) - new Date(startDate));
+    // const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); DAYS
+    const diffHrs = Math.ceil(diffTime / (1000 * 60 * 60)) + 24;
+
+    // setTimeDiff((timeDiff) => diffHrs);
+    setTimeDiff(diffHrs);
+
+    setTtlAmount((ttlAmount) => diffHrs * spaceData.price_per_hour);
+  }
+
+  let id = 1;
+  {
+    user ? (id = user.id) : (id = 1);
+  }
+  async function postReservations() {
+
+    if(startDate>endDate){
+      alert("End date should be greater than start date")
+    }else{
+
+    const formData = {
+      space_id: idd,
+      kickoff_date: startDate,
+      end_date: endDate,
+      client_id: id,
+      total_cash: ttlAmount,
+      no_of_hours: timeDiff,
+    };
+
+    const response = await fetch("/reservations", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+    const data = await response.json();
+    if (response.ok) {
+      // console.log(data);
+      console.log("no err");
+    } else {
+      // setErrors(data.errors);
+      console.log("err");
+    }
+  }
+  }
+
+  async function postReview(e) {
+    // random generate a rate
+    e.preventDefault();
+    const rate = Math.floor(Math.random() * 4.5) + 1;
+
+    const formData = {
+      space_id: idd,
+      ratings: rate,
+      review: reviewByUser,
+      review_by: id,
+      property_id: property.id,
+      client_id: id,
+    };
+
+    const response = await fetch("/reviews", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+    const data = await response.json();
+    if (response.ok) {
+      // console.log(data);
+      console.log("no err");
+      setReviewByUser("");
+    } else {
+      // setErrors(data.errors);
+      console.log("err");
     }
   }
 
@@ -154,7 +248,6 @@ const MySpaces = () => {
                             />
                           </div>
 
-
                           <a
                             class="carousel-control left"
                             href="#listingDetailsSlider"
@@ -173,33 +266,26 @@ const MySpaces = () => {
                       </div>
                       <div class="blog-info details mb-30">
                         <h5 class="mb-4">Description</h5>
-                        <p class="mb-3">
-                          {spaceData.description}
-                        </p>
+                        <p class="mb-3">{spaceData.description}</p>
                       </div>
                     </div>
                   </div>
 
                   <div class="single homes-content details mb-30">
-
-
                     <h5 class="mt-5">Amenities</h5>
 
                     <ul class="homes-list clearfix">
-
-                      {
-                        amenities.map((amenity) => {
-                          return (
-                            <li>
-                              <i class="fa fa-check-square" aria-hidden="true"></i>
-                              <span key={amenity.id}>{amenity.item_name}</span>
-                            </li>
-                          )
-                        })
-
-
-                      }
-
+                      {amenities.map((amenity) => {
+                        return (
+                          <li>
+                            <i
+                              class="fa fa-check-square"
+                              aria-hidden="true"
+                            ></i>
+                            <span key={amenity.id}>{amenity.item_name}</span>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
 
@@ -233,14 +319,12 @@ const MySpaces = () => {
                               laoreet ipsum vestibulum sed.
                             </p>
                             <div class="rest">
-                              <img src={image11} class="img-fluid" alt="" />
+                              {/* <img src={image11} class="img-fluid" alt="" /> */}
                             </div>
                           </div>
                         </li>
                       </ul>
                     </div>
-
-
                   </section>
 
                   <section class="single reviews leve-comments details">
@@ -308,8 +392,14 @@ const MySpaces = () => {
                       </div>
                       <div class="row">
                         <div class="col-md-12 data">
-                          <form action="#">
-                            <div class="col-md-12">
+                          <form
+                            onClick={(e) => {
+                              user
+                                ? postReview(e)
+                                : alert("Bro mbona huja login ?!");
+                            }}
+                          >
+                            {/* <div class="col-md-12">
                               <div class="form-group">
                                 <input
                                   type="text"
@@ -341,13 +431,17 @@ const MySpaces = () => {
                                   required
                                 />
                               </div>
-                            </div>
+                            </div> */}
                             <div class="col-md-12 form-group">
                               <textarea
                                 class="form-control"
                                 id="exampleTextarea"
                                 rows="8"
                                 placeholder="Review"
+                                value={reviewByUser}
+                                onChange={(e) =>
+                                  setReviewByUser(e.target.value)
+                                }
                                 required
                               ></textarea>
                             </div>
@@ -374,34 +468,51 @@ const MySpaces = () => {
                       </div>
                       <div class="widget-boxed-body">
                         <div class="row">
-                          <div class="col-lg-6 col-md-12 book">
-                            <input
+                          <div class="col-lg-12 col-md-12 book">
+                            <h5>Reservation Date</h5>
+                            <DateTimePicker
                               type="text"
                               id="reservation-date"
                               data-lang="en"
                               data-large-mode="true"
                               data-min-year="2017"
+                              minDate={new Date()}
                               data-max-year="2020"
                               data-disabled-days="08/17/2017,08/18/2017"
                               data-id="datedropper-0"
                               data-theme="my-style"
                               class="form-control"
                               readonly=""
+                              onChange={(e) => {
+                                setStartDate(e);
+                                updateDateDiff();
+                              }}
+                              value={startDate}
                             />
+
+                            {/* <DateTimePicker onChange={onChange} value={value} /> */}
                           </div>
                           <div class="col-lg-6 col-md-12 book2">
-                            <input
+                            <br></br>
+                            <h5>Departure Date</h5>
+                            <DateTimePicker
                               type="text"
                               id="reservation-time"
                               class="form-control"
                               readonly=""
+                              minDate={new Date(startDate)}
+                              onChange={(e) => {
+                                setEndDate(e);
+                                updateDateDiff();
+                              }}
+                              value={endDate}
                             />
                           </div>
                         </div>
                         <div class="row mrg-top-15 mb-3">
                           <div class="col-lg-6 col-md-12 mt-4">
-                            <label class="mb-4">Adult</label>
-                            <div class="input-group">
+                            <label class="mb-4">{timeDiff} hrs</label>
+                            {/* <div class="input-group">
                               <span class="input-group-btn">
                                 <button
                                   type="button"
@@ -431,11 +542,11 @@ const MySpaces = () => {
                                   <i class="fa fa-plus"></i>
                                 </button>
                               </span>
-                            </div>
+                            </div>*/}
                           </div>
                           <div class="col-lg-6 col-md-12 mt-4">
-                            <label class="mb-4">Children</label>
-                            <div class="input-group">
+                            <label class="mb-4">Total Ksh. {ttlAmount}</label>
+                            {/* <div class="input-group">
                               <span class="input-group-btn">
                                 <button
                                   type="button"
@@ -465,14 +576,18 @@ const MySpaces = () => {
                                   <i class="fa fa-plus"></i>
                                 </button>
                               </span>
-                            </div>
+                            </div>*/}
                           </div>
                         </div>
                         <a
-                          href="payment-method.html"
                           class="btn reservation btn-radius theme-btn full-width mrg-top-10"
+                          onClick={() => {
+                            user
+                              ? postReservations()
+                              : alert("Bro please Login ! ! !");
+                          }}
                         >
-                          Submit Request
+                          Submit Reservations
                         </a>
                       </div>
                     </div>
@@ -490,7 +605,10 @@ const MySpaces = () => {
                                 alt="author-image"
                                 class="author__img"
                               />
-                              <h4 class="author__title">{clientData.first_name}&nbsp;{clientData.last_name}</h4>
+                              <h4 class="author__title">
+                                {clientData.first_name}&nbsp;
+                                {clientData.last_name}
+                              </h4>
                               <p class="author__meta">Agent of Property</p>
                             </div>
                             <ul class="author__contact">
@@ -913,3 +1031,11 @@ const MySpaces = () => {
 };
 
 export default MySpaces;
+
+// import React from 'react'
+
+// export default function PropertyDetails() {
+//   return (
+//     <div>PropertyDetails</div>
+//   )
+// }

@@ -18,6 +18,7 @@ import PropertyListing from "./Components/DashboardComponents/PropertyListing";
 import SpaceUploadForm from "./Components/DashboardComponents/SpaceUploadForm";
 import PropertyUploadForm from "./Components/DashboardComponents/PropertyUploadForm";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Contact from "./Components/Contact";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -31,17 +32,18 @@ function App() {
   }, []);
 
   return (
-    <Routes>
-      {/* <Route path="/" element={ <Home/> } /> */}
-      <Route path="/" element={<LandingPage />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<SignUp />} />
-      <Route path="/dashboard" element={<Dashboard user={user} />} />
-      <Route path="/space-page" element={<PropertyDetails />} />
-    </Routes>
+    <>
+      <TopBar user={user} setUser={setUser}/>
+
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="login" element={<Login setUser={setUser}/>} />
+        <Route path="signup" element={<SignUp />} />
+        <Route path="dashboard/*" element={<Dashboard user={user} setUser={setUser} />} />
+        <Route path="/space-page" element={<PropertyDetails user={user} />} />
+      </Routes>
+    </>
   );
 }
 export default App;
-{
-  /* <Login/> */
-}

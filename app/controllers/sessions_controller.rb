@@ -14,5 +14,4 @@ def destroy
   session.delete :client_id
   head :no_content
 end
-
 end
