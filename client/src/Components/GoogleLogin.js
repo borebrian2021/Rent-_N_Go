@@ -23,14 +23,15 @@ function LoginGoogle() {
     // useNavigate("/dashboard");
 
   useEffect(() => {
-    function start() {
+    function start(e) {
+      e.preventDefault();
       gapi.client.init({
         clientId: clientId,
         scope: "email",
         plugin_name: "Rent&Go",
       });
     }
-gapi.auth2.getAuthInstance(); 
+    gapi.auth2.getAuthInstance(); 
     // gapi.load("client:auth2", start);
   }, []);
 
