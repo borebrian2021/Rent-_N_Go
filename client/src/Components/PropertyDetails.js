@@ -659,7 +659,7 @@ const MySpaces = ({ user }) => {
                           </div>
                         </div>
                       </div>
-                      <div class="main-search-field-2">
+                      {/* <div class="main-search-field-2">
                         <div class="widget-boxed popular mt-5">
                           <div class="widget-boxed-header">
                             <h4>Specials of the day</h4>
@@ -740,7 +740,7 @@ const MySpaces = ({ user }) => {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </aside>
