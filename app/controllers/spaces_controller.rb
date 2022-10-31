@@ -7,6 +7,7 @@ class SpacesController < ApplicationController
       res = Space.all
       render json: res;
   end
+  
 
   def create
       res = Space.create!(spaces_params)

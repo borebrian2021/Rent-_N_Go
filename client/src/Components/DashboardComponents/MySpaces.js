@@ -1,6 +1,25 @@
 import React from "react";
 
-const MySpaces = ({ clientSpaces }) => {
+const MySpaces = ({
+  clientSpaces,
+  setSubmitSpaceBtn,
+  setClientSpaces,
+  setSpace,
+  setSpaceID,
+}) => {
+  function handleDelete(id) {
+    fetch("/spaces/" + id, {
+      method: "DELETE",
+    })
+      .then((r) => r.json())
+      .then(() => updateAfterDelete(id));
+  }
+
+  function updateAfterDelete(id) {
+    const updated = clientSpaces.filter((space) => space.id !== id);
+    setClientSpaces(updated);
+  }
+
   return (
     <div class="my-properties">
       <table class="table-responsive">
@@ -26,18 +45,18 @@ const MySpaces = ({ clientSpaces }) => {
                     <img alt="image-1" src={item.image_1} class="img-fluid" />
                   </a>
 
-                  <a href="single-property-1.html">
+                  {/* <a href="single-property-1.html">
                     <img alt="image-2" src={item.image_2} class="img-fluid" />
                   </a>
 
                   <a href="single-property-1.html">
                     <img alt="image-3" src={item.image_3} class="img-fluid" />
-                  </a>
+                  </a> */}
                 </td>
                 <td>
                   <div class="inner">
                     <a href="single-property-1.html">
-                      <h2>baadaye</h2>
+                      <h2>{item.space_category}</h2>
                     </a>
                     <figure>
                       <i class="lni-map-marker"></i> {item.location}
@@ -71,11 +90,33 @@ const MySpaces = ({ clientSpaces }) => {
                   <strong>$ {item.price_per_hour}</strong>
                 </td>
                 <td class="actions">
-                  <a href="#" class="edit">
-                    <i class="lni-pencil"></i>Edit
+                  <a class="edit">
+                    <i
+                      class="lni-pencil"
+                      onClick={() => {
+                        setSubmitSpaceBtn(false);
+                        setSpace({
+                          room_size: item.room_size,
+                          image_1: item.image_1,
+                          image_2: item.image_2,
+                          image_3: item.image_3,
+                          description: item.description,
+                          price_per_hour: item.price_per_hour,
+                          status_: item.status,
+                          space_category: item.space_category,
+                          property_id: item.property_id,
+                        });
+                        setSpaceID(item.id);
+                      }}
+                    >
+                      Edit
+                    </i>
                   </a>
-                  <a href="#">
-                    <i class="far fa-trash-alt"></i>
+                  <a>
+                    <i
+                      class="far fa-trash-alt"
+                      onClick={() => handleDelete(item.id)}
+                    ></i>
                   </a>
                 </td>
               </tr>
