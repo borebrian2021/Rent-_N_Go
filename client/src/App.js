@@ -33,10 +33,10 @@ function App() {
 
   return (
     <>
-      <TopBar user={user} setUser={setUser}/>
+      {/* <TopBar user={user} setUser={setUser}/> */}
 
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage  setUser={setUser} user={user} />} />
         <Route path="contact" element={<Contact />} />
         <Route path="login" element={<Login setUser={setUser}/>} />
         <Route path="signup" element={<SignUp />} />

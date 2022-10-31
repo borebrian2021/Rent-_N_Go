@@ -17,6 +17,7 @@ import PropertyListing from "./DashboardComponents/PropertyListing";
 import AmenitiesForm from "./DashboardComponents/AmenitiesForm";
 import PaymentModule from "./PaymentModule";
 import { Routes, Route } from "react-router-dom";
+import LandingPage from "./LandingPage";
 const Dashboard = ({ user, setUser }) => {
   //NAVIGATE
   const navigate = useNavigate();
@@ -133,9 +134,11 @@ const Dashboard = ({ user, setUser }) => {
               mySpaces={mySpaces.length}
               spaceReservations={spaceReservations.length}
             />
+
             <Routes>
+           
               <Route
-                path="*"
+                path="dashboard/profile"
                 element={<Profile profileData={profileData} />}
               ></Route>
               <Route

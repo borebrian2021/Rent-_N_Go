@@ -462,12 +462,11 @@ const MySpaces = ({ user }) => {
                     <div class="schedule widget-boxed mt-0">
                       <div class="widget-boxed-header">
                         <h4>
-                          <i class="fa fa-calendar pr-3 padd-r-10"></i>Schedule
-                          a Tour
+                          <i class="fa fa-calendar pr-3 padd-r-10"></i>Reserve space
                         </h4>
                       </div>
                       <div class="widget-boxed-body">
-                        <div class="row">
+                        <div class="row"S>
                           <div class="col-lg-12 col-md-12 book">
                             <h5>Reservation Date</h5>
                             <DateTimePicker
@@ -661,7 +660,7 @@ const MySpaces = ({ user }) => {
                           </div>
                         </div>
                       </div>
-                      <div class="main-search-field-2">
+                      {/* <div class="main-search-field-2">
                         <div class="widget-boxed popular mt-5">
                           <div class="widget-boxed-header">
                             <h4>Specials of the day</h4>
@@ -742,7 +741,7 @@ const MySpaces = ({ user }) => {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </aside>
