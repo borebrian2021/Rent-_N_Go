@@ -57,7 +57,6 @@ const MySpaces = ({ user }) => {
         setReviews(data.reviews);
         setProperty(data.property);
         setClientData(data.client);
-        console.log(data);
       });
   }, [idd]);
 
@@ -66,7 +65,7 @@ const MySpaces = ({ user }) => {
 
     const formData = {
       message,
-      client_id: 1,
+      client_id: user.id,
     };
 
     const response = await fetch("/messages", {
@@ -94,6 +93,39 @@ const MySpaces = ({ user }) => {
     setTimeDiff((timeDiff) => diffHrs);
 
     setTtlAmount((ttlAmount) => diffHrs * spaceData.price_per_hour);
+  }
+
+  let id = 1;
+  {
+    user ? (id = user.id) : (id = 1);
+  }
+  async function postReservations() {
+    const formData = {
+      space_id: idd,
+      kickoff_date: startDate,
+      end_date: new Date(endDate),
+      client_id: id,
+      total_cash: ttlAmount,
+      no_of_hours: timeDiff,
+    };
+
+    const response = await fetch("/reservations", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+    const data = await response.json();
+    if (response.ok) {
+      // console.log(data);
+      console.log("no err")
+    } else {
+      // setErrors(data.errors);
+      console.log("err")
+    }
+
+    console.log(formData);
   }
 
   return (
@@ -500,7 +532,7 @@ const MySpaces = ({ user }) => {
                           class="btn reservation btn-radius theme-btn full-width mrg-top-10"
                           onClick={() => {
                             user
-                              ? alert(timeDiff * spaceData.price_per_hour)
+                              ? postReservations()
                               : alert("Bro please Login ! ! !");
                           }}
                         >
