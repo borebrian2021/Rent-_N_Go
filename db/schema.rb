@@ -73,7 +73,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_30_234051) do
   end
 
   create_table "properties", force: :cascade do |t|
-    t.integer "client_id", null: false
+    t.integer "client_id"
     t.string "property_name"
     t.string "location"
     t.string "image_url"
@@ -82,7 +82,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_30_234051) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.integer "space_id", null: false
+    t.integer "space_id"
     t.datetime "kickoff_date"
     t.datetime "end_date"
     t.integer "client_id"
@@ -93,7 +93,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_30_234051) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "space_id", null: false
+    t.integer "space_id"
     t.float "ratings"
     t.string "review_by"
     t.text "review"
