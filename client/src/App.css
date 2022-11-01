@@ -82,9 +82,16 @@ html{
 }
 .small-category-2{
   border-radius: 30px !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+  border: none !important;
+
 }
 .project-single{
   border-radius: 30px !important;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
+  border: none !important;
+
+
 }
 .team-block{
   border: none !important;
