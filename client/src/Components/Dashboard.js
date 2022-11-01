@@ -197,7 +197,7 @@ const Dashboard = ({ user, setUser }) => {
                 }
               ></Route>
                <Route path="dashboard/addamenities" element={<AmenitiesForm clientSpaces={clientSpaces} />}></Route>
-              <Route path="dashboard/Myreservation" element={<Reservations />}></Route>
+              <Route path="dashboard/Myreservation" element={<Reservations profileData={profileData}/>}></Route>
               <Route path="dashboard/Mypayments" element={<PaymentModule />}></Route>
               <Route exact path="dashboard/invoices" element={<Invoice />}></Route>
             </Routes>
