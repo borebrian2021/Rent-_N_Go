@@ -12,7 +12,9 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.logoDown{
+  height: 60px;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -46,4 +48,25 @@
 .border{
   border:1px solid blue !important;
 
+}
+.cards_icons{
+  height:40px;
+}
+.transition{
+  transition: all ease 0.3s;
+
+}
+.transition:hover{
+  font-size: 22px;
+}
+.transition_li{
+  transition: all ease 0.3s !important;
+
+}.transition_li:hover{
+  font-size: 20px !important;
+
+
+}
+.overFlow{
+  overflow-y:visible;
 }
