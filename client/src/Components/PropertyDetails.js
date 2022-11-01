@@ -123,8 +123,8 @@ const MySpaces = ({ user }) => {
     });
     const data = await response.json();
     if (response.ok) {
-      // console.log(data);
       toast.success("Reservation made successfully!");
+      alert("sdfgh")
     } else {
       // setErrors(data.errors);
       toast.error("Ooops!Something went wrong");
