@@ -7,6 +7,7 @@ import WhyChooseUs from "./LandingPagComponents/WhyChooseUs";
 import PopularSpaces from "./LandingPagComponents/PopularSpaces";
 import OurAgents from "./LandingPagComponents/OurAgents";
 import OurPartners from "./LandingPagComponents/OurPartners";
+import Footer from "./Footer";
 const LandingPage = ({user,setUser}) => {
   const [properties, setProperties] = useState([]);
   const [spaces, setSpaces] = useState([]);
@@ -41,6 +42,7 @@ const LandingPage = ({user,setUser}) => {
       <PopularSpaces />
       <OurAgents />
       <OurPartners />
+      <Footer/>
     </div>
   );
 };
