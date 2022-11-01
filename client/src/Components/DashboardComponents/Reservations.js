@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-const Reservations = () => {
+const Reservations = ({profileData}) => {
+    const [reservations, setReservations] = useState([]);
+  useEffect(() => {
+    // auto-login
+    fetch("/reservations").then((r) => {
+      if (r.ok) {
+        r.json().then((reservations) => setReservations(reservations));
+      }
+    });
+  }, []);
     return (
         <section class="user-page section-padding">
             <div class="container-fluid">
@@ -22,15 +31,17 @@ const Reservations = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Victoria Musyoka</td>
-                                        <td>+25471234567</td>
-                                        <td class="rating"><span>22/10/2022 10:00 AM</span></td>
-                                        <td class="rating"><span>22/10/2022 5:00 PM</span></td>
-                                        <td class="status"><span class=" active">Ksh. 60,000</span></td>
+                                   {reservations.map((reservation) => {
+                                    return (
+                                        <tr key = {reservation.id}>
+                                        <td>{profileData.first_name}&nbsp;{profileData.last_name}</td>
+                                        <td>{profileData.phone_number}</td>
+                                        <td class="rating"><span>{reservation.kickoff_date}</span></td>
+                                        <td class="rating"><span>{reservation.end_date}</span></td>
+                                        <td class="status"><span class=" active">{reservation.total_cash}</span></td>
                                         <td class="edit">Verified</td>
-                                    </tr>
-                                    
+                                    </tr> )
+                                   })}
                                 </tbody>
                             </table>
                         </div>
