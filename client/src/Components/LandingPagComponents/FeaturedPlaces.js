@@ -15,7 +15,7 @@ const FeaturedPlaces = ({ spaces }) => {
       <div class="container-fluid">
         <div class="sec-title">
           <h2>
-            <span>Featured </span>Spaces
+            <span>Featured properties </span>Spaces
           </h2>
           <p>These are our featured Spaces</p>
         </div>

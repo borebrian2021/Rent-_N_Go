@@ -1,5 +1,6 @@
 import React from 'react';
-
+import maleAgent from '../../Image/undraw_pic_profile_re_i9i4.svg'
+import femaleAgent from '../../Image/undraw_profile_pic_re_tdyo.svg'
 const OurAgents = () => {
     return (
         <section class="team bg-white rec-pro">
@@ -12,13 +13,13 @@ const OurAgents = () => {
                 <div class="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2" >
                     <div class="inner-box team-details">
                         <div class="image team-head">
-                            <a href="agents-listing-grid.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHWO9URiZ2gSVca7__ayIZFv9BAQFhCKAE9QxXnPwkCkd2xo2G6rBeMGVM3lcZpMudlXQ&usqp=CAU" alt="" /></a>
+                            <a href="agents-listing-grid.html"><img src={maleAgent} alt="" /></a>
                             <div class="team-hover">
                                 <ul class="team-social">
-                                    <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                    
+                                    
+                                   
+                                  
                                 </ul>
                             </div>
                         </div>
@@ -31,13 +32,13 @@ const OurAgents = () => {
                 <div class="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2" >
                     <div class="inner-box team-details">
                         <div class="image team-head">
-                            <a href="agents-listing-grid.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHWO9URiZ2gSVca7__ayIZFv9BAQFhCKAE9QxXnPwkCkd2xo2G6rBeMGVM3lcZpMudlXQ&usqp=CAU" alt="" /></a>
+                            <a href="agents-listing-grid.html"><img src={femaleAgent} alt="" /></a>
                             <div class="team-hover">
                                 <ul class="team-social">
-                                    <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                    
+                                    
+                                   
+                                  
                                 </ul>
                             </div>
                         </div>
@@ -50,13 +51,13 @@ const OurAgents = () => {
                 <div class="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2" >
                     <div class="inner-box team-details">
                         <div class="image team-head">
-                            <a href="agents-listing-grid.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHWO9URiZ2gSVca7__ayIZFv9BAQFhCKAE9QxXnPwkCkd2xo2G6rBeMGVM3lcZpMudlXQ&usqp=CAU" alt="" /></a>
+                            <a href="agents-listing-grid.html"><img src={maleAgent} alt="" /></a>
                             <div class="team-hover">
                                 <ul class="team-social">
-                                    <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                    
+                                    
+                                   
+                                  
                                 </ul>
                             </div>
                         </div>
@@ -69,13 +70,13 @@ const OurAgents = () => {
                 <div class="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2 pb-none" >
                     <div class="inner-box team-details">
                         <div class="image team-head">
-                            <a href="agents-listing-grid.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHWO9URiZ2gSVca7__ayIZFv9BAQFhCKAE9QxXnPwkCkd2xo2G6rBeMGVM3lcZpMudlXQ&usqp=CAU" alt="" /></a>
+                            <a href="agents-listing-grid.html"><img src={maleAgent} alt="" /></a>
                             <div class="team-hover">
                                 <ul class="team-social">
-                                    <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                    
+                                    
+                                   
+                                  
                                 </ul>
                             </div>
                         </div>
@@ -88,13 +89,13 @@ const OurAgents = () => {
                 <div class="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2 pb-none" >
                     <div class="inner-box team-details">
                         <div class="image team-head">
-                            <a href="agents-listing-grid.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHWO9URiZ2gSVca7__ayIZFv9BAQFhCKAE9QxXnPwkCkd2xo2G6rBeMGVM3lcZpMudlXQ&usqp=CAU" alt="" /></a>
+                            <a href="agents-listing-grid.html"><img src={femaleAgent} alt="" /></a>
                             <div class="team-hover">
                                 <ul class="team-social">
-                                    <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                    
+                                    
+                                   
+                                  
                                 </ul>
                             </div>
                         </div>
@@ -107,13 +108,13 @@ const OurAgents = () => {
                 <div class="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2 pb-none" >
                     <div class="inner-box team-details">
                         <div class="image team-head">
-                            <a href="agents-listing-grid.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHWO9URiZ2gSVca7__ayIZFv9BAQFhCKAE9QxXnPwkCkd2xo2G6rBeMGVM3lcZpMudlXQ&usqp=CAU" alt="" /></a>
+                            <a href="agents-listing-grid.html"><img src={maleAgent} alt="" /></a>
                             <div class="team-hover">
                                 <ul class="team-social">
-                                    <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                    
+                                    
+                                   
+                                  
                                 </ul>
                             </div>
                         </div>
