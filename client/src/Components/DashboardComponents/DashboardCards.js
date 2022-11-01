@@ -3,10 +3,10 @@ import imageOne from "../../Image/office-building.png"
 import imageTwo from "../../Image/countdown.png"
 import imageFour from "../../Image/messages.png"
 import imageFive from "../../Image/calendar.png"
-
+// import space_image from "../../Image/
 const DashboardCards = ({ propertyData, messages, mySpaces  , spaceReservations }) => {
   return (
-    <div class="dashborad-box stat bg-white">
+    <div class="dashborad-box stat ">
       <h4 class="title">Manage Dashboard</h4>
       <div class="section-body">
         <div class="row">
