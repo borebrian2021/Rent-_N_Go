@@ -31,7 +31,6 @@ const Dashboard = ({ user, setUser }) => {
   const [clientSpaces, setClientSpaces] = useState([]);
   const [profileData, setProfileData] = useState([]);
 
-
   //HIDA & SHOW STATES
   const [profile, setProfile] = useState(true);
   const [uploadForm, setUploadForm] = useState(true);
