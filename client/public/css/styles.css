@@ -1461,21 +1461,19 @@ section.recently.portfolio {
 .hp1 .parallax-searchs.home15.thome-6 .hero-inner {
   padding: 293px 0;
 }
-
 .homepage-1 .full-l .project-single {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: relative;
   -webkit-box-shadow: 0px 0px 2px #e7e7e7 !important;
-          box-shadow: 0px 0px 2px #e7e7e7 !important;
-  border: 1px solid #e7e7e7;
+   box-shadow: 0px 0px 2px #e7e7e7 !important;
 }
 
 .homepage-1 .how-it-works .serv-flex {
   -webkit-box-shadow: 0px 0px 1px #e7e7e7 !important;
-          box-shadow: 0px 0px 1px #e7e7e7 !important;
-  border: 1px solid #e7e7e7;
+   box-shadow: 0px 0px 1px #e7e7e7 !important;
+ ;
 }
 
 .homepage-1 .portfolio.full-l .homes-content {
@@ -1523,7 +1521,7 @@ section.recently.portfolio {
 .homepage-1 .team-block .inner-box {
   -webkit-box-shadow: 0px 0px 2px #e7e7e7;
           box-shadow: 0px 0px 2px #e7e7e7;
-  border: 1px solid #e7e7e7;
+ ;
 }
 
 .homepage-1 .team .team-social li a.facebook,
@@ -2917,7 +2915,7 @@ section.portfolio {
   overflow: hidden;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
-  border: 1px solid #e7e7e7;
+ ;
 }
 
 .portfolio .project-inner {
@@ -3892,7 +3890,7 @@ section.blog-section {
   background: #fff;
   -webkit-box-shadow: 0px 0px 1px #e7e7e7 !important;
           box-shadow: 0px 0px 1px #e7e7e7 !important;
-  border: 1px solid #e7e7e7;
+ ;
   overflow: hidden;
 }
 
@@ -6120,7 +6118,7 @@ a.button,
   margin-bottom: 0px;
   -webkit-box-shadow: none;
           box-shadow: none;
-  border: 1px solid #e7e7e7;
+ ;
 }
 
 .homepage-3 .portfolio .homes-content .homes-address .fa-map-marker {
@@ -6275,7 +6273,7 @@ a.button,
   background: #fff;
   -webkit-box-shadow: 0px 0px 2px #e7e7e7;
           box-shadow: 0px 0px 2px #e7e7e7;
-  border: 1px solid #e7e7e7;
+ ;
   padding: 44px 53px 55px;
   margin-bottom: 30px;
 }
@@ -10195,7 +10193,7 @@ a.button {
 
 .int_white_bg .testimonials .owl-carousel .test-1 {
   background: #fff;
-  border: 1px solid #e7e7e7;
+ ;
 }
 
 .int_white_bg .testimonials .test-1 h3 {
@@ -12989,7 +12987,7 @@ a.button,
   -webkit-box-shadow: none;
           box-shadow: none;
   margin-bottom: 0px;
-  border: 1px solid #e7e7e7;
+ ;
 }
 
 .home-11 .portfolio .homes-content h3 a:hover {
@@ -13746,7 +13744,7 @@ section.how-it-works {
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 1px #e7e7e7 !important;
           box-shadow: 0px 0px 1px #e7e7e7 !important;
-  border: 1px solid #e7e7e7;
+ ;
   -webkit-transition: .5s ease;
   transition: .5s ease;
 }
@@ -16498,7 +16496,7 @@ div.datedropper.my-style.picker-lkd .pick-submit {
 .widget-boxed {
   -webkit-box-shadow: 0px 0px 2px #e7e7e7 !important;
           box-shadow: 0px 0px 2px #e7e7e7 !important;
-  border: 1px solid #e7e7e7;
+ ;
 }
 
 .widget-boxed {
@@ -19778,7 +19776,7 @@ select:focus {
 .payment-card {
   border-radius: 4px;
   padding: 18px 15px 15px;
-  border: 1px solid #eaeff5;
+  /* border: 1px solid #eaeff5; */
   margin-bottom: 20px;
 }
 
