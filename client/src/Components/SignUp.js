@@ -15,8 +15,8 @@ const SignUp = () => {
     password: "",
     passwordConfirmation: "",
     profileUrl:
-      "https://images.unsplash.com/photo-1531384441138-2736e62e0919?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGJsYWNrJTIwbWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-  });
+      "https://as1.ftcdn.net/v2/jpg/03/53/11/00/1000_F_353110097_nbpmfn9iHlxef4EDIhXB1tdTD0lcWhG9.jpg"
+  })
 
   //HANDLE CHANGE
   function handleChange(e) {

@@ -1,28 +1,21 @@
 import React, { useState, useEffect } from "react";
-import image2 from "../Image/single-property/s-2.jpg";
-import image3 from "../Image/single-property/s-3.jpg";
+import TopBar from "./TopBar";
+//import { useNavigation } from "react-router";
 import image10 from "../Image/testimonials/ts-5.jpg";
-import image11 from "../Image/single-property/s-1.jpg";
-import image12 from "../Image/testimonials/ts-4.jpg";
-import image13 from "../Image/testimonials/ts-3.jpg";
-import image21 from "../Image/single-property/banner.jpg";
 import image22 from "../Image/blog/b-11.jpg";
 import image23 from "../Image/testimonials/ts-1.jpg";
 import image24 from "../Image/blog/b-12.jpg";
 import image25 from "../Image/testimonials/ts-2.jpg";
 import image26 from "../Image/blog/b-1.jpg";
 import image27 from "../Image/testimonials/ts-3.jpg";
-import image29 from "../Image/testimonials/ts-1.jpg";
-import image50 from "../Image/single-property/s-1.jpg";
-import image51 from "../Image/single-property/s-2.jpg";
-import image52 from "../Image/single-property/s-3.jpg";
-import image53 from "../Image/single-property/s-4.jpg";
-import image54 from "../Image/single-property/s-5.jpg";
+
 
 // date time
 import DateTimePicker from "react-datetime-picker";
+import toast, {Toaster} from "react-hot-toast";
 
 const MySpaces = ({ user }) => {
+  //const navigate = useNavigation();
   //RETRIEVE SPACE ID
   const [message, setMessage] = useState("");
   const [spaceData, setSpaceData] = useState([]);
@@ -126,10 +119,10 @@ const MySpaces = ({ user }) => {
     const data = await response.json();
     if (response.ok) {
       // console.log(data);
-      console.log("no err");
+      toast.success("Reservation made successfully!");
     } else {
       // setErrors(data.errors);
-      console.log("err");
+      toast.error("Ooops!Something went wrong");
     }
   }
   }
@@ -167,7 +160,10 @@ const MySpaces = ({ user }) => {
   }
 
   return (
+    <div>
+   <TopBar />
     <body class="inner-pages sin-1 homepage-4 hd-white">
+      <Toaster />
       <div>
         <body class="inner-pages sin-1 homepage-4 hd-white">
           <div class="clearfix"></div>
@@ -395,7 +391,7 @@ const MySpaces = ({ user }) => {
                             onClick={(e) => {
                               user
                                 ? postReview(e)
-                                : alert("Bro mbona huja login ?!");
+                                : window.location = "/login";
                             }}
                           >
                             {/* <div class="col-md-12">
@@ -582,7 +578,7 @@ const MySpaces = ({ user }) => {
                           onClick={() => {
                             user
                               ? postReservations()
-                              : alert("Bro please Login ! ! !");
+                              : window.location = "/login";
                           }}
                         >
                           Submit Reservations
@@ -1025,6 +1021,7 @@ const MySpaces = ({ user }) => {
         </body>
       </div>
     </body>
+    </div>
   );
 };
 
