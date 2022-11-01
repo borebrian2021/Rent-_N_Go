@@ -8,10 +8,10 @@ import PopularSpaces from "./LandingPagComponents/PopularSpaces";
 import OurAgents from "./LandingPagComponents/OurAgents";
 import OurPartners from "./LandingPagComponents/OurPartners";
 import Footer from "./Footer";
-const LandingPage = ({user,setUser}) => {
+const LandingPage = ({ user, setUser }) => {
   const [properties, setProperties] = useState([]);
-  const [spaces, setSpaces] = useState([]);
-
+  const [spaces , setSpaces] = useState([]);
+  const featured = spaces.slice(0,2 );
   // properties
   useEffect(() => {
     fetch("/properties")
@@ -32,17 +32,15 @@ const LandingPage = ({user,setUser}) => {
 
   return (
     <div>
-      {/* <TopBar /> */}
-      <TopBar user={user} setUser={setUser}/>
-
+      <TopBar user={user} setUser={setUser} />
       <AfterHeader />
       <PopularPlaces properties={properties} />
       <FeaturedPlaces spaces={spaces} />
       <WhyChooseUs />
-      <PopularSpaces />
+      <PopularSpaces featured={spaces}/>
       <OurAgents />
       <OurPartners />
-      <Footer/>
+      <Footer />
     </div>
   );
 };
