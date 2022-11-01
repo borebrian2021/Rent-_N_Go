@@ -1,5 +1,6 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
+import logo from '../Image/logo.png'
 function Footer() {
   return (
     <div>
@@ -9,29 +10,30 @@ function Footer() {
                     <div class="row">
                         <div class="col-lg-3 col-md-6">
                             <div class="netabout">
-                                <a href="index.html" class="logo">
-                                    <img src="images/logo-footer.svg" alt="netcom"/>
+                                <a href="index.html" >
+                                    <img src={logo} class="logoDown" alt="spaceforrentlogo"/>
                                 </a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum incidunt architecto soluta laboriosam, perspiciatis, aspernatur officiis esse.</p>
+                                <p>Find A Beutiful Space For Your Activity
+We Have Over Multiple Spaces For You Fit.</p>
                             </div>
                             <div class="contactus">
                                 <ul>
                                     <li>
                                         <div class="info">
                                             <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                            <p class="in-p">95 South Park Avenue, USA</p>
+                                            <p class="in-p">Ngong Road</p>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="info">
                                             <i class="fa fa-phone" aria-hidden="true"></i>
-                                            <p class="in-p">+456 875 369 208</p>
+                                            <p class="in-p">+25471234567</p>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="info">
                                             <i class="fa fa-envelope" aria-hidden="true"></i>
-                                            <p class="in-p ti">support@findhouses.com</p>
+                                            <p class="in-p ti">support@rentandgo.com</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -42,19 +44,12 @@ function Footer() {
                                 <h3>Navigation</h3>
                                 <div class="nav-footer">
                                     <ul>
-                                        <li><a href="index.html">Home One</a></li>
-                                        <li><a href="properties-right-sidebar.html">Properties Right</a></li>
-                                        <li><a href="properties-full-list.html">Properties List</a></li>
-                                        <li><a href="properties-details.html">Property Details</a></li>
-                                        <li class="no-mgb"><a href="agents-listing-grid.html">Agents Listing</a></li>
+                                     <li>  <Link to="/">Home One</Link></li> 
+                                        <li><Link to="/login">Login</Link></li>
+                                       <li><Link to="/signup"><a >Sign Up</a></Link></li> 
+                                      <li><Link to="/dashboard"><a href="properties-details.html">Dashboard</a></Link></li>  
                                     </ul>
-                                    <ul class="nav-right">
-                                        <li><a href="agent-details.html">Agents Details</a></li>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="blog.html">Blog Default</a></li>
-                                        <li><a href="blog-details.html">Blog Details</a></li>
-                                        <li class="no-mgb"><a href="contact-us.html">Contact Us</a></li>
-                                    </ul>
+                                   
                                 </div>
                             </div>
                         </div>
