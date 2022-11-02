@@ -54,7 +54,7 @@ const Login = ({ setUser }) => {
 
   return (
     <div>
-      {/* <TopBar /> */}
+      <TopBar />
       <Toaster />
       <section class="headings">
         <div class="text-heading text-center">
