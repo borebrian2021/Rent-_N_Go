@@ -7,7 +7,12 @@ import { Container } from "react-bootstrap";
 const PUBLIC_KEY =
   "pk_test_51LzCDEFcQNOREQ44bSJDbWRHcUoLMXwysFzjHZRWNjPUCT9CFisVEkP7kejHZ6F6schc5j0DONlQZr377QehsiAg00FkEtxCK0";
 const stripeTestPromise = loadStripe(PUBLIC_KEY);
-
+const Wrapper = (props) => (
+  <Elements stripe={stripeTestPromise}>
+    <StripeContainer {...props} />
+  </Elements>
+);
+console.log(Wrapper())
 function StripeContainer({ name, address, email, totalPrice }) {
   console.log(parseInt(totalPrice));
   const [clientSecret, setClientSecret] = useState("");

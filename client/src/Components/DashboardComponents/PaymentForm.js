@@ -3,9 +3,13 @@ import {
   PaymentElement,
   useStripe,
   useElements,
+  Elements,
 } from "@stripe/react-stripe-js";
 
+
+
 export default function PaymentForm() {
+  
   const stripe = useStripe();
   const elements = useElements();
 
@@ -86,3 +90,4 @@ export default function PaymentForm() {
     </form>
   );
 }
+

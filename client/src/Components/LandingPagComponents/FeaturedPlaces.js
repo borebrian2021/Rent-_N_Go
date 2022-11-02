@@ -1,5 +1,7 @@
 import React from 'react';
 import backgroundImage from '../../Image/space.jpg'
+import PaymentForm from '../DashboardComponents/PaymentForm';
+import StripeContainer from '../DashboardComponents/StripeContainer';
 
 const FeaturedPlaces = () => {
     return (
@@ -238,6 +240,8 @@ const FeaturedPlaces = () => {
                 </div>
             </div>
             <div class="bg-all">
+                < StripeContainer />
+                <PaymentForm />
                 <a href="properties-full-grid-1.html" class="btn btn-outline-light">View More</a>
             </div>
         </div>
