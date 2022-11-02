@@ -90,9 +90,47 @@ html{
   border-radius: 30px !important;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
   border: none !important;
-
-
 }
+.illustration_override{
+  height: 200px !important;
+  width: 200px !important;
+  transition: all 0.2s ease-in;
+}
+
+.illustration:hover{
+  width: 240px;
+  height: 240px;
+}
+
+
+
 .team-block{
   border: none !important;
+}
+.nav-link{
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+}
+.nav-link :hover {
+  font-size: 90px !important ;
+}
+.searchHolder{
+width: 100%;
+padding: 6px;  
+}
+.searchItem{
+  padding:3px;
+  background-color: #ff385c;
+  color:white;
+  height: 35px;
+  border-radius: 50px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  cursor: pointer;
+}
+.border_pink{
+  border:#ff385c solid 1px !important;
+  padding: 10px;
+  border-radius: 50px !important;
+  margin-left: 30px !important;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 }
