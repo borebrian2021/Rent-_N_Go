@@ -65,7 +65,7 @@ const SignUp = () => {
 
   return (
     <div>
-      {/* <TopBar /> */}
+      <TopBar />
       <Toaster />
       <section class="headings">
         <div class="text-heading text-center">

@@ -1,7 +1,7 @@
 import React from 'react';
-import svg1 from '../../Image/icons/icon-1.svg';
-import svg3 from '../../Image/icons/icon-2.svg';
-import svg4 from '../../Image/icons/icon-3.svg';
+import svg1 from '../../Image/time.gif';
+import svg3 from '../../Image/proplr.gif';
+import svg4 from '../../Image/buildings.gif';
 
 
 const WhyChooseUs = () => {
@@ -16,7 +16,8 @@ const WhyChooseUs = () => {
                 <article class="col-lg-4 col-md-6 col-xs-12 serv" >
                     <div class="serv-flex">
                         <div class="art-1 img-13">
-                            <img src={svg1} alt=""/>
+                            <img src={svg4}  lt=""/>
+
                             <h3>Wide Renge Of Properties</h3>
                         </div>
                         <div class="service-text-p">
@@ -38,7 +39,8 @@ const WhyChooseUs = () => {
                 <article class="col-lg-4 col-md-6 col-xs-12 serv mb-0 pt" >
                     <div class="serv-flex arrow">
                         <div class="art-1 img-15">
-                            <img src={svg4}  lt=""/>
+                        <img src={svg1} alt=""/>
+
                             <h3>24/7 support</h3>
                         </div>
                         <div class="service-text-p">
@@ -53,3 +55,4 @@ const WhyChooseUs = () => {
 }
 
 export default WhyChooseUs;
+ 

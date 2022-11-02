@@ -8328,7 +8328,7 @@ html input[disabled] {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 160px;
+    /* height: 160px; */
     border-radius: 10px;
   }
 
@@ -12714,7 +12714,7 @@ section.team {
 
 .team-block .inner-box .image img {
   position: relative;
-  width: 100%;
+  width: 60px;
   display: block;
   height: auto;
 }
@@ -12776,6 +12776,9 @@ section.team {
 .team .team-head {
   position: relative;
   overflow: hidden;
+  text-align: center;
+  align-content: center;
+  align-items: center;
 }
 
 .team .team-details {
@@ -13776,8 +13779,8 @@ section.how-it-works {
 .how-it-works article img {
   padding-right: 1rem;
   padding-bottom: .5rem;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   text-align: center;
 }
 

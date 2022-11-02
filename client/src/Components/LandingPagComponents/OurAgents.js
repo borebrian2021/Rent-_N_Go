@@ -89,7 +89,7 @@ const OurAgents = () => {
                 <div class="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2 pb-none" >
                     <div class="inner-box team-details">
                         <div class="image team-head">
-                            <a href="agents-listing-grid.html"><img src={femaleAgent} alt="" /></a>
+                           <img src={femaleAgent} alt="" />
                             <div class="team-hover">
                                 <ul class="team-social">
                                     

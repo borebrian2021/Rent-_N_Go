@@ -33,7 +33,7 @@ const LandingPage = ({ user, setUser }) => {
   return (
     <div>
       <TopBar user={user} setUser={setUser} />
-      <AfterHeader />
+      <AfterHeader  spacesData={spaces}/>
       <PopularPlaces properties={properties} />
       <FeaturedPlaces spaces={spaces} />
       <WhyChooseUs />

@@ -165,9 +165,10 @@ const MySpaces = ({ user }) => {
   }
 
   return (
-    <body class="inner-pages sin-1 homepage-4 hd-white">
+ 
       <div>
-        <body class="inner-pages sin-1 homepage-4 hd-white">
+        <TopBar/>
+        <div class="inner-pages sin-1 homepage-4 hd-white">
           <div class="clearfix"></div>
 
           <section class="single-proper blog details">
@@ -477,13 +478,13 @@ const MySpaces = ({ user }) => {
                               data-disabled-days="08/17/2017,08/18/2017"
                               data-id="datedropper-0"
                               data-theme="my-style"
-                              class="form-control"
                               readonly=""
                               onChange={(e) => {
                                 setStartDate(e);
                                 updateDateDiff();
                               }}
                               value={startDate}
+                              className="boder_pink"
                             />
 
                             {/* <DateTimePicker onChange={onChange} value={value} /> */}
@@ -1020,9 +1021,9 @@ const MySpaces = ({ user }) => {
               </section>
             </div>
           </section>
-        </body>
       </div>
-    </body>
+      </div>
+   
   );
 };
 
