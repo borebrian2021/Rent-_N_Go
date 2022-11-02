@@ -36,12 +36,13 @@ function App() {
       {/* <TopBar user={user} setUser={setUser}/> */}
 
       <Routes>
-        <Route path="/" element={<LandingPage  setUser={setUser} user={user} />} />
+        <Route path="/" element={<LandingPage setUser={setUser} user={user} />} />
         <Route path="contact" element={<Contact />} />
-        <Route path="login" element={<Login setUser={setUser}/>} />
+        <Route path="login" element={<Login setUser={setUser} />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="dashboard/*" element={<Dashboard user={user} setUser={setUser} />} />
         <Route path="/space-page" element={<PropertyDetails user={user} />} />
+        <Route path="/terms" element={<TermsAndConditions />} />
       </Routes>
     </>
   );
