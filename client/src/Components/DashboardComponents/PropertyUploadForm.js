@@ -42,7 +42,7 @@ const PropertyUploadForm = ({propertyData, setPropertyData , id}) => {
     }
     return (
         <div class="dashborad-box mb-0 mb-3 mt-3">
-            {/* <img src="https://ibb.co/6NQ8X6n" className='illustrations' /> */}
+           
         <h4 class="heading pt-0">Property Upload Form</h4>
         <div class="section-inforamation">
             <form onSubmit={handleSubmit}>
