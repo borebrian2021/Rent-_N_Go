@@ -80,7 +80,7 @@ const FeaturedPlaces = ({ spaces }) => {
                         <span>{space.room_size} </span>
                       </li>
                       <li class="the-icons">
-                        <i class="flaticon-car mr-2" aria-hidden="true"></i>
+                        <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
                         <span>{space.created_at}</span>
                       </li>
                       {/* <span>{space}</span> */}

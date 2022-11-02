@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import TopBar from "./TopBar";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
+import  Terms from  "./TermsAndConditions"
+
 //SETTING THE CONSTANTS
 const SignUp = () => {
   //NAVIGATIONS
   const navigate = useNavigate();
+  const [terms,setTerms]= useState(false)
 
   const [userDetails, setUserdetails] = useState({
     firstName: "",
@@ -24,8 +27,17 @@ const SignUp = () => {
     setUserdetails({ ...userDetails, [key]: e.target.value });
   }
 
+  function handleTermsChange(){
+    setTerms(!terms)
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
+  //   if(!terms){
+  //     toast.error("Please read and accept terms and  conditions first to proceed.")
+  //   }
+  //   else
+  //  { 
     fetch("/clients", {
       method: "POST",
       headers: {
@@ -58,8 +70,8 @@ const SignUp = () => {
         setTimeout(function () {
           navigate("/login");
         }, 2000);
-      });
-  };
+      });}
+  // };
 
   //FETCH
 
@@ -172,11 +184,11 @@ const SignUp = () => {
             <div class="fl-wrap filter-tags clearfix add_bottom_30">
               <div class="checkboxes float-left">
                 <div class="filter-tags-wrap">
-                  <input id="check-b" type="checkbox" name="check" />
+                  <input  id="check_box" type="checkbox" name="check_box"  onClick={handleTermsChange} />
                   <label for="check-b">
-                    <a href="register.html" class="default_color">
+                    <Link  to="/terms" class="default_color">
                       Accept Term and Conditions
-                    </a>
+                    </Link>
                   </label>
                 </div>
               </div>

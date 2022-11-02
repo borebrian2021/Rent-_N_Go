@@ -63,7 +63,7 @@ We Have Over Multiple Spaces For You Fit.</p>
                                                 <i class="fa fa-twitter" aria-hidden="true"></i>
                                             </div>
                                             <div class="text">
-                                                <h5><a href="#">@findhouses</a> all share them with me baby said inspet.</h5>
+                                                <h5><a href="#">@rent&go</a> all share them with me baby said inspet.</h5>
                                                 <h4>about 5 days ago</h4>
                                             </div>
                                         </div>
@@ -72,7 +72,7 @@ We Have Over Multiple Spaces For You Fit.</p>
                                                 <i class="fa fa-twitter" aria-hidden="true"></i>
                                             </div>
                                             <div class="text">
-                                                <h5><a href="#">@findhouses</a> all share them with me baby said inspet.</h5>
+                                                <h5><a href="#">@rent&go</a> all share them with me baby said inspet.</h5>
                                                 <h4>about 5 days ago</h4>
                                             </div>
                                         </div>
@@ -81,7 +81,7 @@ We Have Over Multiple Spaces For You Fit.</p>
                                                 <i class="fa fa-twitter" aria-hidden="true"></i>
                                             </div>
                                             <div class="text">
-                                                <h5><a href="#">@findhouses</a> all share them with me baby said inspet.</h5>
+                                                <h5><a href="#">@rent&go</a> all share them with me baby said inspet.</h5>
                                                 <h4>about 5 days ago</h4>
                                             </div>
                                         </div>
@@ -110,7 +110,7 @@ We Have Over Multiple Spaces For You Fit.</p>
             </div>
             <div class="second-footer">
                 <div class="container">
-                    <p>2021 © Copyright - All Rights Reserved.</p>
+                    <p>2022 © Copyright - All Rights Reserved.</p>
                     <ul class="netsocials">
                         <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
