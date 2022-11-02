@@ -38,13 +38,12 @@ const Login = ({ setUser }) => {
             toast.success("Logged in successfully!");
 
             setUser(data);
-            navigate("/");
 
-            // setTimeout(function () {
-            //   localStorage.setItem("user_id", data.id);
-            //   localStorage.setItem("user_data", JSON.stringify(data));
-            //   navigate("/dashboard");
-            // }, 2000);
+            setTimeout(function () {
+            
+              navigate("/");
+
+            }, 2000);
           });
         } else {
           toast.error("Wrong email or password");
@@ -55,7 +54,7 @@ const Login = ({ setUser }) => {
 
   return (
     <div>
-      {/* <TopBar /> */}
+      <TopBar />
       <Toaster />
       <section class="headings">
         <div class="text-heading text-center">

@@ -28,7 +28,7 @@ class SpacesController < ApplicationController
   end
 
   def show
-      res = find
+      res = Space.find_by(property_id: params[:id])
       render json: res
   end
 

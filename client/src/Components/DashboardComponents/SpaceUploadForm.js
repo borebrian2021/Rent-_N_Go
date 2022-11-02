@@ -152,7 +152,7 @@ const SpaceUploadForm = ({
             </div>
             <div class="col-sm-6">
               <div class="form-group">
-                <label>Space size</label>
+                <label>Space size in fts e.g (800fts * 700fts)</label>
                 <input
                   type="text"
                   id="room_size"
@@ -237,7 +237,7 @@ const SpaceUploadForm = ({
                 <select
                   id="space_category"
                   value={useSpace.space_category}
-                  class="form-control"
+                  class="custom-select border"
                   onChange={handleChange}
                 >
                   <option value="" disabled>
@@ -259,7 +259,7 @@ const SpaceUploadForm = ({
                   id="status_"
                   value={useSpace.status_}
                   onChange={handleChange}
-                  class="form-control"
+                  class="custom-select border"
                 >
                   <option value="" disabled>
                     Select
