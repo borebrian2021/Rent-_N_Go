@@ -1,30 +1,40 @@
 import React from "react";
 import backgroundImage from "../../Image/space.jpg";
+import { useNavigate } from "react-router-dom"
 
 const FeaturedPlaces = ({ spaces }) => {
+  const navigate = useNavigate()
+
+  //ROUTING DYNAMICALLY
+  const routeSpace = (id) => {
+    localStorage.setItem("space_id", id)
+    navigate("/space-page")
+  }
   return (
     <section class="featured portfolio bg-white-2 rec-pro full-l">
       <div class="container-fluid">
         <div class="sec-title">
           <h2>
-            <span>Featured </span>Spaces
+            <span>Featured properties </span>Spaces
           </h2>
           <p>These are our featured Spaces</p>
         </div>
         <div class="row portfolio-items">
           {spaces.map((space) => {
+            let description = space.description.slice(0, 40) +"...";
             return (
-              <div
+              <div onClick={() => routeSpace(space.id)}
                 class="item col-xl-6 col-lg-12 col-md-12 col-xs-12 landscapes sale"
                 // key={space}
                 key={space.id}
+                style={{ cursor: "pointer" }}
               >
                 <div class="project-single">
                   <div class="project-inner project-head">
                     <div class="homes">
                       <a href="single-property-1.html" class="homes-img">
                         <div class="homes-tag button alt featured">
-                          Featured
+                          {space.status}
                         </div>
 
                         <img
@@ -35,7 +45,7 @@ const FeaturedPlaces = ({ spaces }) => {
                         />
                       </a>
                     </div>
-                    <div class="button-effect">
+                    {/* <div class="button-effect">
                       <a href="single-property-1.html" class="btn">
                         <i class="fa fa-link"></i>
                       </a>
@@ -48,12 +58,12 @@ const FeaturedPlaces = ({ spaces }) => {
                       <a href="single-property-2.html" class="img-poppu btn">
                         <i class="fa fa-photo"></i>
                       </a>
-                    </div>
+                    </div> */}
                   </div>
                   <div class="homes-content">
                     <h3>
                       <a href="single-property-1.html">
-                        Real Luxury Family House Villa
+                        {space.space_category}
                       </a>
                     </h3>
                     <p class="homes-address mb-3">
@@ -67,14 +77,14 @@ const FeaturedPlaces = ({ spaces }) => {
                       <li class="the-icons">
                         <i class="flaticon-square mr-2" aria-hidden="true"></i>
                         {/* <span>{space} sq ft</span> */}
-                        <span>{space.room_size} sq ft</span>
+                        <span>{space.room_size} </span>
                       </li>
                       <li class="the-icons">
-                        <i class="flaticon-car mr-2" aria-hidden="true"></i>
-                        <span>2 Garages</span>
+                        <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
+                        <span>{space.created_at}</span>
                       </li>
                       {/* <span>{space}</span> */}
-                      <span>{space.description}</span>
+                      <span >{description}</span>
                     </ul>
 
                     <div class="price-properties footer pt-3 pb-0">
@@ -83,7 +93,7 @@ const FeaturedPlaces = ({ spaces }) => {
                           Ksh. {space.price_per_hour}/hr
                         </a>
                       </h3>
-                      <div class="compare">
+                      {/* <div class="compare">
                         <a href="#" title="Compare">
                           <i class="flaticon-compare"></i>
                         </a>
@@ -93,7 +103,7 @@ const FeaturedPlaces = ({ spaces }) => {
                         <a href="#" title="Favorites">
                           <i class="flaticon-heart"></i>
                         </a>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>

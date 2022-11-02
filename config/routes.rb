@@ -9,14 +9,13 @@ Rails.application.routes.draw do
   # get "/get_client", to: "clients#get_client"
   get "/me", to: "clients#show"
   delete "/logout", to: "sessions#destroy"
+
+  post "/payment", to: "charges#create"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
   # Defines the root path route ("/")
   # root "articles#index"
-
   resources :reviews
   resources :reservations
   resources :properties

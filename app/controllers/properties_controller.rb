@@ -25,7 +25,8 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_rend
     def destroy
         property = Property.find(params[:id])
         property.destroy
-        head :no_content
+        # head :no_content
+        render json: {}
     end
 
     private

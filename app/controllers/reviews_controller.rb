@@ -34,10 +34,10 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_rend
     end
 
     def review_params
-        params.permit(:ratings, :review_by, :review, :space_id, :client_id)
+        params.permit(:ratings, :review_by, :review, :space_id, :client_id, :property_id)
     end
 
-    def render_unprocessable_entity_response(invalid)
+    def render_unprocessable_entity_render(invalid)
         # render json: { errors: invalid.record.errors }, status: :unprocessable_entity
         render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
       end
