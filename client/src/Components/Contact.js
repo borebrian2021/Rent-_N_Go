@@ -44,7 +44,7 @@ const Contact = () => {
       <br></br>
       <br></br>
       <br></br>
-      <section class="contact-us">
+      <motion.section  variants={variants_} initial="hidden" animate="visible" exit="exit" class="contact-us">
         <div class="container">
           {/* <div class="property-location mb-5">
                     <h3>Our Location</h3>
@@ -158,7 +158,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

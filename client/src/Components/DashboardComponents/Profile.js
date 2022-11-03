@@ -1,9 +1,11 @@
 import React from 'react';
+import profileIllustration from '../../Image/profile.gif'
 
 const Profile = ({profileData}) => {
     console.log(profileData)
     return (
         <div class="dashborad-box mb-0">
+            <img src={profileIllustration} className="componentIllustation"/>
         <h4 class="heading pt-0">Personal Information</h4>
         <div class="section-inforamation">
             <form>
