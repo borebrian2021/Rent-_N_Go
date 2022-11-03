@@ -36,135 +36,98 @@ const SideBar = ({ sideBarData, hideShowProfiles, setUser }) => {
           />
         </div>
         <div class="active-user">
-          <h4 class="text-white ml-5">
+          <h4 class="text-white ml-5 transition">
             {sideBarData.first_name} &nbsp; {sideBarData.last_name}
           </h4>
         </div>
-        <div class="detail clearfix">
-          <ul class="mb-0">
-            <li class="active">
-              <i class="fa fa-map-marker"></i> Dashboard
+        <div class="detail clearfix overFlow">
+          <ul class="mb-0" className="overFlow">
+            <li >
+            <h4 class="text-white ml-5">Dashboard</h4>
             </li>
             <li>
-              <NavLink to="/" class="active">
+              <NavLink to="/" class="active ">
                 {" "}
-                <i class="fa fa-user"> Home</i>
+                <i class="fa fa-home">  </i> Home
               </NavLink>
             </li>
             <li>
-              <NavLink to="dashboard/profile" class="active">
+              <NavLink to="dashboard/profile" class="active transition_li">
                 {" "}
-                <i class="fa fa-user">Profile</i>
+                <i class="fa fa-user"></i>Profile
               </NavLink>
             </li>
             <li>
-              <NavLink to="dashboard/addproperty">
-                <i class="fa-solid fa-plus" aria-hidden="true">
-                  Add Property
+              <NavLink to="dashboard/addproperty" className="transition_li">
+                <i class="fa fa-solid fa-plus" aria-hidden="true">
                 </i>
+                Add Property
+
               </NavLink>
             </li>
 
             <li>
-              <NavLink to="dashboard/myproperties">
+              <NavLink to="dashboard/myproperties" className="transition_li">
                 {" "}
-                <i class="fa fa-list" aria-hidden="true">
-                  My Properties
+                <i class="fa fa-hospital-o" aria-hidden="true">
                 </i>
+                My Properties
+
               </NavLink>
             </li>
             <li>
-              <NavLink to="dashboard/addspace">
-                <i class="fa fa-list" aria-hidden="true">
+              <NavLink to="dashboard/addspace" className="transition_li">
+              <i class="fa fa-solid fa-plus" aria-hidden="true">
+                </i>
                   AddSpace
-                </i>
               </NavLink>
             </li>
             <li>
-              <NavLink to="dashboard/Myspaces">
-                <i class="fa fa-list" aria-hidden="true">
-                  MySpaces
+              <NavLink to="dashboard/Myspaces" className="transition_li">
+                <i class="fa fa-building-o" aria-hidden="true">
                 </i>
+                MySpaces
+
               </NavLink>
             </li>
             <li>
-              <NavLink to="dashboard/addamenities">
-                <i class="fa fa-list" aria-hidden="true">
-                  Add Amenities
+              <NavLink to="dashboard/addamenities" className="transition_li">
+                <i class="fa fa-th" aria-hidden="true">
                 </i>
+                Add Amenities
+
               </NavLink>
             </li>
             <li>
-              <NavLink to="dashboard/Myreservation">
-                <i class="fa fa-list" aria-hidden="true">
-                  MyReservations
+              <NavLink to="dashboard/Myreservation" className="transition_li">
+                <i class="fa fa-clock-o" aria-hidden="true" >
                 </i>
+                 Reservations
+
               </NavLink>
             </li>
             <li>
-              <NavLink to="dashboard/Mypayments">
-                <i class="fas fa-credit-card" aria-hidden="true">
-                  Mypayments
+              <NavLink to="dashboard/Mypayments" className="transition_li">
+                <i class="fa fa-credit-card-alt" aria-hidden="true">
                 </i>
+                Payments
+
               </NavLink>
             </li>
             <li>
-              <NavLink to="dashboard/invoices">
-                <i class="fa fa-list" aria-hidden="true">
-                  MyInvoice
-                </i>
+              <NavLink to="dashboard/invoices"  className="transition_li">
+                <i class="fa fa-paperclip" aria-hidden="true">
+                </i>                   Invoice
+
               </NavLink>
             </li>
-            <li>
+            <li  className="transition_li">
               <a onClick={logout}>
-                <i class="fas fa-sign-out-alt"></i>Log Out
+              <i class="fa fa-power-off"></i>Log out
               </a>
             </li>
           </ul>
-          {/* <ul class="mb-0"> */}
-          {/* <li>
-              <a class="active" href="dashboard.html">
-                <i class="fa fa-map-marker"></i> Dashboard
-              </a>
-            </li>
-            <li>
-              <a onClick={hideShowProfiles}>
-                <i class="fa fa-user"></i>Profile
-              </a>
-            </li>
-            <li>
-              <a href="my-listings.html">
-                <i class="fa fa-list" aria-hidden="true"></i>My Properties
-              </a>
-            </li>
-            <li>
-              <a href="favorited-listings.html">
-                <i class="fa fa-heart" aria-hidden="true"></i>Favorited
-                Properties
-              </a>
-            </li>
-            <li>
-              <a href="add-property.html">
-                <i class="fa fa-list" aria-hidden="true"></i>Add Property
-              </a>
-            </li>
-            <li>
-              <a href="payment-method.html">
-                <i class="fas fa-credit-card"></i>Payments
-              </a>
-            </li>
-            <li>
-              <a href="invoice.html">
-                <i class="fas fa-paste"></i>Invoices
-              </a>
-            </li> */}
-          {/* <li>
-                        <a href="change-password.html">
-                            <i class="fa fa-lock"></i>Change Password
-                        </a>
-                    </li> */}
-
-          {/* </ul> */}
+          
         </div>
       </div>
     </div>

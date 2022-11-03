@@ -4,7 +4,7 @@ import TopBar from "./TopBar";
 const Contact = () => {
   return (
     <div>
-      {/* <TopBar /> */}
+      <TopBar />
       <br></br>
       <br></br>
       <br></br>

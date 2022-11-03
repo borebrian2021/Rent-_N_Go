@@ -8,7 +8,12 @@ import image24 from "../Image/blog/b-12.jpg";
 import image25 from "../Image/testimonials/ts-2.jpg";
 import image26 from "../Image/blog/b-1.jpg";
 import image27 from "../Image/testimonials/ts-3.jpg";
-
+import image29 from "../Image/testimonials/ts-1.jpg";
+import image50 from "../Image/single-property/s-1.jpg";
+import image51 from "../Image/single-property/s-2.jpg";
+import image52 from "../Image/single-property/s-3.jpg";
+import image53 from "../Image/single-property/s-4.jpg";
+import image54 from "../Image/single-property/s-5.jpg";
 
 // date time
 import DateTimePicker from "react-datetime-picker";
@@ -118,8 +123,8 @@ const MySpaces = ({ user }) => {
     });
     const data = await response.json();
     if (response.ok) {
-      // console.log(data);
       toast.success("Reservation made successfully!");
+      alert("sdfgh")
     } else {
       // setErrors(data.errors);
       toast.error("Ooops!Something went wrong");
@@ -160,12 +165,10 @@ const MySpaces = ({ user }) => {
   }
 
   return (
-    <div>
-   <TopBar />
-    <body class="inner-pages sin-1 homepage-4 hd-white">
-      <Toaster />
+ 
       <div>
-        <body class="inner-pages sin-1 homepage-4 hd-white">
+        <TopBar/>
+        <div class="inner-pages sin-1 homepage-4 hd-white">
           <div class="clearfix"></div>
 
           <section class="single-proper blog details">
@@ -475,13 +478,13 @@ const MySpaces = ({ user }) => {
                               data-disabled-days="08/17/2017,08/18/2017"
                               data-id="datedropper-0"
                               data-theme="my-style"
-                              class="form-control"
                               readonly=""
                               onChange={(e) => {
                                 setStartDate(e);
                                 updateDateDiff();
                               }}
                               value={startDate}
+                              className="boder_pink"
                             />
 
                             {/* <DateTimePicker onChange={onChange} value={value} /> */}
@@ -1018,10 +1021,9 @@ const MySpaces = ({ user }) => {
               </section>
             </div>
           </section>
-        </body>
       </div>
-    </body>
-    </div>
+      </div>
+   
   );
 };
 

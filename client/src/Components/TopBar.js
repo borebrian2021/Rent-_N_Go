@@ -28,19 +28,19 @@ export default function TopBar({ user, setUser }) {
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand nav-link" href="#">
+        <Link class="navbar-brand nav-link" to="/">
           <img src={logo} className="logo" />
-          Rent N Go
-        </a>
+          Rent & Go
+        </Link>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item ">
             <Link to="/" class="nav-link">
               Home <span class="sr-only">(current)</span>
             </Link>
           </li>
-          <li class="nav-item">
+          {/* <li class="nav-item">
             <Link class="nav-link">About us</Link>
-          </li>
+          </li> */}
           <li class="nav-item">
             <Link to="contact" class="nav-link ">
               Contact Us
