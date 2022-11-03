@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
-import image2 from "../Image/single-property/s-2.jpg";
-import image3 from "../Image/single-property/s-3.jpg";
+import TopBar from "./TopBar";
+//import { useNavigation } from "react-router";
 import image10 from "../Image/testimonials/ts-5.jpg";
-import image11 from "../Image/single-property/s-1.jpg";
-import image12 from "../Image/testimonials/ts-4.jpg";
-import image13 from "../Image/testimonials/ts-3.jpg";
-import image21 from "../Image/single-property/banner.jpg";
 import image22 from "../Image/blog/b-11.jpg";
 import image23 from "../Image/testimonials/ts-1.jpg";
 import image24 from "../Image/blog/b-12.jpg";
@@ -21,8 +17,10 @@ import image54 from "../Image/single-property/s-5.jpg";
 
 // date time
 import DateTimePicker from "react-datetime-picker";
+import toast, {Toaster} from "react-hot-toast";
 
 const MySpaces = ({ user }) => {
+  //const navigate = useNavigation();
   //RETRIEVE SPACE ID
   const [message, setMessage] = useState("");
   const [spaceData, setSpaceData] = useState([]);
@@ -125,11 +123,11 @@ const MySpaces = ({ user }) => {
     });
     const data = await response.json();
     if (response.ok) {
-      // console.log(data);
-      console.log("no err");
+      toast.success("Reservation made successfully!");
+      alert("sdfgh")
     } else {
       // setErrors(data.errors);
-      console.log("err");
+      toast.error("Ooops!Something went wrong");
     }
   }
   }
@@ -167,9 +165,10 @@ const MySpaces = ({ user }) => {
   }
 
   return (
-    <body class="inner-pages sin-1 homepage-4 hd-white">
+ 
       <div>
-        <body class="inner-pages sin-1 homepage-4 hd-white">
+        <TopBar/>
+        <div class="inner-pages sin-1 homepage-4 hd-white">
           <div class="clearfix"></div>
 
           <section class="single-proper blog details">
@@ -395,7 +394,7 @@ const MySpaces = ({ user }) => {
                             onClick={(e) => {
                               user
                                 ? postReview(e)
-                                : alert("Bro mbona huja login ?!");
+                                : window.location = "/login";
                             }}
                           >
                             {/* <div class="col-md-12">
@@ -461,12 +460,11 @@ const MySpaces = ({ user }) => {
                     <div class="schedule widget-boxed mt-0">
                       <div class="widget-boxed-header">
                         <h4>
-                          <i class="fa fa-calendar pr-3 padd-r-10"></i>Schedule
-                          a Tour
+                          <i class="fa fa-calendar pr-3 padd-r-10"></i>Reserve space
                         </h4>
                       </div>
                       <div class="widget-boxed-body">
-                        <div class="row">
+                        <div class="row"S>
                           <div class="col-lg-12 col-md-12 book">
                             <h5>Reservation Date</h5>
                             <DateTimePicker
@@ -480,13 +478,13 @@ const MySpaces = ({ user }) => {
                               data-disabled-days="08/17/2017,08/18/2017"
                               data-id="datedropper-0"
                               data-theme="my-style"
-                              class="form-control"
                               readonly=""
                               onChange={(e) => {
                                 setStartDate(e);
                                 updateDateDiff();
                               }}
                               value={startDate}
+                              className="boder_pink"
                             />
 
                             {/* <DateTimePicker onChange={onChange} value={value} /> */}
@@ -583,7 +581,7 @@ const MySpaces = ({ user }) => {
                           onClick={() => {
                             user
                               ? postReservations()
-                              : alert("Bro please Login ! ! !");
+                              : window.location = "/login";
                           }}
                         >
                           Submit Reservations
@@ -660,7 +658,7 @@ const MySpaces = ({ user }) => {
                           </div>
                         </div>
                       </div>
-                      <div class="main-search-field-2">
+                      {/* <div class="main-search-field-2">
                         <div class="widget-boxed popular mt-5">
                           <div class="widget-boxed-header">
                             <h4>Specials of the day</h4>
@@ -741,7 +739,7 @@ const MySpaces = ({ user }) => {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </aside>
@@ -1023,9 +1021,9 @@ const MySpaces = ({ user }) => {
               </section>
             </div>
           </section>
-        </body>
       </div>
-    </body>
+      </div>
+   
   );
 };
 

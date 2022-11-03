@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import propertyIllustration from '../../Image/properties.gif'
 //SETTING THE CONSTANTS
 const PropertyUploadForm = ({
   propertyData,
@@ -82,8 +83,11 @@ const PropertyUploadForm = ({
 
   return (
     <div class="dashborad-box mb-0 mb-3 mt-3">
-      {/* <img src="https://ibb.co/6NQ8X6n" className='illustrations' /> */}
+
+      {/* <img src={property_image}  className='illustrations ' /> */}
       <h4 class="heading pt-0">
+      <img src={propertyIllustration} className="componentIllustation"/><br/>
+
         {submitBtn ? "Property Upload Form" : "Property Edit Form"}
       </h4>
       <div class="section-inforamation">

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import spaceIllustrationForm from '../../Image/space.gif'
 //SETTING THE CONSTANTS
 const SpaceUploadForm = ({
   propertyData,
@@ -125,7 +126,10 @@ const SpaceUploadForm = ({
     <div class="dashborad-box mb-0 mb-3 mt-3">
       {/* <img src="https://ibb.co/6NQ8X6n" className='illustrations' /> */}
       <h4 class="heading pt-0">
+      <img src={spaceIllustrationForm} className="componentIllustation"/><br/>
+
         {submitBtnSpace ? "Space Upload Form" : "Space Edit Form"}
+
       </h4>
       <div class="section-inforamation">
         <form onSubmit={submitBtnSpace ? handleSubmit : handleEditSpaces}>
@@ -152,7 +156,7 @@ const SpaceUploadForm = ({
             </div>
             <div class="col-sm-6">
               <div class="form-group">
-                <label>Space size</label>
+                <label>Space size in fts e.g (800fts * 700fts)</label>
                 <input
                   type="text"
                   id="room_size"
@@ -237,7 +241,7 @@ const SpaceUploadForm = ({
                 <select
                   id="space_category"
                   value={useSpace.space_category}
-                  class="form-control"
+                  class="custom-select border"
                   onChange={handleChange}
                 >
                   <option value="" disabled>
@@ -259,7 +263,7 @@ const SpaceUploadForm = ({
                   id="status_"
                   value={useSpace.status_}
                   onChange={handleChange}
-                  class="form-control"
+                  class="custom-select border"
                 >
                   <option value="" disabled>
                     Select

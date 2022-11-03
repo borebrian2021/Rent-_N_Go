@@ -1,5 +1,5 @@
 import React from "react";
-
+import myspaces from '../../Image/my_poperties.gif'
 const MySpaces = ({
   clientSpaces,
   setSubmitSpaceBtn,
@@ -22,6 +22,8 @@ const MySpaces = ({
 
   return (
     <div class="my-properties">
+      <img src={myspaces} className="componentIllustation"/><br/>
+
       <table class="table-responsive">
         <thead>
           <tr>

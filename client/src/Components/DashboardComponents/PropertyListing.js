@@ -1,4 +1,5 @@
 import React from "react";
+import myproperties from '../../Image/properties.gif'
 
 const PropertyListing = ({ propertyData, setPropertyData, setSubmitBtn,setPropertyId,setProperty}) => {
   function handleDelete(id) {
@@ -6,16 +7,23 @@ const PropertyListing = ({ propertyData, setPropertyData, setSubmitBtn,setProper
       method: "DELETE",
     })
       .then((r) => r.json())
-      .then(() => updateAfterDelete(id));
+      .then(() => updateAfterDelete(id)
+      
+      
+      );
   }
  
   function updateAfterDelete(id) {
     const updated = propertyData.filter((property) => property.id !== id);
     setPropertyData(updated);
+    
+
   }
 
   return (
     <div class="my-properties">
+      <img src={myproperties} className="componentIllustation"/><br/>
+
       <table class="table-responsive">
         <thead>
           <tr>

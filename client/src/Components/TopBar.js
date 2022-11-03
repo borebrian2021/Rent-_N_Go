@@ -3,6 +3,7 @@ import logowhite from "../Image/logo-white-1.svg";
 import profileImage from "../Image/testimonials/ts-1.jpg";
 import logo from "../Image/logo.png";
 import { Link, useNavigate } from "react-router-dom";
+import { motion } from 'framer-motion'
 
 export default function TopBar({ user, setUser }) {
   function handleLogoutClick() {
@@ -15,7 +16,7 @@ export default function TopBar({ user, setUser }) {
   }
 
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent shaddow">
+    <motion.nav initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.3, delay:0 , stiffness: 120, type: "spring" }}  class="navbar navbar-expand-lg navbar-light bg-transparent shaddow">
       <button
         class="navbar-toggler"
         type="button"
@@ -28,19 +29,19 @@ export default function TopBar({ user, setUser }) {
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand nav-link" href="#">
+        <Link class="navbar-brand nav-link" to="/">
           <img src={logo} className="logo" />
-          Rent N Go
-        </a>
+          Rent & Go
+        </Link>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item ">
             <Link to="/" class="nav-link">
               Home <span class="sr-only">(current)</span>
             </Link>
           </li>
-          <li class="nav-item">
+          {/* <li class="nav-item">
             <Link class="nav-link">About us</Link>
-          </li>
+          </li> */}
           <li class="nav-item">
             <Link to="contact" class="nav-link ">
               Contact Us
@@ -90,6 +91,6 @@ export default function TopBar({ user, setUser }) {
           )}
         </ul>
       </div>
-    </nav>
+    </motion.nav>
   );
 }
