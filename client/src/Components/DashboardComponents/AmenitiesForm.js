@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import toast, { Toaster } from "react-hot-toast";
-
+import amebities from '../../Image/amenitties.gif'
 const AmenitiesForm = ({ clientSpaces }) => {
     const [useAmenities, setAmenities] = useState({
         space_id: "",
@@ -41,6 +41,8 @@ const AmenitiesForm = ({ clientSpaces }) => {
     return (
         <div class="dashborad-box mb-0 mb-3 mt-3">
             {/* <img src="https://ibb.co/6NQ8X6n" className='illustrations' /> */}
+      <img src={amebities} className="componentIllustation"/><br/>
+<br/>
             <h4 class="heading pt-0">Amenity Upload Form</h4>
             <div class="section-inforamation">
                 <form onSubmit={handleSubmit}>
