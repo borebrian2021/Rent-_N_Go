@@ -1,29 +1,29 @@
-class MessagesController < ApplicationController
+class ContactsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
     def index
-        message = Message.all
-        render json: message
+        contact = Contact.all
+        render json: contact
     end
 
     def create
-        message = Message.create(message_params)
-        render json: message, status: :created
+        contact = Contact.create(contact_params)
+        render json: contact, status: :created
     end
 
     def show
-        message = Message.find(params[:id])
-        render json: message, status: :ok
+        contact = Contact.find(params[:id])
+        render json: contact, status: :ok
     end
 
     private
-    def message_params
-        params.permit(:client_id, :message)
+    def contact_params
+        params.permit(:first_name, :last_name, :email, :message)
     end
 
     def render_not_found_response
-        render json: { error: "Message not found" }, status: :not_found
+        render json: { error: "Contact not found" }, status: :not_found
     end
     
     def render_unprocessable_entity_response(invalid)
