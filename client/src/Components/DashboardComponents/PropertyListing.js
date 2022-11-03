@@ -1,4 +1,5 @@
 import React from "react";
+import myproperties from '../../Image/properties.gif'
 
 const PropertyListing = ({ propertyData, setPropertyData, setSubmitBtn,setPropertyId,setProperty}) => {
   function handleDelete(id) {
@@ -21,6 +22,8 @@ const PropertyListing = ({ propertyData, setPropertyData, setSubmitBtn,setProper
 
   return (
     <div class="my-properties">
+      <img src={myproperties} className="componentIllustation"/><br/>
+
       <table class="table-responsive">
         <thead>
           <tr>

@@ -19,32 +19,12 @@ import SpaceUploadForm from "./Components/DashboardComponents/SpaceUploadForm";
 import PropertyUploadForm from "./Components/DashboardComponents/PropertyUploadForm";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Contact from "./Components/Contact";
+import RoutesAnimator from "./Components/RoutesAnimator";
 
 function App() {
-  const [user, setUser] = useState(null);
-  useEffect(() => {
-    // auto-login
-    fetch("/me").then((r) => {
-      if (r.ok) {
-        r.json().then((user) => setUser(user));
-      }
-    });
-  }, []);
-
+ 
   return (
-    <>
-      {/* <TopBar user={user} setUser={setUser}/> */}
-
-      <Routes>
-        <Route path="/" element={<LandingPage setUser={setUser} user={user} />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="login" element={<Login setUser={setUser} />} />
-        <Route path="signup" element={<SignUp />} />
-        <Route path="dashboard/*" element={<Dashboard user={user} setUser={setUser} />} />
-        <Route path="/space-page" element={<PropertyDetails user={user} />} />
-        <Route path="/terms" element={<TermsAndConditions />} />
-      </Routes>
-    </>
+     <RoutesAnimator/>
   );
 }
 export default App;

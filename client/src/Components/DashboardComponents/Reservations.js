@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import reservations from '../../Image/reservation.gif'
 
 const Reservations = ({profileData}) => {
     const [reservations, setReservations] = useState([]);
@@ -12,9 +13,11 @@ const Reservations = ({profileData}) => {
   }, []);
     return (
         <section class="user-page section-padding">
+
             <div class="container-fluid">
                 <div class="row"></div>
                 <div class="dashborad-box">
+      <img src={reservations} className="componentIllustation"/><br/>
                     <h4 class="title">Reservations made</h4>
                     <div class="section-body listing-table">
                         <div class="table-responsive">

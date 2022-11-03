@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom"
+import { motion } from 'framer-motion'
 
 //Images import
 import backgroundImage from '../../Image/space.jpg'
@@ -28,7 +29,7 @@ const AfterHeader = ({ spacesData }) => {
         })
     }
     return (
-        <section id="hero-area" class="parallax-searchs home15 overlay thome-6 thome-1" >
+        <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay:1 , stiffness: 120, type: "spring" }}  id="hero-area" class="parallax-searchs home15 overlay thome-6 thome-1" >
             <div class="hero-main" >
                 <div class="container" >
                     <div class="row">
@@ -317,7 +318,7 @@ const AfterHeader = ({ spacesData }) => {
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }
 
