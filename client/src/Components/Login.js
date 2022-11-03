@@ -2,8 +2,29 @@ import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import TopBar from "./TopBar";
 import { Link, useNavigate } from "react-router-dom";
+import { motion } from 'framer-motion'
 
 const Login = ({ setUser }) => {
+
+  const variants_ = {
+    hidden: {
+      // opacity: 0,
+      x:'100vw'
+    },
+    visible: {
+      // opacity: 1,
+      x:0,
+      transition: {
+        type: 'spring',
+        delay: 0.3
+      }
+    },
+    exit: {
+      x: '-100vw',
+      // transition: { ease: 'easeInOut' }
+  delay:2
+    }
+  }
   //NAVIGATE
   const navigate = useNavigate();
   const [userDetails, setUserdetails] = useState({
@@ -56,13 +77,14 @@ const Login = ({ setUser }) => {
     <div>
       <TopBar />
       <Toaster />
-      <section class="headings">
+      <motion.div  variants={variants_} initial="hidden" animate="visible" exit="exit">
+     <div class="headings">
         <div class="text-heading text-center">
           <div class="container">
             <h6 className="m-3">Welcome back ,please login</h6>
           </div>
         </div>
-      </section>
+      </div>
 
       <div id="login">
         <div class="login text-left">
@@ -139,6 +161,7 @@ const Login = ({ setUser }) => {
           </form>
         </div>
       </div>
+      </motion.div>
     </div>
   );
 };

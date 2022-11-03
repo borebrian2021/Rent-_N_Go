@@ -3,6 +3,7 @@ import logowhite from "../Image/logo-white-1.svg";
 import profileImage from "../Image/testimonials/ts-1.jpg";
 import logo from "../Image/logo.png";
 import { Link, useNavigate } from "react-router-dom";
+import { motion } from 'framer-motion'
 
 export default function TopBar({ user, setUser }) {
   function handleLogoutClick() {
@@ -15,7 +16,7 @@ export default function TopBar({ user, setUser }) {
   }
 
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent shaddow">
+    <motion.nav initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.3, delay:0 , stiffness: 120, type: "spring" }}  class="navbar navbar-expand-lg navbar-light bg-transparent shaddow">
       <button
         class="navbar-toggler"
         type="button"
@@ -90,6 +91,6 @@ export default function TopBar({ user, setUser }) {
           )}
         </ul>
       </div>
-    </nav>
+    </motion.nav>
   );
 }

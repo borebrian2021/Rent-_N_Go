@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import reservations from '../../Image/reservation,.gif'
+import reservations from '../../Image/reservation.gif'
 
 const Reservations = ({profileData}) => {
     const [reservations, setReservations] = useState([]);
