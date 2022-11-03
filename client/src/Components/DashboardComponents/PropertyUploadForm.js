@@ -61,10 +61,16 @@ const PropertyUploadForm = ({
       body: JSON.stringify(form_data),
     })
       .then((r) => r.json())
-      .then((updatedItem) => updateList(updatedItem));
+      .then((updatedItem) => {
+        updateList(updatedItem)
+    window.location="/dashboard/dashboard/addproperty";
+      
+      }
+      );
   }
 
   function updateList(updatedItem) {
+    alert("Test edit")
     const updatedItems = propertyData.map((item) => {
       if (item.id === updatedItem.id) {
         return updatedItem;
@@ -78,6 +84,9 @@ const PropertyUploadForm = ({
       propertyName: "",
       location: "",
       imageUrl: "https://ibb.co/vXqRQvG",
+
+
+
     });
   }
 

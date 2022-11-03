@@ -8,7 +8,7 @@ import Login from "../Components/Login";
 import ResetPassword from "../Components/ResetPassword";
 import TermsAndConditions from "../Components/TermsAndConditions";
 import Dashboard from "../Components/Dashboard";
-
+import PropertyUploadForm from './DashboardComponents/PropertyUploadForm';
 // import PropertyCard from '../Components/PropertyListing';
 // import PropertyDetails from '../Components/PropertyDetails';
 import PropertyDetails from "../Components/PropertyDetails";
@@ -38,6 +38,7 @@ const RoutesAnimator = () => {
         <Route path="dashboard/*" element={<Dashboard user={user} setUser={setUser} />}/>
         <Route path="/space-page" element={<PropertyDetails user={user}/>}/>
         <Route path="/terms" element={<TermsAndConditions/>}/>
+        <Route path="/property-upload-form" element={<PropertyUploadForm/>}/>
       </Routes>
             </AnimatePresence>
         </div>
