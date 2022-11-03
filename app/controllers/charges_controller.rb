@@ -30,3 +30,4 @@ class ChargesController < ApplicationController
       clientSecret: payment_intent["client_secret"],
     }
 end
+end
