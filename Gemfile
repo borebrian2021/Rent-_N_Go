@@ -79,3 +79,7 @@ group :test do
 end
 
 gem "stripe", "~> 7.1"
+group :production do
+       gem 'pg', '~> 1.4', '>= 1.4.3'
+    
+end
