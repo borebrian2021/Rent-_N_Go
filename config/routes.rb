@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :contacts
+  resources :contacts, only: [:index, :create, :show]
   resources :selected_amenities
   resources :amenities
   resources :spaces

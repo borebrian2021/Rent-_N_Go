@@ -30,3 +30,35 @@ class MessagesController < ApplicationController
         render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
     end
 end
+ 
+  
+  const handleSubmit = (e) => {
+   
+    fetch("/contacts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        first_name: contact.firstName,
+        last_name: contact.lastName,
+        email: contact.email,
+        message: contact.message
+        
+      }),
+    })
+      .then((r) => r.json())
+      .then((contact) => {
+        setContact({
+          ...contact,
+          first_name: "",
+          last_name: "",
+          email: "",
+          message: ""
+          
+        });
+      
+      
+        
+
+      } )     

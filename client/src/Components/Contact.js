@@ -1,7 +1,43 @@
-import React from "react";
+import React, {useState} from "react";
 import TopBar from "./TopBar";
-
+import toast, { Toaster } from "react-hot-toast";
 const Contact = () => {
+  const [contact, setContact] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
+  });
+   function handleChange(e) {
+     const key = e.target.id;
+     setContact({ ...contact, [key]: e.target.value });
+   }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    fetch("/contacts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        first_name: contact.firstName,
+        last_name: contact.lastName,
+        email: contact.email,
+        message: contact.message,
+      }),
+    })
+      .then((res) => res.json())
+      .then((contact) => {
+        setContact({
+          ...contact,
+          first_name: "",
+          last_name: "",
+          email: "",
+          message: "",
+        });
+        toast.success("message sent succesfully!");
+      });
+  }
   return (
     <div>
       <TopBar />
@@ -24,6 +60,7 @@ const Contact = () => {
                 name="contactform"
                 method="post"
                 novalidate
+                onSubmit={handleSubmit}
               >
                 <div id="success" class="successform">
                   <p class="alert alert-success font-weight-bold" role="alert">
@@ -43,6 +80,7 @@ const Contact = () => {
                     class="form-control input-custom input-full"
                     name="name"
                     placeholder="First Name"
+                    onChange={handleChange}
                   />
                 </div>
                 <div class="form-group">
@@ -52,6 +90,7 @@ const Contact = () => {
                     class="form-control input-custom input-full"
                     name="lastname"
                     placeholder="Last Name"
+                    onChange={handleChange}
                   />
                 </div>
                 <div class="form-group">
@@ -60,6 +99,7 @@ const Contact = () => {
                     class="form-control input-custom input-full"
                     name="email"
                     placeholder="Email"
+                    onChange={handleChange}
                   />
                 </div>
                 <div class="form-group">
@@ -70,6 +110,7 @@ const Contact = () => {
                     required
                     rows="8"
                     placeholder="Message"
+                    onChange={handleChange}
                   ></textarea>
                 </div>
                 <button
