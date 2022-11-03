@@ -1,7 +1,27 @@
 import React, {useState} from "react";
 import TopBar from "./TopBar";
 import toast, { Toaster } from "react-hot-toast";
+import { motion } from "framer-motion";
 const Contact = () => {
+    const variants_ = {
+      hidden: {
+        // opacity: 0,
+        x: "100vw",
+      },
+      visible: {
+        // opacity: 1,
+        x: 0,
+        transition: {
+          type: "spring",
+          delay: 0.3,
+        },
+      },
+      exit: {
+        x: "-100vw",
+        // transition: { ease: 'easeInOut' }
+        delay: 2,
+      },
+    };
   const [contact, setContact] = useState({
     firstName: "",
     lastName: "",
